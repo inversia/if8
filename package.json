@@ -8,13 +8,19 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4",
-    "typescript": "^4.0.2"
+    "parcel": "^1.12.4",
+    "typescript": "^4.0.2",
+    "@types/react": "^16.9.46",
+    "@typescript-eslint/eslint-plugin": "^3.5.0",
+    "@typescript-eslint/parser": "^3.5.0",
+    "autoprefixer": "^9.8.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.20.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel index.html",
-    "start": "parcel ./src/index.html",
+    "start": "rm -rf dist .cache && parcel src/index.html",
     "build": "rm -rf dist .cache && parcel build --public-url ./ index.html"
   },
   "keywords": [],

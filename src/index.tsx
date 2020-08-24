@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDom from 'react-dom'
 
 // import './fonts.css'
-import './reset.css'
+// import './reset.css'
 import './index.css'
 
 import App from './App'
