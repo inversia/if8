@@ -1,6 +1,13 @@
+.search {
+    border: 1px solid salmon;
+}
+
 .search input {
     width: 30vw;
-    background: linear-gradient(to left, #e66465, #9198e5);
+    background: linear-gradient(to left, #ededed, #ffffff);
     outline: none;
     border:none;
+    border-radius: 0.5vw;
+    height: 1.797vw;
+
 }
