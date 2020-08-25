@@ -1,0 +1,11 @@
+div {
+    box-sizing:border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    --mega-padding: 4vw 4vw;
+}

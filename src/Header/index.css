@@ -1,0 +1,27 @@
+.header-wrapper {
+    display: flex;
+    border: 1px solid salmon;
+    justify-content: space-between;
+    padding: var(--mega-padding);
+}
+
+.tagline {
+    font-size: 5vw;
+    width: 15vw;
+    height: 5vw;
+    background-image: url(~/icons/tagline.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 1px solid salmon;
+}
+
+.logo {
+    font-size: 5vw;
+    color:black;
+    width: 10vw;
+    height: 15vw;
+    background-image: url(~/icons/logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 1px solid salmon;
+}
