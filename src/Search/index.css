@@ -1,0 +1,6 @@
+.search input {
+    width: 30vw;
+    background: linear-gradient(to left, #e66465, #9198e5);
+    outline: none;
+    border:none;
+}
