@@ -1,0 +1,74 @@
+.footer-wrapper {
+    height: 19vw;
+    background-image: url("data:image/svg+xml,%3Csvg width='1438' height='309' viewBox='0 0 1438 309' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1438 45.9516L302.5 0L-2 30.8212L-2 309L1438 309L1438 45.9516Z' fill='%23121111'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    padding: 0vw var(--global-padding);
+  }
+  
+  .contacts {
+    display: flex;
+    /* border: solid salmon 1px; */
+    flex: 2.8;
+    flex-direction: column;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 2.3vw;
+    padding-top: 5vw;
+  }
+  
+  .contacts * {
+    padding-bottom: 1vw;
+  }
+  
+  .contacts .phone {
+    display: flex;
+  }
+  
+  .contacts .address {
+    display: flex;
+  }
+  
+  .contacts a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .contacts span {
+    font-size: 1.4vw;
+  }
+  
+  .social {
+    display: flex;
+    /* border: solid salmon 1px; */
+    flex: 1;
+    height: 5vw;
+    position: relative;
+    top: 10vw;
+  }
+  
+  .social * {
+    display: flex;
+    flex: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+  }
+  
+  .telegram {
+    background-image: url(https://scontent.cdninstagram.com/v/t51.2885-15/e35/s240x240/118602156_314264089686873_7017636230894439593_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=109&_nc_ohc=N320t4cFJUEAX84SdRE&oh=3b413dd1df3bf8350a11ba12416055df&oe=5F7725C9&ig_cache_key=MjM4ODIwNjQ1MjAxNDM5NjU3Mg%3D%3D.2);
+  }
+  
+  .facebook {
+    background-image: url(https://scontent.cdninstagram.com/v/t51.2885-15/e35/s240x240/118599829_184941323069140_8260048978001662134_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=104&_nc_ohc=t062rKFYzg0AX_YZWUl&oh=d445f9a0ab20c393986111be1f9d842a&oe=5F7564D4&ig_cache_key=MjM4ODIwOTc2Mjc4ODI0NzQ1NQ%3D%3D.2);
+  }
+  
+  .instagram {
+    background-image: url(https://scontent.cdninstagram.com/v/t51.2885-15/e35/s240x240/118578962_429478231348836_5820576780050939794_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_cat=100&_nc_ohc=Pg4fOGuqg-AAX-QqObo&oh=e4505febdce0968e6a2d8fda0ec713d7&oe=5F78F069&ig_cache_key=MjM4ODIxMDI3NzE4NjE5MjcyMQ%3D%3D.2);
+  }
+  
