@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './index.css'
 
 export default function Menu () {
 
-    const [menuItemSelected, setMenuItemSelected] = useState ()
+    // const [menuItemSelected, setMenuItemSelected] = useState ()
 
     return <div className='menu'>
         <ul>

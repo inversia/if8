@@ -10,7 +10,8 @@
         "allowSyntheticDefaultImports": true,
         "allowJs": false,
         "noImplicitAny": true,
-        "typeRoots": [ "./src/@types", "./node_modules/@types"]
+        "typeRoots": [ "./src/@types", "./node_modules/@types"],
+        "target": "es2015"
     },
     "include": ["src/**/*"],
     "exclude": ["./src/@types"]
