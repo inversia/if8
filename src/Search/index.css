@@ -1,13 +1,31 @@
 .search {
-    border: 1px solid salmon;
+    /* border: 1px solid salmon; */
+    flex:2;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    --search-height: 1.46vw;
 }
 
 .search input {
-    width: 30vw;
+    width: 20.125vw;
     background: linear-gradient(to left, #ededed, #ffffff);
     outline: none;
-    border:none;
+    border: none;
     border-radius: 0.5vw;
-    height: 1.797vw;
+    height: var(--search-height);
+    position: relative;
+}
 
+.search::before {
+    content: '';
+    display: block;
+    width: var(--search-height);
+    height: var(--search-height);
+    position: relative;
+    background-image: url(~/icons/search-icon.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 0vw;
+    /* border: 1px solid salmon; */
 }

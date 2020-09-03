@@ -1,0 +1,26 @@
+.menu {
+    position: relative;
+    display: flex;
+    margin: 0vw 23vw;
+    font-weight: 100;
+    font-family: sans-serif;
+    top:-5.5vw;
+    opacity: 0.66;
+}
+
+    .menu ul {
+        display: flex;
+        white-space: nowrap;
+        justify-content: space-between;
+        /* border: 1px solid salmon; */
+        width: 100%;
+        
+    }
+
+        .menu li {
+            display: flex;
+            /* border:solid 1px salmon; */
+            font-size:1.3vw;
+            cursor: pointer;
+        }
+
