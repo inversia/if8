@@ -1,3 +1,23 @@
+// {
+//     "compilerOptions": {
+//         "baseUrl": ".",
+//         "paths": {
+//             "~*": ["./src/*"],
+//             "Common": ["./src/Common"],
+//             "Common/*": ["./src/Common/*"]
+//         },
+//         "jsx": "react",
+//         "allowSyntheticDefaultImports": true,
+//         "allowJs": false,
+//         "noImplicitAny": true,
+//         "typeRoots": [ "./src/@types", "./node_modules/@types"],
+//         "target": "es2015"
+//     },
+//     "include": ["src/**/*"],
+//     "exclude": ["./src/@types"]
+// }
+
+
 {
     "compilerOptions": {
         "baseUrl": ".",
@@ -11,7 +31,7 @@
         "allowJs": false,
         "noImplicitAny": true,
         "typeRoots": [ "./src/@types", "./node_modules/@types"],
-        "target": "es2015"
+        // "target": "es2015"
     },
     "include": ["src/**/*"],
     "exclude": ["./src/@types"]

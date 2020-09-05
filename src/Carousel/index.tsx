@@ -40,6 +40,7 @@ export default function Carousel ({ children = [] as React.ReactNode[] }) {
             {x}
           </div>
         ))}
+        
       </div>
       <div className="carousel-pagination">
         {children.map ((_, i) => (
