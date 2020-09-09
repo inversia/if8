@@ -1,7 +1,6 @@
 .carousel-wrapper-novelties {
     width: 85.5%;
-    margin-bottom: 8vw;
-    margin-top: 3vw;
+    margin-bottom: 10vw;
     /* border: 1px solid salmon; */
   }
 
@@ -10,13 +9,21 @@
     scroll-snap-type: x mandatory;
   }
 
+  .novelty-wrapper .carousel {
+    height: 32vw;
+  }
+
   .novelty-wrapper .carousel-item {
     /* margin: 3vw; */
   }
 
   .novelty-wrapper .carousel-item > * { 
-    margin:3vw;
-    width:22.6vw;
+    /* margin:3vw; */
+    margin:2vw;
+    /* width:22.6vw; */
+    width:24.5vw;
+    display: flex;
+    /* flex:0.9; */
   }
 
   .novelty {
@@ -25,8 +32,8 @@
     white-space: normal;
     position: relative;
     overflow-y: hidden;
-    background-color: #ffacc7;
-    box-shadow: 0vw 0vw 2.7vw rgba(0, 0, 0, 0.219);
+    /* background-color: #ffacc7; */
+    box-shadow: 0vw 0vw 1.9vw rgba(0, 0, 0, 0.205);
   }
 
   .novelty-image {

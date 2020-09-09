@@ -1,7 +1,7 @@
 .carousel {
   display: flex;
   position: relative;
-  height: 30vw;
+  /* height: 34vw; */
 }
 
 .carousel-scroller {
