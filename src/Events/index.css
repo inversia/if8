@@ -16,6 +16,10 @@
   }
 
 
+  .event-wrapper .carousel { 
+      height: 38vw;
+  }
+
   .event-wrapper .carousel-item {
     display: flex;
     /* flex: 0 0 34.9%; */
@@ -39,7 +43,8 @@
     scroll-snap-align: start;
     white-space: normal;
     position: relative;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
+    overflow: hidden;
     /* background-color: #ff0055; */
   }
 
@@ -51,7 +56,8 @@
 
   .event-description {
     display: flex;
-    flex:1;
-    background-color: #000000;
+    flex:0.8;
+    background-color: #ffffff;
     height: 100%;
+    transform: rotate(-10deg) scale(1.4);
   }
