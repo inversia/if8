@@ -1,74 +1,73 @@
 .carousel {
-    display: flex;
-    position: relative;
-    height: 28vw;
-  }
-  
-  .carousel-scroller {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: stretch;
-    align-content: stretch;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    position: relative;
-    height: 100%;
-    /* border:aquamarine 1px solid; */
-  }
-  
-  .carousel-scroller::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .carousel-item {
-    display: flex;
-    /* flex: 0 0 34.9%; */
-    scroll-snap-align: start;
-    /* flex:0 0 30.6vw; */
-  }
-  
-  .carousel-item > * {
-    /* flex: 1; */
-    margin-right: 3vw;
-    width:26.5vw;
-  }
+  display: flex;
+  position: relative;
+  height: 28vw;
+}
 
-  .carousel-item:last-child .feedback{
-    margin-right: 0vw;
-  }
-  
-  .carousel-pagination {
-    position: absolute;
-    display: flex;
-    top: 110%;
-    width: 100%;
-    justify-content: center;
-    /* border:aquamarine 1px solid; */
-  }
-  
-  .carousel-page-btn {
-    height: 1.4vw;
-    width:1.4vw;
-    /* width: 10%; */
-    background-color: #E2E2E2;
-    margin-right: 0.494vw;
-    border-radius: 50%;
-    transition: opacity 0.35s ease-in-out;
-    cursor: pointer;
-  }
-  
-  .carousel-page-btn:last-child {
-    margin-right: 0;
-  }
-  
-  .carousel-page-btn.active { 
-    background-image: url(~/icons/diamond2.jpg);
-    background-size: 125% 125%;
-    background-position: center center;
-    border:0.11vw solid black;
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  
+.carousel-scroller {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  position: relative;
+  height: 100%;
+  /* border:aquamarine 1px solid; */
+}
+
+.carousel-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  display: flex;
+  /* flex: 0 0 34.9%; */
+  scroll-snap-align: start;
+  /* flex:0 0 30.6vw; */
+}
+
+.carousel-item > * {
+  /* flex: 1; */
+  margin-right: 3vw;
+  width:26.5vw;
+}
+
+.carousel-item:last-child .feedback{
+  margin-right: 0vw;
+}
+
+.carousel-pagination {
+  position: absolute;
+  display: flex;
+  top: 110%;
+  width: 100%;
+  justify-content: center;
+  /* border:aquamarine 1px solid; */
+}
+
+.carousel-page-btn {
+  height: 1.4vw;
+  width:1.4vw;
+  /* width: 10%; */
+  background-color: #E2E2E2;
+  margin-right: 0.494vw;
+  border-radius: 50%;
+  transition: opacity 0.35s ease-in-out;
+  cursor: pointer;
+}
+
+.carousel-page-btn:last-child {
+  margin-right: 0;
+}
+
+.carousel-page-btn.active { 
+  background-image: url(~/icons/diamond2.jpg);
+  background-size: 125% 125%;
+  background-position: center center;
+  border:0.11vw solid black;
+  transform: scale(1.1);
+  opacity: 1;
+}

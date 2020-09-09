@@ -1,30 +1,35 @@
-.carousel-wrapper {
+.carousel-wrapper-novelties {
     width: 85.5%;
     margin-bottom: 8vw;
     margin-top: 3vw;
-    border: 1px solid salmon;
+    /* border: 1px solid salmon; */
   }
-  .carousel-wrapper h1 {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 3.6875vw;
-    line-height: 4.6875vw;
-    letter-spacing: 0.046875vw;
-    color: #333333;
-    margin-bottom: 4.76vw;
-  }
-  
-  .feedbacks-wrapper {
+
+  .novelty-wrapper {
     white-space: nowrap;
     scroll-snap-type: x mandatory;
-
   }
 
-  .feedback {
+  .novelty-wrapper .carousel-item {
+    /* margin: 3vw; */
+  }
+
+  .novelty-wrapper .carousel-item > * { 
+    margin:3vw;
+    width:22.6vw;
+  }
+
+  .novelty {
     display: inline-block;
     scroll-snap-align: start;
     white-space: normal;
     position: relative;
     overflow-y: hidden;
     background-color: #ffacc7;
+    box-shadow: 0vw 0vw 2.7vw rgba(0, 0, 0, 0.219);
   }
+
+  .novelty-image {
+    /* box-shadow: var(--global-shadow); */
+  }
+
