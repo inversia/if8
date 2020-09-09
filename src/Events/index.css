@@ -1,0 +1,57 @@
+.carousel-wrapper-events {
+    width: 85.5%;
+    margin-bottom: 8vw;
+    margin-top: 3vw;
+    /* border: 1px solid salmon; */
+    box-shadow: var(--global-shadow);
+  }
+  .carousel-wrapper-events h1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.6875vw;
+    line-height: 4.6875vw;
+    letter-spacing: 0.046875vw;
+    color: #333333;
+    margin-bottom: 4.76vw;
+  }
+
+
+  .event-wrapper .carousel-item {
+    display: flex;
+    /* flex: 0 0 34.9%; */
+    scroll-snap-align: start;
+    flex:0 0 100%;
+  }
+  
+  .event-wrapper .carousel-item > * {
+    flex: 1;
+    margin-right: 0vw;
+  }
+  
+  .event-wrapper {
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+
+  }
+
+  .event {
+    display: flex;
+    scroll-snap-align: start;
+    white-space: normal;
+    position: relative;
+    overflow-y: hidden;
+    /* background-color: #ff0055; */
+  }
+
+  .event-image {
+    display: flex;
+    flex:2;
+    background-color: #ff0055;
+  }
+
+  .event-description {
+    display: flex;
+    flex:1;
+    background-color: #000000;
+    height: 100%;
+  }
