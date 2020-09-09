@@ -3,6 +3,7 @@ import './index.css'
 import classname from 'classnames'
 
 export default function Carousel ({ children = [] as React.ReactNode[] }) {
+
   const [currentItem, setCurrentItem] = useState (0)
   const scrollerContainer = useRef<HTMLDivElement> ()
 
@@ -16,6 +17,7 @@ export default function Carousel ({ children = [] as React.ReactNode[] }) {
 
       setCurrentItem (itemPosition)
     },
+    
     [setCurrentItem]
   )
 
