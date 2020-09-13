@@ -61,3 +61,16 @@
     height: 100%;
     transform: rotate(-10deg) scale(1.4);
   }
+
+  .event-description p {
+    font-size: 1vw;
+    display: flex;
+    width: 40%;
+    position: absolute;
+    top:25%;
+    left:25%;
+    z-index: 2;
+    transform: rotate(10deg) scale(1);
+    /* border:solid salmon 1px; */
+    line-height: 1.3em;
+  }

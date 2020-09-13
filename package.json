@@ -6,6 +6,7 @@
   "dependencies": {
     "@types/classnames": "^2.2.10",
     "@types/lodash.debounce": "^4.0.6",
+    "hookrouter": "^1.2.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
