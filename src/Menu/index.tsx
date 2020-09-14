@@ -1,18 +1,27 @@
 import React, { useState } from 'react'
 import './index.css'
 import cls from 'classnames'
-import { useRoutes, usePath } from 'hookrouter'
-import Main from '~/Main'
-import Footer from '~/Footer'
+import { A } from 'hookrouter'
 
-const routes = {
-    '/':           () => {},
-    '/foot':    () => <Footer/>,
+
+const props = (id:string) => ({
+
+    className: cls ({ [id && ('menu-item-' + id)]: 1, active: location.pathname === ('/' + id) }),
+    href: '/' + id
+})
+
+function smoothScrollTo (hash:string) {
+
+    const target = document.getElementById (hash)
+
+    target.scrollIntoView ({
+        behavior: 'smooth',
+        block: 'nearest',
+    })
 }
 
 export default function Menu () {
 
-    // const [itemSelected, setItemSelected] = useState (false)
     const [ jewellerySelected, setJewellerySelected ] = useState (false)
     const [ interiorSelected, setInteriorSelected]    = useState (false)
 
@@ -21,24 +30,28 @@ export default function Menu () {
     return <>
         <div className='menu'>
             <ul>
-                <li>о компании</li>
-                <li onClick={() => {
+                <A href=''  {...props ('about')}>о компании</A>
+                <A href=''  onClick={() => {
                                     setJewellerySelected (!jewellerySelected)
                                     setInteriorSelected (false)
-                                    }}>ювелирные украшения
-                </li>
-                <li onClick={() => {
+                                    }}
+                            {...props ('jewellery')}>ювелирные украшения
+                </A>
+                <A href=''  onClick={() => {
                                     setInteriorSelected (!interiorSelected)
                                     setJewellerySelected (false)
-                                    }}>интерьер
-                </li>
-                <li>события</li>
-                <li>контакты</li>
-                <li>сделать заказ</li>
+                                    }}
+                            {...props ('interior')}>интерьер
+                                    
+                </A>
+                <A {...props ('')} onClick={() => setTimeout (() => smoothScrollTo ('events'), 100)}>события</A>
+                <A {...props ('footer')}>контакты</A>
+                <A {...props ('cart')}>сделать заказ</A>
             </ul>
         </div>
         <div className={ cls ('dropdown-menu', {'visible': jewellerySelected || interiorSelected })}>
-
+            <label className='cathegories'></label>
+            <label className='material'></label>
         </div>
     </>
 }

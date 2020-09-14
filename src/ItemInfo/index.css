@@ -1,0 +1,23 @@
+.item-wrapper {
+    border: solid salmon 1px;
+    display: flex;
+    padding: var(--global-padding);
+  }
+  
+  .illustration {
+    display: flex;
+    flex: 1;
+    background-color: pink;
+    box-shadow: var(--global-shadow);
+  }
+  
+  .dummy {
+    width: var(--global-padding);
+  }
+  
+  .item-info {
+    display: flex;
+    flex: 1;
+    background-color: palegreen;
+  }
+  

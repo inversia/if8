@@ -3,6 +3,7 @@ import Header from '~/Header'
 import Menu from '~/Menu'
 import Main from '~/Main'
 import Footer from '~/Footer'
+import ItemInfo from '~/ItemInfo'
 import { useRoutes, usePath } from 'hookrouter'
 
 const MainPage = () => <>
@@ -12,12 +13,11 @@ const MainPage = () => <>
     <Footer />
 </>
 
-const routes = {
+export const routes = {
     '/':        () => <MainPage/>,
-    '/foot':    () => <Footer/>,
-    '/main':    () => <Main />
-    'itemInfo': () => <ItemInfo />,
-    // '/service':    () => <Service/>,
+    '/footer':    () => <Footer/>,
+    '/main':    () => <Main />,
+    '/itemInfo': () => <ItemInfo />,
 }
 
 export default function App () {

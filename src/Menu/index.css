@@ -19,11 +19,17 @@
         
     }
 
-        .menu li {
+        .menu a {
             display: flex;
             /* border:solid 1px salmon; */
             font-size:1.3vw;
             cursor: pointer;
+            color:black;
+            text-transform: uppercase;
+        }
+
+        a.menu-item-about {
+            color:pink;
         }
 
     .dropdown-menu.visible {
@@ -34,7 +40,6 @@
         background-size: contain;
         background-repeat: no-repeat;
         z-index: 2;
-        /* border:1px solid salmon; */
         top:19vw;
     }
 

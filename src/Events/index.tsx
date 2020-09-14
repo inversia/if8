@@ -16,10 +16,10 @@ const events = Array.from ({ length: 5 }, (_, i:number) => ({
 }))
 
   return (
-    <div className='carousel-wrapper-events'>
+    <div id='events' className='carousel-wrapper-events'>
       <div className='event-wrapper'>
         <Carousel>
-          {events.map ((props, i:number) => (
+          { events.map ((props, i:number) => (
             <Event key={i} {...props} />
           ))}
         </Carousel>
