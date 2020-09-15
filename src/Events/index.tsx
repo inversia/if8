@@ -13,7 +13,8 @@ export default function Events () {
 const events = Array.from ({ length: 5 }, (_, i:number) => {(
     content: ['fdsgsdfg', 'jfgjsfgjf', 'trwjsd', 'aafdhf', 'kfkjhh'],
     name:    ['fsdfsdg', 'gsdgsr4hh', 'sdfghsdfhfdh', '4qtgsrggds', 'fbbbxcbx'],
-    index: i)}
+    index: i
+  )}
 )
 
   return (
