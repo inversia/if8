@@ -1,22 +1,10 @@
 import React from 'react'
 import './index.css'
 import Carousel from '~/Carousel'
-
-type EventProps = {
-  content: string [],
-  name: string [],
-  index: number
-}
+import events from '~/data/events'
+import images from '~/images'
 
 export default function Events () {
-
-const events = Array.from ({ length: 5 }, (_, i:number) => {(
-    content: ['fdsgsdfg', 'jfgjsfgjf', 'trwjsd', 'aafdhf', 'kfkjhh'],
-    name:    ['fsdfsdg', 'gsdgsr4hh', 'sdfghsdfhfdh', '4qtgsrggds', 'fbbbxcbx'],
-    index: i
-  )}
-)
-
   return (
     <div id='events' className='carousel-wrapper-events'>
       <div className='event-wrapper'>
@@ -30,12 +18,13 @@ const events = Array.from ({ length: 5 }, (_, i:number) => {(
   )
 }
 
-function Event () {
+function Event (props: {text: string, image: string}) {
+
   return (
     <div className='event'>
-      <div className='event-image'></div>
+      <div className='event-image' style={{ backgroundImage: `url(${images[props.image]})` }}></div>
       <div className='event-description'>
-          <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.</p>
+        <p>{ props.text }</p>
       </div>
     </div>
   )

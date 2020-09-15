@@ -7,7 +7,7 @@ const jewellery = [
         price: 3300,
         availability: 30,
         colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'url(~/images/gold.jpg)',
+        img: 'url(~/images/detective_pikachu.jpg)',
         id:1
     },
 
@@ -18,7 +18,7 @@ const jewellery = [
         price: 3300,
         availability: 30,
         colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'url(~/images/gold.jpg)',
+        img: 'url(~/images/pika-pika.png)',
         id:2
     },
 
@@ -29,7 +29,7 @@ const jewellery = [
         price: 3300,
         availability: 30,
         colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'url(~/images/gold.jpg)',
+        img: 'url(~/images/smth.jpg)',
         id:3
     },
 

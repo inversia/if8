@@ -31,8 +31,8 @@
         "allowJs": false,
         "noImplicitAny": true,
         "typeRoots": [ "./src/@types", "./node_modules/@types"],
-        // "target": "es2015"
+        //"target": "es2017",
     },
-    "include": ["src/**/*", "data"],
+    "include": ["src/**/*", "src/data"],
     "exclude": ["./src/@types"]
 }
