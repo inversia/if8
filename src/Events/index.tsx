@@ -10,10 +10,11 @@ type EventProps = {
 
 export default function Events () {
 
-const events = Array.from ({ length: 5 }, (_, i:number) => ({
+const events = Array.from ({ length: 5 }, (_, i:number) => {(
     content: ['fdsgsdfg', 'jfgjsfgjf', 'trwjsd', 'aafdhf', 'kfkjhh'],
-    index: i
-}))
+    name:    ['fsdfsdg', 'gsdgsr4hh', 'sdfghsdfhfdh', '4qtgsrggds', 'fbbbxcbx'],
+    index: i)}
+)
 
   return (
     <div id='events' className='carousel-wrapper-events'>

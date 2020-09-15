@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { createContext, useContext } from 'react'
 import Header from '~/Header'
 import Menu from '~/Menu'
 import Main from '~/Main'
 import Footer from '~/Footer'
 import ItemInfo from '~/ItemInfo'
-import { useRoutes, usePath } from 'hookrouter'
+import { useRoutes } from 'hookrouter'
 
 const MainPage = () => <>
     <Header/>
@@ -19,11 +19,23 @@ export const routes = {
     '/main':    () => <Main />,
     '/itemInfo': () => <ItemInfo />,
 }
+const defaultAppContext = {
+    
+}
+
+type AppContextProps = typeof defaultAppContext
+const AppContext = createContext<AppContextProps> (defaultAppContext)
 
 export default function App () {
-    return <>
-        { useRoutes (routes) }
-    </>
+    return (
+        <AppContext.Provider value={{}}>
+            { useRoutes (routes) }
+        </AppContext.Provider>
+    )
+}
+
+export function useAppContext (): AppContextProps {
+    return useContext (AppContext)
 }
 
 // import ItemInfo from "../ItemInfo"

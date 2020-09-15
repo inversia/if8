@@ -29,7 +29,12 @@
         }
 
         a.menu-item-about {
-            color:pink;
+            /* color:pink; */
+        }
+
+        a .active {
+            color:rgb(255, 0, 43);
+            transform: scale(2);
         }
 
     .dropdown-menu.visible {
