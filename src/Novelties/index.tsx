@@ -1,6 +1,8 @@
 import React from 'react'
 import './index.css'
 import Carousel from '~/Carousel'
+import novelties from '~/data/novelties'
+import images from '~/images'
 
 type NoveltiesProps = {
 
@@ -11,29 +13,23 @@ type NoveltiesProps = {
 
 export default function Novelties () {
 
-const testimonials = Array.from ({ length: 15 }, (_, i:number) => ({
-    content: ['Кольцо', 'Браслет', 'Подвеска', 'Кулон', 'Серьги'],
-    name: ['Elioth Smith', 'Пал Палыч', 'Васёк', 'Петян', 'Владим Владимыч'][i],
-    index: i
-} as NoveltiesProps))
-
   return (
     <div className='carousel-wrapper-novelties'>
       <div className='novelty-wrapper'>
         <Carousel>
-          {testimonials.map ((props, i:number) => (
+          { novelties.map ((props, i:number) => (
             <Novelty key={i} {...props} />
-          ))}
+          )) }
         </Carousel>
       </div>
     </div>
   )
 }
 
-function Novelty () {
+function Novelty (props: {text: string, image: string}) {
   return (
     <div className='novelty'>
-      <div className='novelty-image'></div>
+      <div className='novelty-image' style={{ backgroundImage: `url(${images[props.image]})` }}></div>
     </div>
   )
 }

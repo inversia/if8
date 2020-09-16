@@ -17,7 +17,7 @@ export const routes = {
     '/':        () => <MainPage/>,
     '/footer':    () => <Footer/>,
     '/main':    () => <Main />,
-    '/itemInfo': () => <ItemInfo />,
+    '/item-info': () => <ItemInfo />,
 }
 const defaultAppContext = {
     

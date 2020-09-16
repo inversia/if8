@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './index.css'
 import cls from 'classnames'
 import { A } from 'hookrouter'
+import jewellery from '~/data/jewellery'
+import interior from '~/data/interior'
 
 
 function smoothScrollTo (hash:string) {
@@ -14,21 +16,50 @@ function smoothScrollTo (hash:string) {
     })
 }
 
+type Product = [
+   
+    {
+        type: string,
+        matherial: string,
+        description: string,
+        probe: number,
+        partNumber: number,
+        price:number,
+        availability: number,
+        colors:[[string, string]],
+        img:string,
+        id:number
+    }
+]
+
+type Products = {
+    [key:string]: Product,
+}
+
+const products = {
+    jewellery,
+    interior
+}
+
+
 export default function Menu () {
 
     const [ jewellerySelected, setJewellerySelected ] = useState<boolean> (false)
     const [ interiorSelected, setInteriorSelected]    = useState<boolean> (false)
-    const [ currentItem, setCurrentItem] = useState<string> (undefined)
+    const [ currentItem, setCurrentItem] = useState<string> ('interior')
 
     const props = (id:string ) => ({
-
-        // className: cls ({ [id && ('menu-item-' + id)]: 1, active: location.pathname === ('/' + id) }),
     
         className: cls ({ [id && ('menu-item-' + id)]: 1, active: (id === currentItem)}),
         href: '/' + id
     })
 
-    console.log (currentItem)
+    const productsTypes = (currentItem && (products[currentItem] as Product)).map ( x => x.type )
+
+    // const uniqueTypes = [...new Set (productsTypes)]  TODO: как пофиксить этот более преимущественный вариант
+
+    const uniqueTypes:string[] = productsTypes.filter ((x, i) => productsTypes.indexOf (x) === i)
+    
 
     return <>
         <div className='menu'>
@@ -59,12 +90,15 @@ export default function Menu () {
             </ul>
         </div>
         <div className={ cls ('dropdown-menu', {'visible': jewellerySelected || interiorSelected })}>
-            <label className='cathegories'>
+            <label className='cathegories'>Категории
+                <ul>
+                    {uniqueTypes.map ((x, i) => <li key={i}>{x}</li> )}
+                </ul>
+            </label>
+            <label className='material'>Материал
 
             </label>
-            <label className='material'>
-
-            </label>
+            <label>Цена</label>
         </div>
     </>
 }
