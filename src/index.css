@@ -3,6 +3,11 @@
     src: url('./fonts/Forward-extra.otf');
 }
 
+@font-face {
+    font-family: 'Forward';
+    src: url('./fonts/Forward.otf');
+}
+
 div {
     box-sizing:border-box;
 }

@@ -89,16 +89,21 @@ export default function Menu () {
                     {...props ('cart')}>сделать заказ</A>
             </ul>
         </div>
-        <div className={ cls ('dropdown-menu', {'visible': jewellerySelected || interiorSelected })}>
-            <label className='cathegories'>Категории
-                <ul>
-                    {uniqueTypes.map ((x, i) => <li key={i}>{x}</li> )}
-                </ul>
-            </label>
-            <label className='material'>Материал
-
-            </label>
-            <label>Цена</label>
+        <div className={ cls ('dropdown-menu-container', {'visible': jewellerySelected || interiorSelected })}>
+            <div className='dropdown-menu'>
+                <div className='cathegories'>
+                    <label>Категории</label>
+                    <ul>
+                        {uniqueTypes.map ((x, i) => <li key={i}>{x}</li> )}
+                    </ul>
+                </div>
+                <div className='material'>
+                    <label>Материал</label>
+                </div>
+                <div className='price'>
+                    <label>Цена</label>
+                </div>
+            </div>
         </div>
     </>
 }

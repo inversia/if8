@@ -2,7 +2,7 @@
     display: flex;
     /* border: 1px solid salmon; */
     justify-content: space-between;
-    padding: 4vw var(--mega-padding);
+    padding: 4vw var(--mega-padding) 0vw var(--mega-padding);
 }
 
 .tagline {
