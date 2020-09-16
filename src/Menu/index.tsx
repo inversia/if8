@@ -59,6 +59,17 @@ export default function Menu () {
     // const uniqueTypes = [...new Set (productsTypes)]  TODO: как пофиксить этот более преимущественный вариант
 
     const uniqueTypes:string[] = productsTypes.filter ((x, i) => productsTypes.indexOf (x) === i)
+    const productsDictionary = {
+        rings: 'кольца',
+        bracelets: 'браслеты',
+        earrings: 'серьги',
+        neck: 'цепочки и подвески',
+        brooches: 'броши',
+        vases: 'вазы',
+        tables:'столы',
+        chairs:'стулья',
+        statuettes: 'статуэтки'
+    }
     
 
     return <>
@@ -80,7 +91,7 @@ export default function Menu () {
                     {...props ('')}>интерьер</A>
                 <A  onClick={() => {
                             setTimeout (() => smoothScrollTo ('events'), 100)
-                            setCurrentItem ('events')
+                            // setCurrentItem ('events')
                             }}
                     {...props ('')}>события</A>
                 <A  onClick={() => setCurrentItem ('contacts')}
@@ -94,7 +105,10 @@ export default function Menu () {
                 <div className='cathegories'>
                     <label>Категории</label>
                     <ul>
-                        {uniqueTypes.map ((x, i) => <li key={i}>{x}</li> )}
+                        { (currentItem === 'jewellery') && <li>эксклюзивные украшения</li> }
+                        { uniqueTypes.map ((x, i) => <li key={i}>{productsDictionary[x]}</li> ) }
+                        <li>Корпоративные подарки</li>
+                        <li>Посмотреть всё</li>
                     </ul>
                 </div>
                 <div className='material'>

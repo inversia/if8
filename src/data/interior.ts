@@ -2,7 +2,7 @@ const interior = [
     
     {
         type: 'vases',
-        matherial: 'gold',
+        matherial: 'wood',
         description: 'Едет быдло через быдло, видит быдло — в реке быдо. Сунул быдло быдло в быдло. Быдло быдло быдло быдло.',
         probe: 585,
         partNumber: 124323432,
@@ -15,7 +15,7 @@ const interior = [
 
     {
         type: 'tables',
-        matherial: 'silver',
+        matherial: 'metal',
         description: 'Вначале нужно сделать так, чтобы всё приложение имело доступ к Context. Для этого в index.js нужно обернуть всё приложение в ThemeContext.Provider',
         probe: 585,
         partNumber: 124323432,
@@ -28,7 +28,7 @@ const interior = [
 
     {
         type: 'tables',
-        matherial: 'gold',
+        matherial: 'glass',
         description: 'You\'ll sign in automatically to Gmail, YouTube, Search, and other Google services. If you were signed in before turning on sync, youll stay signed in.',
         probe: 585,
         partNumber: 124323432,
@@ -41,7 +41,7 @@ const interior = [
 
     {
         type: 'vases',
-        matherial: 'silver',
+        matherial: 'wood',
         description: 'Вначале нужно сделать так, чтобы всё приложение имело доступ к Context. Для этого в index.js нужно обернуть всё приложение в ThemeContext.Provider',
         probe: 585,
         partNumber: 124323432,
@@ -54,7 +54,7 @@ const interior = [
 
     {
         type: 'chairs',
-        matherial: 'gold',
+        matherial: 'ceramic',
         description: 'Вначале нужно сделать так, чтобы всё приложение имело доступ к Context. Для этого в index.js нужно обернуть всё приложение в ThemeContext.Provider',
         probe: 585,
         partNumber: 124323432,
@@ -67,7 +67,7 @@ const interior = [
 
     {
         type: 'statuettes',
-        matherial: 'gold',
+        matherial: 'steel',
         description: 'Едет быдло через быдло, видит быдло — в реке быдо. Сунул быдло быдло в быдло. Быдло быдло быдло быдло.',
         probe: 585,
         partNumber: 124323432,
@@ -80,7 +80,7 @@ const interior = [
 
     {
         type: 'chairs',
-        matherial: 'silver',
+        matherial: 'glass',
         description: 'Вначале нужно сделать так, чтобы всё приложение имело доступ к Context. Для этого в index.js нужно обернуть всё приложение в ThemeContext.Provider',
         probe: 585,
         partNumber: 124323432,
@@ -93,7 +93,7 @@ const interior = [
 
     {
         type: 'vases',
-        matherial: 'gold',
+        matherial: 'wood',
         description: 'You\'ll sign in automatically to Gmail, YouTube, Search, and other Google services. If you were signed in before turning on sync, youll stay signed in.',
         probe: 585,
         partNumber: 124323432,
@@ -106,7 +106,7 @@ const interior = [
 
     {
         type: 'tables',
-        matherial: 'silver',
+        matherial: 'ceramic',
         description: 'Вначале нужно сделать так, чтобы всё приложение имело доступ к Context. Для этого в index.js нужно обернуть всё приложение в ThemeContext.Provider',
         probe: 585,
         partNumber: 124323432,
@@ -119,7 +119,7 @@ const interior = [
 
     {
         type: 'vases',
-        matherial: 'gold',
+        matherial: 'wood',
         description: 'Вначале нужно сделать так, чтобы всё приложение имело доступ к Context. Для этого в index.js нужно обернуть всё приложение в ThemeContext.Provider',
         probe: 585,
         partNumber: 124323432,
