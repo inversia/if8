@@ -1,5 +1,5 @@
-import {jewellery} from './jewellery'
-import {interior} from './interior'
+import { jewellery } from './jewellery'
+import { interior } from './interior'
 
 export const categories = {
     jewellery,

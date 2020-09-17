@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useState } from 'react'
 import './index.css'
 import cls from 'classnames'
 import { A, usePath } from 'hookrouter'
-import { productTypes } from '~/data'
+import { Category, productTypes, materials } from '~/data'
 import RubberSlider from '@shwilliam/react-rubber-slider'
 import '@shwilliam/react-rubber-slider/dist/styles.css'
 
@@ -21,7 +21,6 @@ function MenuLink ({
     children = null as React.ReactChild,
     onClick = (_path: string) => {}
 }) {
-
     const currentPath = usePath ()
     const className = path.replace (/\//g, '_')
     const active = currentPath.startsWith (path)
@@ -37,16 +36,23 @@ function MenuLink ({
     )
 }
 
+function parsePath (path: string): { category?: Category } {
+    const [, page, category] = path.split ('/')
+    return {
+        category: page === 'items' ? (category as Category) : undefined
+    }
+}
+
 export function Menu () {
 
     const [value, setValue] = useState (0.5)
 
     const [dropdownVisible, setDropdownVisible] = useState (false)
 
-    const currentPath = usePath ()
+    const { category } = parsePath (usePath ())
     
     const toggleDropdown = (path: string) => {
-        if (dropdownVisible && currentPath.startsWith (path)) {
+        if (dropdownVisible && category === parsePath (path).category) {
             setDropdownVisible (false)
         } else {
             setDropdownVisible (true)
@@ -54,12 +60,8 @@ export function Menu () {
     }
 
     useLayoutEffect (() => {
-        if (!currentPath.startsWith ('/items/')) {
-            setDropdownVisible (false)
-        }
-    }, [currentPath])
-
-    const isJewellery = currentPath.startsWith ('/items/jewellery')
+        if (!category) setDropdownVisible (false)
+    }, [category])
 
     return <>
 
@@ -82,17 +84,17 @@ export function Menu () {
                 <div className='cathegories'>
                     <label>Категории</label>
                     <ul>
-                        { isJewellery && <li>эксклюзивные украшения</li> }
-                        { Object.entries (productTypes).map (([k, v]) => <li key={k}>{ v }</li> ) }
+                        { category === 'jewellery' && <li>эксклюзивные украшения</li> }
+                        { Object.entries (productTypes[category]).map (([k, v]: [string, string]) => <li key={ k }>{ v }</li> ) }
                         <li>Корпоративные подарки</li>
                         <li>Посмотреть всё</li>
                     </ul>
                 </div>
                 <div className='material'>
                     <label>Материал</label>
-                    {/* <ul>
-                        { uniqueMatherials.map ((x, i) => <li key={i}>{ productTypes[x] }</li> ) }
-                    </ul> */}
+                    <ul>
+                        { Object.entries (materials[category]).map (([k, v]: [string, string]) => <li key={ k }>{ v }</li> ) }
+                    </ul>
                 </div>
                 <div className='price'>
                     <label>Цена</label>

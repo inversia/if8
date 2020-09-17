@@ -12,6 +12,10 @@ interface ObjectConstructor {
     entries<T>(obj: T): Entries<T>
 }
 
+interface String {
+    startsWith(s: string): boolean;
+}
+
 // interface Set<T> {
 //     add(value: T): Set<T>
 //     clear(): void

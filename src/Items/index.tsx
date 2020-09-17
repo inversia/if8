@@ -1,6 +1,5 @@
 import React from 'react'
 import './index.css'
-// import cls from 'classnames'
 import { Header } from '~/Header'
 import { Menu } from '~/Menu'
 import { categories, Category } from '~/data'

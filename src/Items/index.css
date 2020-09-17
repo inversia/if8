@@ -6,7 +6,7 @@
     .items-container {
         display: grid;
         grid-area: auto;
-        border:1px solid salmon;
+        /* border:1px solid salmon; */
         grid-template-columns: 30vw;
         grid-template-rows: 30vw;
         /* justify-content: center; */
@@ -17,7 +17,7 @@
             /* height: 30vw; */
             background-repeat: no-repeat;
             background-size: cover;
-            border:1px solid salmon;
+            /* border:1px solid salmon; */
             /* grid-column: 3;
             grid-row: 2; */
         }

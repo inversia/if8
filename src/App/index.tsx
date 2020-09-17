@@ -20,7 +20,7 @@ export const routes = {
     '/footer':    () => <Footer/>,
     '/main':    () => <Main />,
     '/item-info': () => <ItemInfo />,
-    '/items/:category': ({ category = 'jewellery' as Category }) => <Items category={category} />
+    '/items/:category': ({ category = 'jewellery' as Category }) => <Items category={ category } />
 }
 
 const defaultAppContext = {
