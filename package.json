@@ -4,23 +4,29 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@reach/slider": "^0.11.2",
+    "@shwilliam/react-rubber-slider": "^0.1.4",
     "@types/classnames": "^2.2.10",
     "@types/lodash.debounce": "^4.0.6",
+    "@types/styled-components": "^5.1.3",
+    "d3": "^6.1.1",
     "hookrouter": "^1.2.3",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-is": "^16.13.1"
   },
   "devDependencies": {
-    "classnames": "^2.2.6",
     "@types/hookrouter": "^2.2.1",
-    "lodash.debounce": "^4.0.8",
     "@types/react": "^16.9.46",
     "@typescript-eslint/eslint-plugin": "^3.5.0",
     "@typescript-eslint/parser": "^3.5.0",
     "autoprefixer": "^9.8.1",
+    "classnames": "^2.2.6",
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.20.2",
     "eslint-plugin-react-hooks": "^4.1.0",
+    "lodash.debounce": "^4.0.8",
     "parcel": "^1.12.4",
     "typescript": "^4.0.2"
   },

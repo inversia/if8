@@ -1,10 +1,12 @@
 import React, { createContext, useContext } from 'react'
-import Header from '~/Header'
-import Menu from '~/Menu'
-import Main from '~/Main'
-import Footer from '~/Footer'
-import ItemInfo from '~/ItemInfo'
+import { Header } from '~/Header'
+import { Menu } from '~/Menu'
+import { Main } from '~/Main'
+import { Footer } from '~/Footer'
+import { ItemInfo } from '~/ItemInfo'
+import { Items } from '~/Items'
 import { useRoutes } from 'hookrouter'
+import { Category, ProductType } from '~/data'
 
 const MainPage = () => <>
     <Header/>
@@ -18,7 +20,9 @@ export const routes = {
     '/footer':    () => <Footer/>,
     '/main':    () => <Main />,
     '/item-info': () => <ItemInfo />,
+    '/items/:category': ({ category = 'jewellery' as Category }) => <Items category={category} />
 }
+
 const defaultAppContext = {
     
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.css'
 
-export default function Footer () {
+export function Footer () {
   return (
     <>
       <div className='footer-wrapper'>

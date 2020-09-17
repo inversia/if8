@@ -2,6 +2,7 @@
     border: solid salmon 1px;
     display: flex;
     padding: var(--global-padding);
+    width: 100%;
   }
   
   .illustration {

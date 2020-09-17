@@ -1,7 +1,9 @@
 import React from 'react'
 import './index.css'
 
-export default function ItemInfo () {
+
+
+export function ItemInfo () {
   return (
     <div className='item-wrapper'>
       <div className='illustration'></div>

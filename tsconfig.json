@@ -31,7 +31,7 @@
         "allowJs": false,
         "noImplicitAny": true,
         "typeRoots": [ "./src/@types", "./node_modules/@types"],
-        //"target": "es2017",
+        "target": "esnext",
     },
     "include": ["src/**/*", "src/data"],
     "exclude": ["./src/@types"]

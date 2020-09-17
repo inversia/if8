@@ -4,6 +4,14 @@ declare module '*.jpg'
 declare module '*.json'
 declare module '*.(jpg|png|svg)'
 
+type Entries<T> = {
+    [K in keyof T]: [K, T[K]]
+}[keyof T][]
+
+interface ObjectConstructor {
+    entries<T>(obj: T): Entries<T>
+}
+
 // interface Set<T> {
 //     add(value: T): Set<T>
 //     clear(): void

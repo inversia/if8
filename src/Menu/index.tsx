@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import './index.css'
 import cls from 'classnames'
-import { A } from 'hookrouter'
-import jewellery from '~/data/jewellery'
-import interior from '~/data/interior'
-
+import { A, usePath } from 'hookrouter'
+import { productTypes } from '~/data'
+import RubberSlider from '@shwilliam/react-rubber-slider'
+import '@shwilliam/react-rubber-slider/dist/styles.css'
 
 function smoothScrollTo (hash:string) {
 
@@ -16,106 +16,88 @@ function smoothScrollTo (hash:string) {
     })
 }
 
-type Product = [
-   
-    {
-        type: string,
-        matherial: string,
-        description: string,
-        probe: number,
-        partNumber: number,
-        price:number,
-        availability: number,
-        colors:[[string, string]],
-        img:string,
-        id:number
-    }
-]
+function MenuLink ({
+    path = '',
+    children = null as React.ReactChild,
+    onClick = (_path: string) => {}
+}) {
 
-type Products = {
-    [key:string]: Product,
+    const currentPath = usePath ()
+    const className = path.replace (/\//g, '_')
+    const active = currentPath.startsWith (path)
+
+    return (
+        <A
+            className={ cls ({ active, [('menu-item-' + className)]: 1 }) }
+            href={path}
+            onClick={() => onClick (path)}
+        >
+            {children}
+        </A>
+    )
 }
 
-const products = {
-    jewellery,
-    interior
-}
+export function Menu () {
 
+    const [value, setValue] = useState (0.5)
 
-export default function Menu () {
+    const [dropdownVisible, setDropdownVisible] = useState (false)
 
-    const [ jewellerySelected, setJewellerySelected ] = useState<boolean> (false)
-    const [ interiorSelected, setInteriorSelected]    = useState<boolean> (false)
-    const [ currentItem, setCurrentItem] = useState<string> ('interior')
-
-    const props = (id:string ) => ({
+    const currentPath = usePath ()
     
-        className: cls ({ [id && ('menu-item-' + id)]: 1, active: (id === currentItem)}),
-        href: '/' + id
-    })
-
-    const productsTypes = (currentItem && (products[currentItem] as Product)).map ( x => x.type )
-
-    // const uniqueTypes = [...new Set (productsTypes)]  TODO: как пофиксить этот более преимущественный вариант
-
-    const uniqueTypes:string[] = productsTypes.filter ((x, i) => productsTypes.indexOf (x) === i)
-    const productsDictionary = {
-        rings: 'кольца',
-        bracelets: 'браслеты',
-        earrings: 'серьги',
-        neck: 'цепочки и подвески',
-        brooches: 'броши',
-        vases: 'вазы',
-        tables:'столы',
-        chairs:'стулья',
-        statuettes: 'статуэтки'
+    const toggleDropdown = (path: string) => {
+        if (dropdownVisible && currentPath.startsWith (path)) {
+            setDropdownVisible (false)
+        } else {
+            setDropdownVisible (true)
+        }
     }
-    
+
+    useLayoutEffect (() => {
+        if (!currentPath.startsWith ('/items/')) {
+            setDropdownVisible (false)
+        }
+    }, [currentPath])
+
+    const isJewellery = currentPath.startsWith ('/items/jewellery')
 
     return <>
+
         <div className='menu'>
             <ul>
-                <A  onClick={() => setCurrentItem ('about')}
-                    {...props ('about')}>о компании</A>
-                <A  onClick={() => {
-                            setJewellerySelected (!jewellerySelected)
-                            setInteriorSelected (false)
-                            setCurrentItem ('jewellery')
-                            }}
-                    {...props ('')}>ювелирные украшения</A>
-                <A  onClick={() => {
-                            setInteriorSelected (!interiorSelected)
-                            setJewellerySelected (false)
-                            setCurrentItem ('interior')
-                            }}
-                    {...props ('')}>интерьер</A>
-                <A  onClick={() => {
+                <MenuLink path='/about'>о компании</MenuLink>
+                <MenuLink path='/items/jewellery' onClick={toggleDropdown}>ювелирные украшения</MenuLink>
+                <MenuLink path='/items/interior' onClick={toggleDropdown}>интерьер</MenuLink>
+
+                <li  onClick={() => {
                             setTimeout (() => smoothScrollTo ('events'), 100)
-                            // setCurrentItem ('events')
-                            }}
-                    {...props ('')}>события</A>
-                <A  onClick={() => setCurrentItem ('contacts')}
-                    {...props ('footer')}>контакты</A>
-                <A  onClick={() => setCurrentItem ('cart')}
-                    {...props ('cart')}>сделать заказ</A>
+                            }
+                    }>события</li>
+                <MenuLink path='/contacts'>контакты</MenuLink>
+                <MenuLink path='/cart'>сделать заказ</MenuLink>
             </ul>
         </div>
-        <div className={ cls ('dropdown-menu-container', {'visible': jewellerySelected || interiorSelected })}>
+        <div className={ cls ('dropdown-menu-container', { visible: dropdownVisible })}>
             <div className='dropdown-menu'>
                 <div className='cathegories'>
                     <label>Категории</label>
                     <ul>
-                        { (currentItem === 'jewellery') && <li>эксклюзивные украшения</li> }
-                        { uniqueTypes.map ((x, i) => <li key={i}>{productsDictionary[x]}</li> ) }
+                        { isJewellery && <li>эксклюзивные украшения</li> }
+                        { Object.entries (productTypes).map (([k, v]) => <li key={k}>{ v }</li> ) }
                         <li>Корпоративные подарки</li>
                         <li>Посмотреть всё</li>
                     </ul>
                 </div>
                 <div className='material'>
                     <label>Материал</label>
+                    {/* <ul>
+                        { uniqueMatherials.map ((x, i) => <li key={i}>{ productTypes[x] }</li> ) }
+                    </ul> */}
                 </div>
                 <div className='price'>
                     <label>Цена</label>
+                    <RubberSlider width={200} height={100} value={value} onChange={setValue} min={1} max={130000}/>
+                    <p className='rating-value'>{value}</p>
                 </div>
             </div>
         </div>
