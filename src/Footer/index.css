@@ -17,7 +17,7 @@
     color: white;
     font-family: sans-serif;
     font-weight: 100;
-    font-size: 2.3vw;
+    font-size: 2.0vw;
     padding-top: 5vw;
     font-family: 'Forward-extra';
   }
@@ -42,6 +42,8 @@
   .contacts span {
     font-size: 1.4vw;
   }
+
+
   
   .social {
     display: flex;
@@ -55,21 +57,32 @@
   .social * {
     display: flex;
     flex: 1;
-    background-size: contain;
+    /* background-size: contain;
     background-repeat: no-repeat;
-    background-position: center right;
+    background-position: center right; */
     cursor: pointer;
+    mask-mode: alpha;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    background-color: rgb(255, 255, 255);
   }
   
   .telegram {
-    background-image: url(~/icons/telegram.svg);  
+
+    mask-image: url(~/icons/telegram.svg);
+    mask-mode: alpha;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    background-color: rgb(255, 255, 255);
   }
   
   .facebook {
-    background-image: url(~/icons/facebook.svg); 
+    mask-image: url(~/icons/facebook.svg); 
   }
   
   .instagram {
-    background-image: url(~/icons/instagram.svg); 
+    mask-image: url(~/icons/instagram.svg); 
   }
   

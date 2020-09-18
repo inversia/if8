@@ -87,11 +87,12 @@
         z-index: 2;
         opacity: 0;
         padding: 0vw 23vw;
-        /* border:1px solid salmon; */
+        display: none;
     } 
 
     .dropdown-menu-container.visible {
         opacity: 1;
+        display: flex;
     }
 
         .dropdown-menu {

@@ -5,6 +5,7 @@ import { Main } from '~/Main'
 import { Footer } from '~/Footer'
 import { ItemInfo } from '~/ItemInfo'
 import { Items } from '~/Items'
+import Contacts  from '~/Contacts'
 import { useRoutes } from 'hookrouter'
 import { Category, materials, MaterialsType } from '~/data'
 
@@ -17,7 +18,7 @@ const MainPage = () => <>
 
 export const routes = {
     '/':        () => <MainPage/>,
-    '/footer':    () => <Footer/>,
+    '/contacts':    () => <Contacts/>,
     '/main':    () => <Main />,
     '/item-info': () => <ItemInfo />,
     '/items/:category': ({ category = 'jewellery' as Category }, material = 'gold' as MaterialsType) => <Items category={ category } material={ material }/>

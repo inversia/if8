@@ -3,7 +3,7 @@ import './index.css'
 import cls from 'classnames'
 import { A, usePath } from 'hookrouter'
 import { Category, productTypes, materials, MaterialsType } from '~/data'
-import RubberSlider from '@shwilliam/react-rubber-slider'
+// import RubberSlider from '@shwilliam/react-rubber-slider'
 import '@shwilliam/react-rubber-slider/dist/styles.css'
 
 function smoothScrollTo (hash:string) {

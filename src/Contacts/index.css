@@ -1,0 +1,42 @@
+.decoration-corner {
+    /* border:1px solid salmon; */
+    height: 6vw;
+    width: 100%;
+    transform: rotate(-5deg) scale(2.3);
+    background-color: white;
+    position: relative;
+    z-index: 2;
+    top:0.3vw;
+}
+
+.contacts-footer-wrapper .footer-wrapper {
+    background-image: none;
+    height:8vw;
+}
+
+.contacts-footer-wrapper .contacts,
+.contacts-footer-wrapper .contacts a { 
+    color:black;
+    padding-top: 1vw;
+    position: relative;
+    z-index: 3;
+}
+
+.contacts-footer-wrapper .social {
+    top:5vw;
+ }
+
+.contacts-footer-wrapper .telegram,
+.contacts-footer-wrapper .facebook,
+.contacts-footer-wrapper .instagram {
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    z-index: 3;
+}
+
+.map {
+    height: 65.6vh;
+    /* filter: invert(0.96) hue-rotate(145deg); */
+    /* filter: grayscale(100%); */
+    filter: invert(100%) grayscale(100%);
+}
