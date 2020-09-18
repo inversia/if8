@@ -6,7 +6,7 @@ import { Footer } from '~/Footer'
 import { ItemInfo } from '~/ItemInfo'
 import { Items } from '~/Items'
 import { useRoutes } from 'hookrouter'
-import { Category, ProductType } from '~/data'
+import { Category, materials, MaterialsType } from '~/data'
 
 const MainPage = () => <>
     <Header/>
@@ -20,7 +20,7 @@ export const routes = {
     '/footer':    () => <Footer/>,
     '/main':    () => <Main />,
     '/item-info': () => <ItemInfo />,
-    '/items/:category': ({ category = 'jewellery' as Category }) => <Items category={ category } />
+    '/items/:category': ({ category = 'jewellery' as Category }, material = 'gold' as MaterialsType) => <Items category={ category } material={ material }/>
 }
 
 const defaultAppContext = {

@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useState } from 'react'
 import './index.css'
 import cls from 'classnames'
 import { A, usePath } from 'hookrouter'
-import { Category, productTypes, materials } from '~/data'
+import { Category, productTypes, materials, MaterialsType } from '~/data'
 import RubberSlider from '@shwilliam/react-rubber-slider'
 import '@shwilliam/react-rubber-slider/dist/styles.css'
 
@@ -69,12 +69,11 @@ export function Menu () {
             <ul>
                 <MenuLink path='/about'>о компании</MenuLink>
                 <MenuLink path='/items/jewellery' onClick={toggleDropdown}>ювелирные украшения</MenuLink>
-                <MenuLink path='/items/interior' onClick={toggleDropdown}>интерьер</MenuLink>
-
-                <li  onClick={() => {
-                            setTimeout (() => smoothScrollTo ('events'), 100)
-                            }
-                    }>события</li>
+                <MenuLink path='/items/interior'  onClick={toggleDropdown}>интерьер</MenuLink>
+                <MenuLink path='/'  onClick={() => {
+                                        setTimeout (() => smoothScrollTo ('events'), 100)
+                                    }}>события</MenuLink>
+                
                 <MenuLink path='/contacts'>контакты</MenuLink>
                 <MenuLink path='/cart'>сделать заказ</MenuLink>
             </ul>
@@ -85,7 +84,8 @@ export function Menu () {
                     <label>Категории</label>
                     <ul>
                         { category === 'jewellery' && <li>эксклюзивные украшения</li> }
-                        { Object.entries (productTypes[category]).map (([k, v]: [string, string]) => <li key={ k }>{ v }</li> ) }
+                        {/* { category && Object.entries (productTypes[category]).map (([k, v]: [string, string]) => <li key={ k }>{ v }</li> ) } */}
+                        { category && Object.entries (productTypes[category]).map (([k, v]: [string, string]) => <MenuLink path={`/items/${category}/${k}`} key={ k }>{ v }</MenuLink> ) }
                         <li>Корпоративные подарки</li>
                         <li>Посмотреть всё</li>
                     </ul>
@@ -93,12 +93,12 @@ export function Menu () {
                 <div className='material'>
                     <label>Материал</label>
                     <ul>
-                        { Object.entries (materials[category]).map (([k, v]: [string, string]) => <li key={ k }>{ v }</li> ) }
+                        { category && Object.entries (materials[category]).map (([k, v]: [string, string]) => <li key={ k }>{ v }</li> ) }
                     </ul>
                 </div>
                 <div className='price'>
                     <label>Цена</label>
-                    <RubberSlider width={200} height={100} value={value} onChange={setValue} min={1} max={130000}/>
+                    {/* <RubberSlider width={200} height={100} value={value} onChange={setValue} min={1} max={130000}/> */}
                     <p className='rating-value'>{value}</p>
                 </div>
             </div>

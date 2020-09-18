@@ -40,6 +40,7 @@ export const materials = {
 export type JewelleryType = keyof typeof jewelleryTypes
 export type InteriorType  = keyof typeof interiorTypes
 export type ProductType = JewelleryType | InteriorType
+export type MaterialsType = typeof materials
 
 export type Product = {
     type: ProductType,
