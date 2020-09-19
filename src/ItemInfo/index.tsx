@@ -1,13 +1,12 @@
 import React from 'react'
 import './index.css'
+import { categories, FilterProps } from '~/data'
+import images from '~/images'
 
-
-
-export function ItemInfo () {
-  return (
+export function ItemInfo ({ category, subcategory, material, id }: FilterProps) {
+  return <>
     <div className='item-wrapper'>
       <div className='illustration'></div>
-      <div className='dummy'></div>
       <div className='item-info'>
         <ul>
           <label>Описание</label>
@@ -24,5 +23,5 @@ export function ItemInfo () {
         </ul>
       </div>
     </div>
-  )
+  </>
 }

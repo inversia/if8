@@ -120,8 +120,19 @@
             .dropdown-menu ul li {
                 cursor: pointer;
                 padding: 0.5em 0em;
-                white-space: nowrap;
+				white-space: nowrap;
+
             }
+
+            	.subcategories a {
+					display: flex;
+					flex-direction: column;
+					padding: 0.5em 0em;
+					white-space: nowrap;
+					color: rgb(0, 0, 0);
+					text-decoration: none;
+
+				}
 
 .rubber-slider-handle {
     stroke:red;

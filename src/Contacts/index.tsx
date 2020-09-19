@@ -1,14 +1,10 @@
 import React from 'react'
 import './index.css'
-import { Header } from '~/Header'
-import { Menu }   from '~/Menu'
 import { Footer } from '~/Footer'
 import { YMaps, Map } from 'react-yandex-maps'
 
 export default function Contacts () {
-    return <>
-        <Header/>
-        <Menu />
+    return <div className='contacts-wrapper'>
         <div className='contacts-footer-wrapper'>
             <Footer />
             <div className='decoration-corner'></div>
@@ -19,5 +15,5 @@ export default function Contacts () {
                 </YMaps>
             </div>
         </div>
-    </>
+    </div>
 }

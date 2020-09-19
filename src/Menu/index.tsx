@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useState } from 'react'
 import './index.css'
 import cls from 'classnames'
 import { A, usePath } from 'hookrouter'
-import { Category, productTypes, materials, MaterialsType } from '~/data'
+import { Category, productTypes, materials, FilterProps } from '~/data'
 // import RubberSlider from '@shwilliam/react-rubber-slider'
 import '@shwilliam/react-rubber-slider/dist/styles.css'
 
@@ -43,15 +43,14 @@ function parsePath (path: string): { category?: Category } {
     }
 }
 
-export function Menu () {
+export function Menu ({ category, subcategory, material, id }: FilterProps) {
 
     const [value, setValue] = useState (0.5)
 
     const [dropdownVisible, setDropdownVisible] = useState (false)
-
-    const { category } = parsePath (usePath ())
     
     const toggleDropdown = (path: string) => {
+
         if (dropdownVisible && category === parsePath (path).category) {
             setDropdownVisible (false)
         } else {
@@ -64,7 +63,6 @@ export function Menu () {
     }, [category])
 
     return <>
-
         <div className='menu'>
             <ul>
                 <MenuLink path='/about'>о компании</MenuLink>
@@ -73,7 +71,6 @@ export function Menu () {
                 <MenuLink path='/'  onClick={() => {
                                         setTimeout (() => smoothScrollTo ('events'), 100)
                                     }}>события</MenuLink>
-                
                 <MenuLink path='/contacts'>контакты</MenuLink>
                 <MenuLink path='/cart'>сделать заказ</MenuLink>
             </ul>
@@ -85,16 +82,22 @@ export function Menu () {
                     <ul>
                         { category === 'jewellery' && <li>эксклюзивные украшения</li> }
                         {/* { category && Object.entries (productTypes[category]).map (([k, v]: [string, string]) => <li key={ k }>{ v }</li> ) } */}
-                        { category && Object.entries (productTypes[category]).map (([k, v]: [string, string]) => <MenuLink path={`/items/${category}/${k}`} key={ k }>{ v }</MenuLink> ) }
+                        <div className='subcategories'>{
+                            category && Object.entries (productTypes[category]).map (([subcategory, label]: [string, string]) =>
+                                <MenuLink path={`/items/${category}/${subcategory}`} key={ subcategory }>{ label }</MenuLink>
+                            )
+                        }</div>
                         <li>Корпоративные подарки</li>
                         <li>Посмотреть всё</li>
                     </ul>
                 </div>
                 <div className='material'>
                     <label>Материал</label>
-                    <ul>
-                        { category && Object.entries (materials[category]).map (([k, v]: [string, string]) => <li key={ k }>{ v }</li> ) }
-                    </ul>
+                    <ul>{
+                        category && Object.entries (materials[category]).map (([material, label]: [string, string]) =>
+                            <MenuLink path={`/items/${category}/${subcategory || 'all'}/${material}`} key={ material }>{ label }</MenuLink>
+                        )
+                    }</ul>
                 </div>
                 <div className='price'>
                     <label>Цена</label>

@@ -1,24 +1,26 @@
 .item-wrapper {
-    border: solid salmon 1px;
-    display: flex;
-    padding: var(--global-padding);
-    width: 100%;
+    display: grid;
+    grid-template-columns: 41vw 41vw;
+    grid-gap: 4vw;
+    margin: var(--global-padding);
+    width: 86vw;
+    margin: 1vw auto;
+    border: solid rgb(255, 0, 128) 1px;
   }
   
   .illustration {
-    display: flex;
-    flex: 1;
     background-color: pink;
-    box-shadow: var(--global-shadow);
+    border: solid rgb(255, 0, 128) 1px;
+    padding: 4vw;
   }
-  
-  .dummy {
-    width: var(--global-padding);
-  }
+
   
   .item-info {
     display: flex;
-    flex: 1;
-    background-color: palegreen;
+    /* flex: 1; */
+    padding: 4vw;
+    /* margin: 4vw; */
+    border: solid rgb(255, 0, 128) 1px;
+    background-color: rgba(0, 60, 255, 0.555);
   }
   

@@ -52,5 +52,16 @@ export type Product = {
     availability: number,
     colors:[string, string][],
     img:string,
-    id:number
+    id:string
 }
+
+import {Category} from './categories'
+
+export type FilterProps = {
+    category?: Category
+    subcategory?: string
+    material?: string
+    id?: string
+}
+
+export type FilterProp = keyof FilterProps

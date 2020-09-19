@@ -2,26 +2,31 @@ import React, { createContext, useContext } from 'react'
 import { Header } from '~/Header'
 import { Menu } from '~/Menu'
 import { Main } from '~/Main'
-import { Footer } from '~/Footer'
 import { ItemInfo } from '~/ItemInfo'
 import { Items } from '~/Items'
 import Contacts  from '~/Contacts'
+import Cart from '~/Cart'
 import { useRoutes } from 'hookrouter'
-import { Category, materials, MaterialsType } from '~/data'
-
-const MainPage = () => <>
-    <Header/>
-    <Menu />
-    <Main />
-    <Footer />
-</>
+import { Category } from '~/data'
 
 export const routes = {
-    '/':        () => <MainPage/>,
-    '/contacts':    () => <Contacts/>,
-    '/main':    () => <Main />,
-    '/item-info': () => <ItemInfo />,
-    '/items/:category': ({ category = 'jewellery' as Category }, material = 'gold' as MaterialsType) => <Items category={ category } material={ material }/>
+    '/':            makePage (Main),
+    '/contacts':    makePage (Contacts),
+    '/cart':        makePage (Cart),
+    '/items/:category': makePage (Items),
+    '/items/:category/:subcategory': makePage (Items),
+    '/items/:category/:subcategory/:material': makePage (Items),
+    '/items/:category/:subcategory/:material/:id': makePage (ItemInfo),
+}
+
+function makePage (Content: React.JSXElementConstructor<Record<string, unknown>> ) {
+    return function Page (props: Record<string, unknown>) {
+        return <>
+            <Header/>
+            <Menu {...props} />
+            <Content {...props} />
+        </>
+    }
 }
 
 const defaultAppContext = {
@@ -34,7 +39,7 @@ const AppContext = createContext<AppContextProps> (defaultAppContext)
 export default function App () {
     return (
         <AppContext.Provider value={{}}>
-            { useRoutes (routes) }
+            { useRoutes (routes) || 'не найдено :(' }
         </AppContext.Provider>
     )
 }

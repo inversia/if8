@@ -1,27 +1,28 @@
 import React from 'react'
 import './index.css'
-import { Header } from '~/Header'
-import { Menu } from '~/Menu'
-import { categories, Category } from '~/data'
-
+import { categories, Category, Product, FilterProps, FilterProp } from '~/data'
 import images from '~/images'
 
-export function Items ({ category = 'jewellery' as Category, material = '' }) {
+function productMatches (item: Product, filterProps: FilterProps) {
+    for (const k of ['category', 'subcategory', 'material'] as FilterProp[]) {
+        if (filterProps[k] && item[k] !== filterProps[k]) return false
+    }
+    return true
+}
+
+export function Items (filterProps: FilterProps) {
 
     return <div className='items-wrapper'>
-        <Header />
-        <Menu />
         <div className='items-container'>
-            {/* {categories[category]   .filter (x => x.matherial === material)
-                                    .map ((x) =>
-                                        <div className='product-item'
-                                            key={ x.partNumber }
-                                            style={{ backgroundImage: `url(${images[x.img]})` }}></div>)
-            } */}
-            {categories[category].map ((x) =>
-                                        <div className='product-item'
-                                            key={ x.partNumber }
-                                            style={{ backgroundImage: `url(${images[x.img]})` }}></div>)
+            {categories[filterProps.category]
+                .filter (x => productMatches (x, filterProps))
+                .map ((x) =>
+                    <div className='product-item'
+                            key={ x.partNumber }
+                            style={{ backgroundImage: `url(${images[x.img]})` }}
+                            onClick={() => alert (filterProps.subcategory)}
+                    ></div>
+                )
             }
         </div>
     </div>
