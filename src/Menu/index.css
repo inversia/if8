@@ -38,6 +38,11 @@
     height: auto;
   }
 
+/* .menu-container {
+  position: relative;
+  z-index: 10;
+} */
+
 .menu {
     position: relative;
     display: flex;
@@ -47,7 +52,7 @@
     top:-1.35vw;
     opacity: 0.66;
     font-family: 'Forward-extra';
-    z-index: 3;
+    z-index: 10;
 }
 
     .menu ul {
@@ -85,7 +90,7 @@
         background-image: url(~/icons/dropdownMenu.svg);
         background-size: contain;
         background-repeat: no-repeat;
-        z-index: 2;
+        z-index: 12;
         opacity: 0;
         padding: 0vw 23vw;
         display: none;
