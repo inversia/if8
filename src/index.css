@@ -8,6 +8,11 @@
     src: url('./fonts/Forward.otf');
 }
 
+@font-face {
+    font-family: 'Fractal';
+    src: url('./fonts/Fractal.otf');
+}
+
 div {
     box-sizing:border-box;
 }
