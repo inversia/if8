@@ -94,10 +94,10 @@ export function Menu ({ category, subcategory, material, id }: FilterProps) {
                     <label>Материал</label>
                     <ul>{
                         category && Object.entries (materials[category]).map (([material, label]: [string, string]) =>
-                            <MenuLink path={`/items/${category}/${subcategory || 'all'}/${material}`} key={ material }>{ label }</MenuLink>
+                            <MenuLink path={`/items/${category || 'all'}/${subcategory || 'all'}/${material}`} key={ material }>{ label }</MenuLink>
                         )
                     }
-                        <MenuLink path={`/items/${category}/${subcategory || 'all'}`} key={ material }>все</MenuLink>
+                        <MenuLink path={`/items/${category || 'all'}/${subcategory || 'all'}`} key={ material }>все</MenuLink>
                     </ul>
                 </div>
                 <div className='price'>

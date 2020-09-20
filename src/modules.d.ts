@@ -16,6 +16,10 @@ interface String {
     startsWith(s: string): boolean;
 }
 
+interface Array<T> {
+    find(fn: (item: T, index: number) => boolean): T;
+}
+
 // interface Set<T> {
 //     add(value: T): Set<T>
 //     clear(): void

@@ -16,7 +16,7 @@ export const routes = {
     '/items/:category': makePage (Items),
     '/items/:category/:subcategory': makePage (Items),
     '/items/:category/:subcategory/:material': makePage (Items),
-    '/items/:category/:subcategory/:material/:id': makePage (ItemInfo),
+    '/item/:id': makePage (ItemInfo),
 }
 
 function makePage (Content: React.JSXElementConstructor<Record<string, unknown>> ) {
