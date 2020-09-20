@@ -1,11 +1,11 @@
 import React from 'react'
 import './index.css'
-import { products, FilterProps } from '~/data'
+import { productsById, FilterProps } from '~/data'
 import images from '~/images'
 
 export function ItemInfo ({ id }: FilterProps) {
 
-	const choosenProduct = products.find (x => x.id === id)
+	const choosenProduct = productsById[id]
 
 	return <>
 		<div className='item-wrapper'>

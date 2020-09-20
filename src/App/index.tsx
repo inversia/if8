@@ -6,6 +6,7 @@ import { ItemInfo } from '~/ItemInfo'
 import { Items } from '~/Items'
 import Contacts  from '~/Contacts'
 import Cart from '~/Cart'
+import { CartContextProvider } from '~/Cart/Context'
 import { useRoutes } from 'hookrouter'
 import { Category } from '~/data'
 
@@ -37,23 +38,12 @@ function replaceAllWithUndefined (props: Record<string, unknown>) {
     return props
 }
 
-const defaultAppContext = {
-    
-}
-
-type AppContextProps = typeof defaultAppContext
-const AppContext = createContext<AppContextProps> (defaultAppContext)
-
 export default function App () {
     return (
-        <AppContext.Provider value={{}}>
+        <CartContextProvider>
             { useRoutes (routes) || 'не найдено :(' }
-        </AppContext.Provider>
+        </CartContextProvider>
     )
-}
-
-export function useAppContext (): AppContextProps {
-    return useContext (AppContext)
 }
 
 // import ItemInfo from "../ItemInfo"
