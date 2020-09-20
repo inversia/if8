@@ -41,18 +41,20 @@ export type Category = keyof typeof subcategories
 export type Subcategory = keyof typeof jewelleryTypes | keyof typeof interiorTypes
 export type Material = keyof typeof jewelleryMaterials | keyof typeof interiorMaterials
 
+export type ProductId = string;
+
 export type Product = {
-    category: Category,
-    subcategory: Subcategory,
-    material: Material,
-    description: string,
-    probe: number,
-    partNumber: number,
-    price:number,
-    availability: number,
-    colors:[string, string][],
-    img:string,
-    id:string
+    category: Category
+    subcategory: Subcategory
+    material: Material
+    description: string
+    probe: number
+    partNumber: number
+    price:number
+    availability: number
+    colors:[string, string][]
+    img:string
+    id:ProductId
 }
 
 export type FilterProps = {

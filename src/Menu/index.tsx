@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect, useState, useCallback } from 'react'
+import React, { createContext, useRef, useLayoutEffect, useState, useCallback, useContext } from 'react'
 import './index.css'
 import cls from 'classnames'
 import { A, usePath } from 'hookrouter'
@@ -17,20 +17,22 @@ function smoothScrollTo (hash:string) {
     })
 }
 
+const MenuContext = createContext ({ hideDropdown: () => {} })
+
 function MenuLink ({
     path = '',
-    children = null as React.ReactChild,
-    onClick = (_path: string) => {}
+    children = null as React.ReactChild
 }) {
     const currentPath = usePath ()
     const className = path.replace (/\//g, '_')
     const active = currentPath.startsWith (path)
+    const { hideDropdown } = useContext (MenuContext)
 
     return (
         <A
             className={ cls ({ active, [('menu-item-' + className)]: 1 }) }
             href={path}
-            onClick={() => onClick (path)}
+            onClick={() => hideDropdown ()}
         >
             {children}
         </A>
@@ -43,9 +45,11 @@ export function Menu ({ category, subcategory, material, id }: FilterProps) {
 
     const [dropdownCategory, setDropdownCategory] = useState<Category|null> ()
     
+    const hideDropdown = () => setDropdownCategory (null)
+
     const toggleDropdown = (newCategory: Category|null) => {
         if (dropdownCategory && dropdownCategory === newCategory) {
-            setDropdownCategory (null)
+            hideDropdown ()
         } else {
             setDropdownCategory (newCategory)
         }
@@ -53,30 +57,29 @@ export function Menu ({ category, subcategory, material, id }: FilterProps) {
 
     const menuContainerRef = useRef<HTMLDivElement> ()
     useOnClickOutside (menuContainerRef, () => {
-        setDropdownCategory (null)
+        hideDropdown ()
     })
 
     const hideIfClickedAtBottom = useCallback ((e: React.MouseEvent) => {
         const distanceFromBottom = e.currentTarget.getBoundingClientRect ().bottom - e.clientY
         const distanceFromBottomRel = distanceFromBottom / e.currentTarget.clientHeight // relative to height (0...1)
         if (distanceFromBottomRel < 0.24) {
-            setDropdownCategory (null)
+            hideDropdown ()
         }
     }, [])
 
     useLayoutEffect (() => {
-        if (!category) setDropdownCategory (null)
+        if (!category) hideDropdown ()
     }, [category])
 
-    return <div ref={menuContainerRef} className="menu-container">
+    return <MenuContext.Provider value={{ hideDropdown }}>
+        <div ref={menuContainerRef} className="menu-container">
         <div className='menu'>
             <ul>
                 <MenuLink path='/about'>о компании</MenuLink>
                 <li onClick={() => toggleDropdown ('jewellery')}>ювелирные украшения</li>
                 <li onClick={() => toggleDropdown ('interior')}>интерьер</li>
-                <MenuLink path='/'  onClick={() => {
-                                        setTimeout (() => smoothScrollTo ('events'), 100)
-                                    }}>события</MenuLink>
+                <li onClick={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</li>
                 <MenuLink path='/contacts'>контакты</MenuLink>
                 <MenuLink path='/cart'>сделать заказ</MenuLink>
             </ul>
@@ -114,4 +117,5 @@ export function Menu ({ category, subcategory, material, id }: FilterProps) {
             </div>
         </div>
     </div>
+    </MenuContext.Provider>
 }

@@ -258,3 +258,7 @@ export const products: Product[] = [
         id:'sff888'
     },
 ]
+
+import keyBy from 'lodash/keyBy'
+
+export const productsById = keyBy (products, 'id')
