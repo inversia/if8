@@ -34,6 +34,10 @@ export function ItemInfo ({ id }: FilterProps) {
 					</li>
 					<li>
 						<label>Цвета</label>
+						<div className='products-colors'>
+							{ choosenProduct.colors.map ((x, i) => <div key={i}
+																		style={{backgroundColor:`#${x[1]}`}}/>) }
+						</div>
 					</li>
 				</ul>
 				<button>КУПИТЬ</button>

@@ -1,7 +1,7 @@
 .item-wrapper {
     display: grid;
-    grid-template-columns: 41vw 41vw;
-    grid-gap: 4vw;
+    grid-template-columns: 41vw 38.3vw;
+    grid-gap: 6vw;
     margin: var(--global-padding);
 	width: 86vw;
 	height: 30vw;
@@ -14,6 +14,7 @@
 		background-repeat: no-repeat;
 		background-position: center center;
 		box-shadow: var(--global-shadow);
+		display: grid;
 	}
 
 
@@ -29,6 +30,7 @@
 			display: flex;
 			flex-direction: column;
 			position: relative;
+			font-size: 1.4vw;
 			/* border: solid rgb(0, 255, 157) 1px; */
 		}
 
@@ -42,6 +44,10 @@
 			outline: none;
 			border: 2px solid black;
 			position: relative;
+			cursor: pointer;
+			text-align: center;
+			position: relative;
+
 		}
 
 			.item-info li {
@@ -55,10 +61,46 @@
 					flex: 1;
 				}
 
-				.item-info li span { 
+				.item-info li span,
+				.item-info li .products-colors { 
 					flex: 2.5;
 				}
 
+				.item-info li .products-colors {
+					/* width: 10vw; */
+					/* border: black 1px solid; */
+					display: flex;
+					flex-direction: row;
+				}
 
+					.item-info li .products-colors > *{
+						width: 1.4vw;
+						height: 1.4vw;
+						border-radius: 50%;
+						margin-right: 0.4vw;
+						/* border: rgb(255, 0, 0) 1px solid; */
+					}
+
+
+@media all and (max-width: 865px) {
+	.item-wrapper {
+		grid-template-columns: 100%;
+	}
+
+	.illustration {
+		height: 50vw;
+	}
+
+		.item-info ul {
+			font-size: 2.4vw;
+		}
+
+		.item-info button {
+			margin-top: 1em;
+			margin-bottom: 1em;
+			font-size: 5vw;
+			padding: 4vw;
+		}
+}
 
   
