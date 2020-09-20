@@ -21,12 +21,20 @@ export const routes = {
 
 function makePage (Content: React.JSXElementConstructor<Record<string, unknown>> ) {
     return function Page (props: Record<string, unknown>) {
+        props = replaceAllWithUndefined (props)
         return <>
             <Header/>
             <Menu {...props} />
             <Content {...props} />
         </>
     }
+}
+
+function replaceAllWithUndefined (props: Record<string, unknown>) {
+    for (const k in props) {
+        if (props[k] === 'all') props[k] = undefined
+    }
+    return props
 }
 
 const defaultAppContext = {

@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useState } from 'react'
 import './index.css'
 import cls from 'classnames'
 import { A, usePath } from 'hookrouter'
-import { Category, productTypes, materials, FilterProps } from '~/data'
+import { Category, subcategories, materials, FilterProps } from '~/data'
 // import RubberSlider from '@shwilliam/react-rubber-slider'
 import '@shwilliam/react-rubber-slider/dist/styles.css'
 
@@ -77,27 +77,28 @@ export function Menu ({ category, subcategory, material, id }: FilterProps) {
         </div>
         <div className={ cls ('dropdown-menu-container', { visible: dropdownVisible })}>
             <div className='dropdown-menu'>
-                <div className='cathegories'>
+                <div className='categories'>
                     <label>Категории</label>
                     <ul>
-                        { category === 'jewellery' && <li>эксклюзивные украшения</li> }
-                        {/* { category && Object.entries (productTypes[category]).map (([k, v]: [string, string]) => <li key={ k }>{ v }</li> ) } */}
+                        <MenuLink path={`/items/${category}/exclusive`}>эксклюзивные украшения</MenuLink>
                         <div className='subcategories'>{
-                            category && Object.entries (productTypes[category]).map (([subcategory, label]: [string, string]) =>
+                            category && Object.entries (subcategories[category]).map (([subcategory, label]: [string, string]) =>
                                 <MenuLink path={`/items/${category}/${subcategory}`} key={ subcategory }>{ label }</MenuLink>
                             )
                         }</div>
-                        <li>Корпоративные подарки</li>
-                        <li>Посмотреть всё</li>
+                        <MenuLink path={`/items/${category}/corporate`}>корпоративные подарки</MenuLink>
+                        <MenuLink path={`/items/${category}/all`}>все</MenuLink>
                     </ul>
                 </div>
-                <div className='material'>
+                <div className='materials'>
                     <label>Материал</label>
                     <ul>{
                         category && Object.entries (materials[category]).map (([material, label]: [string, string]) =>
                             <MenuLink path={`/items/${category}/${subcategory || 'all'}/${material}`} key={ material }>{ label }</MenuLink>
                         )
-                    }</ul>
+                    }
+                        <MenuLink path={`/items/${category}/${subcategory || 'all'}`} key={ material }>все</MenuLink>
+                    </ul>
                 </div>
                 <div className='price'>
                     <label>Цена</label>

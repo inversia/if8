@@ -98,15 +98,14 @@
         .dropdown-menu {
             display: flex;
             position: relative;
-            /* left: 18.7%; */
-            top:0%;
-            /* border:1px solid salmon; */
+			top:0%;
+			color:rgb(0, 0, 0);
         }
 
             .dropdown-menu > div {
                 margin-right:9vw;
                 padding-top:0.5vw;
-                font-size: 1.1vw;
+				font-size: 1.1vw;
             }
 
             .dropdown-menu label {
@@ -117,22 +116,22 @@
                 display: inline-block;
             }
 
-            .dropdown-menu ul li {
+			.dropdown-menu ul a,
+			.categories ul > * {
                 cursor: pointer;
-                padding: 0.5em 0em;
+                margin: 0.5em 0em;
 				white-space: nowrap;
+				display: flex;
+				flex-direction: column;
+				color:black;
+				text-decoration: none;
+			}
 
-            }
+			.dropdown-menu .materials ul > * {
+				margin-bottom: 1em;
+			}
 
-            	.subcategories a {
-					display: flex;
-					flex-direction: column;
-					padding: 0.5em 0em;
-					white-space: nowrap;
-					color: rgb(0, 0, 0);
-					text-decoration: none;
-
-				}
+	
 
 .rubber-slider-handle {
     stroke:red;

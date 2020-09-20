@@ -1,5 +1,5 @@
 export * from './types'
+export * from './products'
 export * from './events'
-export * from './categories'
 export * from './novelties'
 

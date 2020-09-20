@@ -13,7 +13,7 @@ export const interiorTypes = {
     statuettes: 'статуэтки',
 } as const
 
-export const productTypes = {
+export const subcategories = {
     jewellery: jewelleryTypes,
     interior: interiorTypes
 }
@@ -21,7 +21,7 @@ export const productTypes = {
 export const jewelleryMaterials = {
     gold: 'золото',
     silver: 'серебро',
-    platinum: 'платина'
+    platinum: 'платина',
 } as const
 
 export const interiorMaterials = {
@@ -37,14 +37,14 @@ export const materials = {
     interior: interiorMaterials
 }
 
-export type JewelleryType = keyof typeof jewelleryTypes
-export type InteriorType  = keyof typeof interiorTypes
-export type ProductType = JewelleryType | InteriorType
-export type MaterialsType = typeof materials
+export type Category = keyof typeof subcategories
+export type Subcategory = keyof typeof jewelleryTypes | keyof typeof interiorTypes
+export type Material = keyof typeof jewelleryMaterials | keyof typeof interiorMaterials
 
 export type Product = {
-    type: ProductType,
-    matherial: string,
+    category: Category,
+    subcategory: Subcategory,
+    material: Material,
     description: string,
     probe: number,
     partNumber: number,
@@ -55,12 +55,10 @@ export type Product = {
     id:string
 }
 
-import {Category} from './categories'
-
 export type FilterProps = {
     category?: Category
-    subcategory?: string
-    material?: string
+    subcategory?: Subcategory
+    material?: Material
     id?: string
 }
 
