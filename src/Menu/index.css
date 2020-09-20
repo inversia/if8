@@ -66,6 +66,7 @@
             cursor: pointer;
             color:black;
             text-transform: uppercase;
+            user-select: none;
         }
 
         a.menu-item-about {
