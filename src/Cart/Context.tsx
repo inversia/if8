@@ -8,13 +8,12 @@ type CartContext = {
   cartItems: CartItems
   addToCart(id: ProductId): void
   removeFromCart(id: ProductId): void
+  totalItems (): number
 }
 
 export const cartContext = createContext<CartContext> (null as CartContext)
 
-export function useCartContext () {
-  return useContext (cartContext)
-}
+export const useCartContext = () => useContext (cartContext)
 
 export function CartContextProvider ({ children = null as React.ReactChild }) {
     const [items, setItems] = useState<CartItems> (JSON.parse (localStorage.getItem ('cartItems')) || {})
@@ -39,8 +38,10 @@ export function CartContextProvider ({ children = null as React.ReactChild }) {
       }))
     }
 
+    const totalItems = () => Object.keys (items).length
+
     return (
-        <cartContext.Provider value={{ cartItems: items, addToCart, removeFromCart }}>
+        <cartContext.Provider value={{ cartItems: items, addToCart, removeFromCart, totalItems }}>
             {children}
         </cartContext.Provider>
     )

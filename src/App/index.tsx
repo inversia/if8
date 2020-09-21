@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from 'react'
+import React, { createContext, useContext, useState} from 'react'
 import { Header } from '~/Header'
 import { Menu } from '~/Menu'
 import { Main } from '~/Main'
@@ -8,7 +8,8 @@ import Contacts  from '~/Contacts'
 import Cart from '~/Cart'
 import { CartContextProvider } from '~/Cart/Context'
 import { useRoutes } from 'hookrouter'
-import { Category } from '~/data'
+import '@shwilliam/react-rubber-slider/dist/styles.css'
+
 
 export const routes = {
     '/':            makePage (Main),

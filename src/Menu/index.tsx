@@ -3,8 +3,8 @@ import './index.css'
 import cls from 'classnames'
 import { A, usePath } from 'hookrouter'
 import { Category, subcategories, materials, FilterProps } from '~/data'
-import {useOnClickOutside} from 'use-hooks'
-// import RubberSlider from '@shwilliam/react-rubber-slider'
+import { useOnClickOutside } from 'use-hooks'
+import RubberSlider from '@shwilliam/react-rubber-slider'
 import '@shwilliam/react-rubber-slider/dist/styles.css'
 
 function smoothScrollTo (hash:string) {
@@ -73,17 +73,17 @@ export function Menu ({ category, subcategory, material, id }: FilterProps) {
     }, [category])
 
     return <MenuContext.Provider value={{ hideDropdown }}>
-        <div ref={menuContainerRef} className="menu-container">
-        <div className='menu'>
-            <ul>
-                <MenuLink path='/about'>о компании</MenuLink>
-                <li onClick={() => toggleDropdown ('jewellery')}>ювелирные украшения</li>
-                <li onClick={() => toggleDropdown ('interior')}>интерьер</li>
-                <li onClick={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</li>
-                <MenuLink path='/contacts'>контакты</MenuLink>
-                <MenuLink path='/cart'>сделать заказ</MenuLink>
-            </ul>
-        </div>
+        <div ref={menuContainerRef} className='menu-container'>
+            <div className='menu'>
+                <ul>
+                    <MenuLink path='/about'>о компании</MenuLink>
+                    <li onClick={() => toggleDropdown ('jewellery')}>ювелирные украшения</li>
+                    <li onClick={() => toggleDropdown ('interior')}>интерьер</li>
+                    <A href='/' onClick={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</A>
+                    <MenuLink path='/contacts'>контакты</MenuLink>
+                    <MenuLink path='/cart'>сделать заказ</MenuLink>
+                </ul>
+            </div>
         <div className={ cls ('dropdown-menu-container', { visible: !!dropdownCategory })} onClick={hideIfClickedAtBottom}>
             <div className='dropdown-menu'>
                 <div className='categories'>
@@ -111,7 +111,7 @@ export function Menu ({ category, subcategory, material, id }: FilterProps) {
                 </div>
                 <div className='price'>
                     <label>Цена</label>
-                    {/* <RubberSlider width={200} height={100} value={value} onChange={setValue} min={1} max={130000}/> */}
+                    <RubberSlider width={200} height={100} value={value} onChange={setValue} min={1} max={130000}/>
                     <p className='rating-value'>{value}</p>
                 </div>
             </div>

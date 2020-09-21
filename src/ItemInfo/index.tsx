@@ -2,45 +2,48 @@ import React from 'react'
 import './index.css'
 import { productsById, FilterProps } from '~/data'
 import images from '~/images'
+import { useCartContext } from '~/Cart/Context'
 
 export function ItemInfo ({ id }: FilterProps) {
 
-	const choosenProduct = productsById[id]
+	const chosenProduct = productsById[id]
+	const { cartItems, addToCart } = useCartContext ()
+	const count = cartItems[id] || 0
 
 	return <>
 		<div className='item-wrapper'>
-			<div className='illustration' style={{ backgroundImage: `url(${images[choosenProduct.img]})` }}></div>
+			<div className='illustration' style={{ backgroundImage: `url(${images[chosenProduct.img]})` }}></div>
 			<div className='item-info'>
 				<ul>
 					<li>
 						<label>Описание</label>
-						<span>{choosenProduct.description}</span>
+						<span>{chosenProduct.description}</span>
 					</li>
 					<li>
 						<label>Артикул</label>
-						<span>{choosenProduct.partNumber}</span>
+						<span>{chosenProduct.partNumber}</span>
 					</li>
 					<li>
 						<label>Проба</label>
-						<span>{choosenProduct.probe}</span>
+						<span>{chosenProduct.probe}</span>
 					</li>
 					<li>
 						<label>Наличие</label>
-						<span>{choosenProduct.availability}</span>
+						<span>{chosenProduct.availability}</span>
 					</li>
 					<li>
 						<label>Цена</label>
-						<span>{choosenProduct.price}</span>
+						<span>{chosenProduct.price}</span>
 					</li>
 					<li>
 						<label>Цвета</label>
 						<div className='products-colors'>
-							{ choosenProduct.colors.map ((x, i) => <div key={i}
+							{ chosenProduct.colors.map ((x, i) => <div key={i}
 																		style={{backgroundColor:`#${x[1]}`}}/>) }
 						</div>
 					</li>
 				</ul>
-				<button>КУПИТЬ</button>
+				<button onClick={() => addToCart (id)}>КУПИТЬ{count ? ` (${count})` : ''}</button>
 			</div>
 		</div>
 	</>

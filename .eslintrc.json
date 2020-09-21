@@ -71,6 +71,7 @@
         "@typescript-eslint/prefer-regexp-exec": 0,
         "@typescript-eslint/explicit-module-boundary-types": 0,
         "@typescript-eslint/ban-ts-comment": 0,
+        "@typescript-eslint/unbound-method": 0, // gives false positives with useContext
 
         "no-empty-function": 0,
         "@typescript-eslint/no-empty-function": ["off"]
