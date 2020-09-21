@@ -6,6 +6,7 @@ import { ItemInfo } from '~/ItemInfo'
 import { Items } from '~/Items'
 import Contacts  from '~/Contacts'
 import Cart from '~/Cart'
+import About from '~/About'
 import { CartContextProvider } from '~/Cart/Context'
 import { useRoutes } from 'hookrouter'
 import '@shwilliam/react-rubber-slider/dist/styles.css'
@@ -13,6 +14,7 @@ import '@shwilliam/react-rubber-slider/dist/styles.css'
 
 export const routes = {
     '/':            makePage (Main),
+    '/about':       makePage (About),
     '/contacts':    makePage (Contacts),
     '/cart':        makePage (Cart),
     '/items/:category': makePage (Items),
