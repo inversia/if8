@@ -14,6 +14,7 @@
         .chosen-item {
             display: flex;
             flex-direction: row;
+            padding-bottom: 1vw;
         }
             .chosen-item .item-background {
                 height: 6vw;
@@ -23,7 +24,9 @@
                 background-position: center center;
                 display: flex;
                 /* flex: 0.15; */
-                border:solid 1px salmon;
+                /* border:solid 1px rgb(0, 0, 0); */
+                border-radius: 50%;
+                box-shadow: 0vw 0vw 0.4vw 0.2vw rgba(128, 128, 128, 0.342);
             }
 
             .chosen-item .item-info-wrapper {
@@ -36,27 +39,37 @@
 
                 .item-info-wrapper .description {
                     display: flex;
-                    flex:0.7;
+                    flex:0.8;
                     padding-left: 3vw;
+                    align-items: center;
                     /* border:solid 1px salmon; */
                 }
 
                 .item-info-wrapper .price {
                     display: flex;
                     flex:0.1;
-                    border:solid 1px saddlebrown;
+                    color:rgb(0, 0, 0);
+                    font-family: 'Forward';
+                    align-items: center;
+                    /* border:solid 1px saddlebrown; */
                 }
 
                 .item-info-wrapper .delete {
                     outline: none;
-                    border:solid 1px saddlebrown;
                     height: 100%;
-                    width: 5vw;
-                    background-color: none;
-                    background-size: contain;
+                    width: 3vw;
+                    height: 3vw;
+                    display: flex;
+                    align-self: center;
+                    align-items: center;
+                    flex: 0.02;
+                    border:none;
+                    /* border:solid 1px rgb(0, 0, 0); */
+                    background-color: white;
+                    background-size: 100% 100%;
                     background-repeat: no-repeat;
-                    /* background-position: center center; */
-                    background-image: url(~/icons/cart.svg);
+                    background-position: center center;
+                    background-image: url(~/icons/delete.svg);
                 }
 
 
