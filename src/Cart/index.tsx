@@ -6,9 +6,10 @@ import images from '~/images'
 
 export default function Cart () {
 
-    const { cartItems, addToCart, removeFromCart } = useCartContext ()
+    const { cartItems, removeFromCart } = useCartContext ()
 
     const totalChosenProductes = Object.keys (cartItems).map (x => productsById[x])
+    const totalPrice = totalChosenProductes.map (x => (x.price * cartItems[x.id])).reduce ((a, b) => a + b, 0)
 
     return <>
         <div className='cart-wrapper'>
@@ -21,9 +22,11 @@ export default function Cart () {
                                                             <div className='price'>{prdct.price}</div>
                                                             <button className='delete' onClick={() => removeFromCart (prdct.id)}></button>
                                                         </div>
+                                                        <div className='num-item'>{cartItems[prdct.id]}</div>
                                                     </div>
                 )}
             </div>
+            <div className='total-price'><span>ИТОГО</span>{totalPrice}</div>
         </div>
     </>
 }

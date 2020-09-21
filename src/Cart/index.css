@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    flex-direction: column;
 }
 
     .chosen-products {
@@ -75,5 +76,24 @@
                     background-image: url(~/icons/delete.svg);
                 }
 
+            .num-item {
+                font-size: 1.5vw;
+                /* color:red; */
+                position: relative;
+                top:0.5em;
+                left:-0.2em;
+                font-family: 'Forward';
+            }
+
+    .total-price {
+        font-size: 3.5vw;
+        padding-top: 3.5vw;
+        font-family: 'Forward';
+    }
+
+        .total-price span {
+            font-family: 'Fractal';
+            margin-right: 0.5em;
+        }
 
 
