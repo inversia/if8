@@ -42,27 +42,30 @@
                     flex:0.8;
                     padding-left: 3vw;
                     align-items: center;
+                    font-size: 1.5vw;
+                    line-height: 1.3em;
                     /* border:solid 1px salmon; */
                 }
 
                 .item-info-wrapper .price {
                     display: flex;
-                    flex:0.1;
+                    flex:0.05;
                     color:rgb(0, 0, 0);
                     font-family: 'Forward';
                     align-items: center;
+                    font-size: 2.8vw;
                     /* border:solid 1px saddlebrown; */
                 }
 
                 .item-info-wrapper .delete {
                     outline: none;
                     height: 100%;
-                    width: 3vw;
-                    height: 3vw;
+                    /* width: 5vw; */
+                    /* height: 2.26vw; */
                     display: flex;
                     align-self: center;
                     align-items: center;
-                    flex: 0.02;
+                    flex: 0.011;
                     border:none;
                     /* border:solid 1px rgb(0, 0, 0); */
                     background-color: white;

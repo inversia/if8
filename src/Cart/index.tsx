@@ -6,7 +6,7 @@ import images from '~/images'
 
 export default function Cart () {
 
-    const { cartItems, addToCart } = useCartContext ()
+    const { cartItems, addToCart, removeFromCart } = useCartContext ()
 
     const totalChosenProductes = Object.keys (cartItems).map (x => productsById[x])
 
@@ -19,7 +19,7 @@ export default function Cart () {
                                                         <div className='item-info-wrapper'>
                                                             <div className='description'>{prdct.description}</div>
                                                             <div className='price'>{prdct.price}</div>
-                                                            <button className='delete'></button>
+                                                            <button className='delete' onClick={() => removeFromCart (prdct.id)}></button>
                                                         </div>
                                                     </div>
                 )}

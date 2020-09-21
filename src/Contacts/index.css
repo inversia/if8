@@ -46,7 +46,5 @@
 
 .map {
     height: 65.6vh;
-    /* filter: invert(0.96) hue-rotate(145deg); */
-    /* filter: grayscale(100%); */
-    filter: invert(100%) grayscale(100%);
+    filter:  invert(17%) grayscale(100%) hue-rotate(200deg) brightness(72%) contrast(500%);;
 }
