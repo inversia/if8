@@ -220,6 +220,7 @@ export const products: Product[] = [
         subcategory: 'bracelets',
         material: 'gold',
         description: 'Браслет голубой',
+        probe: 750,
         partNumber: '5227',
         weight: 4.88,
         price: 1000,
@@ -229,6 +230,62 @@ export const products: Product[] = [
         id:'bracelets1'
     },
 
+    {
+        category: 'jewellery',
+        subcategory: 'bracelets',
+        material: 'gold',
+        description: 'Браслет «Сфера» синий, синие сапфиры 18 - 0,126ct, 1 - 0,011сt, 7 - 0,098сt, 162 - 4.05сt,  (4,285)',
+        probe: 750/585,
+        partNumber: '5430',
+        weight: 6.39,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', '7D73F3'], ['url(~/images/yellow.jpg)', 'BBBBBB'], ['url(~/images/yellow.jpg)', '197850'], ['url(~/images/yellow.jpg)', '886945']],
+        img: 'bracelet-sphere-gold-blue',
+        id:'bracelets2'
+    },
+
+    {
+        category: 'jewellery',
+        subcategory: 'rings',
+        material: 'silver',
+        description: 'Кольцо «Инти» (Синее)',
+        partNumber: '5234',
+        weight: 5.89,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', '1F23D2'], ['url(~/images/yellow.jpg)', '0A7454']],
+        img: 'ring-inti-silver-blue',
+        id:'ring5'
+    },
+
+    {
+        category: 'jewellery',
+        subcategory: 'earrings',
+        material: 'silver',
+        description: 'Cерьги «IF8» розовые, малахит 6,8 ct Ситал 10,5 ct',
+        partNumber: '5345',
+        weight: 7.30,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', 'E182EA'], ['url(~/images/yellow.jpg)', 'D0D4FD'], ['url(~/images/yellow.jpg)', '7B9BD8'], ['url(~/images/yellow.jpg)', '42BDF1']],
+        img: 'earrings-if8-silver-rose',
+        id:'earrings7'
+    },
+
+    {
+        category: 'jewellery',
+        subcategory: 'earrings',
+        material: 'silver',
+        description: 'Cерьги «Васильки», ситал 0,8 ct',
+        partNumber: '5366',
+        weight: 4.74,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', '1122B9']],
+        img: 'earrings-vasilki-silver',
+        id:'earrings8'
+    },
     
 ]
 
