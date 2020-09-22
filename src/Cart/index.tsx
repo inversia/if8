@@ -74,6 +74,7 @@ export default function Cart () {
     const { cartItems, removeFromCart } = useCartContext ()
 
     const totalChosenProductes = Object.keys (cartItems).map (x => productsById[x])
+    console.log (cartItems)
     const totalPrice = totalChosenProductes.map (x => (x.price * cartItems[x.id])).reduce ((a, b) => a + b, 0)
 
     return <>
@@ -91,14 +92,14 @@ export default function Cart () {
                                                     </div>
                 )}
             </div>
-            <div className='total-price'><span>ИТОГО</span>{totalPrice}</div>
+            <div className='total-price'><span>ИТОГО:</span>{totalPrice}</div>
             <h1>ФОРМА</h1>
             <div className='form-wrapper'>
                 <form ref={form} className='fields'>
                     <input         disabled={isLoading} type='text' name='name'    placeholder='Как к Вам обращаться?'/>
-                    <RequiredInput disabled={isLoading} type='text' name='address' placeholder='Адрес'/>
-                    <RequiredInput disabled={isLoading} type='tel'  name='phone'   pattern='^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$' placeholder='Номер для связи'/>
-                    <input         disabled={isLoading} type='text' name='notes'   placeholder='Пометки'/>
+                    <RequiredInput disabled={isLoading} type='tel'  name='phone'   pattern='^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$' placeholder='Контактный номер'/>
+                    <RequiredInput disabled={isLoading} type='text' name='email'   placeholder='E-mail'/>
+                    <input         disabled={isLoading} type='text' name='notes'   placeholder='Уточнения по заказу'/>
                 </form>
                 <button className='submit'>ОТПРАВИТЬ</button>
             </div>

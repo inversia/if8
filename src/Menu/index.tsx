@@ -89,24 +89,20 @@ export function Menu ({ category, subcategory, material, id }: FilterProps) {
                 <div className='categories'>
                     <label>Категории</label>
                     <ul>
-                        <MenuLink path={`/items/${dropdownCategory}/exclusive`}>эксклюзивные украшения</MenuLink>
+                        <MenuLink path={`/items/${dropdownCategory}/all`}>все</MenuLink>
                         <div className='subcategories'>{
                             dropdownCategory && Object.entries (subcategories[dropdownCategory]).map (([subcategory, label]: [string, string]) =>
                                 <MenuLink path={`/items/${dropdownCategory}/${subcategory}`} key={ subcategory }>{ label }</MenuLink>
                             )
                         }</div>
-                        <MenuLink path={`/items/${dropdownCategory}/corporate`}>корпоративные подарки</MenuLink>
-                        <MenuLink path={`/items/${dropdownCategory}/all`}>все</MenuLink>
                     </ul>
                 </div>
                 <div className='materials'>
                     <label>Материал</label>
-                    <ul>{
-                        dropdownCategory && Object.entries (materials[dropdownCategory]).map (([material, label]: [string, string]) =>
-                            <MenuLink path={`/items/${dropdownCategory}/${subcategory || 'all'}/${material}`} key={ material }>{ label }</MenuLink>
-                        )
-                    }
+                    <ul>
                         <MenuLink path={`/items/${dropdownCategory}/${subcategory || 'all'}`} key={ material }>все</MenuLink>
+                        {dropdownCategory && Object.entries (materials[dropdownCategory]).map (([material, label]: [string, string]) =>
+                            <MenuLink path={`/items/${dropdownCategory}/${subcategory || 'all'}/${material}`} key={ material }>{ label }</MenuLink>)}
                     </ul>
                 </div>
                 <div className='price'>

@@ -4,259 +4,232 @@ export const products: Product[] = [
 
 /*  Interior    */
 
-    {
-        category: 'interior',
-        subcategory: 'vases',
-        material: 'wood',
-        description: 'Серьги из коллекции «Перу». Кварц 9,15 ct, Лунные 5,25 ct',
-        probe: 585,
-        partNumber: 1123,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'peripheral1',
-        id:'91'
-    },
-
-    {
-        category:'interior',
-        subcategory: 'tables',
-        material: 'metal',
-        description: 'Кольцо «Сфера». Цавориты 17 – 0,102 ct, 10 - 0,21сt, 4 - 0,048сt, 138 - 2,76сt, 14 - 0,35сt (3,36)',
-        probe: 585,
-        partNumber: 6546333,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'vagrant_magpie',
-        id:'92'
-    },
-
-    {
-        category: 'interior',
-        subcategory: 'tables',
-        material: 'glass',
-        description: 'Кольцо «Сфера». Синие сапфиры 9 – 0,063 ct, 46 - 0,552сt, 13 - 0,182сt, 123 - 2,46сt, 7 - 0,175сt, 9 - 0,27ct (3,702)',
-        probe: 585,
-        partNumber: 785436,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'bio_modem',
-        id:'93'
-    },
-
-    {
-        category: 'interior',
-        subcategory: 'vases',
-        material: 'wood',
-        description: 'Кольцо «Сфера». Синие сапфиры 9 – 0,063 ct, 46 - 0,552сt, 13 - 0,182сt, 123 - 2,46сt, 7 - 0,175сt, 9 - 0,27ct (3,702)',
-        probe: 585,
-        partNumber: 1426782,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'bio_tv',
-        id:'94'
-    },
-
-    {
-        category: 'interior',
-        subcategory: 'chairs',
-        material: 'ceramic',
-        description: 'Кольцо «Сфера». Синие сапфиры 9 – 0,063 ct, 46 - 0,552сt, 13 - 0,182сt, 123 - 2,46сt, 7 - 0,175сt, 9 - 0,27ct (3,702)',
-        probe: 585,
-        partNumber: 80006634,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'by_billboards',
-        id:'95'
-    },
-
-    {
-        category: 'interior',
-        subcategory: 'statuettes',
-        material: 'steel',
-        description: 'Серьги из коллекции «Перу». Кварц 9,15 ct, Лунные 5,25 ct',
-        probe: 585,
-        partNumber: 434553444,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'peripheral1',
-        id:'96'
-    },
-
-    {
-        category: 'interior',
-        subcategory: 'chairs',
-        material: 'glass',
-        description: 'Кольцо «IF8» (неделька). Бирюза',
-        probe: 585,
-        partNumber: 77652,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'bio_tv',
-        id:'97'
-    },
-
-    {
-        category: 'interior',
-        subcategory: 'vases',
-        material: 'wood',
-        description: 'Серьги из коллекции «Перу». Кварц 9,15 ct, Лунные 5,25 ct',
-        probe: 585,
-        partNumber: 78932,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'by_gathering2',
-        id:'98'
-    },
-
-    {
-        category: 'interior',
-        subcategory: 'tables',
-        material: 'ceramic',
-        description: 'Кольцо «Сфера». Синие сапфиры 9 – 0,063 ct, 46 - 0,552сt, 13 - 0,182сt, 123 - 2,46сt, 7 - 0,175сt, 9 - 0,27ct (3,702)',
-        probe: 585,
-        partNumber: 9000654,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'bio_stereo',
-        id:'99'
-    },
-
-    {
-        category: 'interior',
-        subcategory: 'vases',
-        material: 'wood',
-        description: 'Кольцо «Сфера». Синие сапфиры 9 – 0,063 ct, 46 - 0,552сt, 13 - 0,182сt, 123 - 2,46сt, 7 - 0,175сt, 9 - 0,27ct (3,702)',
-        probe: 585,
-        partNumber: 23445455,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'peripheral1',
-        id:'100'
-    },
-
+    
 /*  Jewellery    */
 
     {
         category: 'jewellery',
         subcategory: 'rings',
-        material: 'gold',
-        description: 'Кольцо «Сфера». Синие сапфиры 9 – 0,063 ct, 46 - 0,552сt, 13 - 0,182сt, 123 - 2,46сt, 7 - 0,175сt, 9 - 0,27ct (3,702)',
-        probe: 585,
-        partNumber: 124323432,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'by_billboards',
-        id:'s23'
+        material: 'silver',
+        description: 'Кольцо «Солнце». (Серо-красное)',
+        partNumber: '5257',
+        weight: 4.56,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', 'E50101'], ['url(~/images/red.jpg)', '1C0CD1'], ['url(~/images/blue.jpg)', '00856D'], ['url(~/images/blue.jpg)', '3DD39D']],
+        img: 'ring-sun-grey',
+        id:'ring1'
     },
 
     {
         category: 'jewellery',
-        subcategory: 'bracelets',
-        material: 'silver',
-        description: 'Кольцо «Сфера». Синие сапфиры 9 – 0,063 ct, 46 - 0,552сt, 13 - 0,182сt, 123 - 2,46сt, 7 - 0,175сt, 9 - 0,27ct (3,702)',
-        probe: 585,
-        partNumber: 9675688454,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'by_gathering2',
-        id:'dfsdsgh'
+        subcategory: 'rings',
+        material: 'gold',
+        description: 'Кольцо «Сфера». Фантазийный гранат 4-0,024ct, 5-0,035сt, 47-0,517сt, 2-0,028сt, 3-0,06сt, 127-3,175ct, 15-0,45ct (4.289)',
+        probe: 750,
+        partNumber: '5381(960)',
+        weight: 7.39,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', '6B8D89'], ['url(~/images/red.jpg)', '4AD6DF']],
+        img: 'ring-sphere-gold-grey',
+        id:'ring2'
+    },
+
+    {
+        category: 'jewellery',
+        subcategory: 'rings',
+        material: 'gold',
+        description: 'Кольцо «Бабочка» «IF8» Бр-ты 8кр57 – 0,069 ct, 12кр57 – 0,118 ct, 6кр57 – 0,08 ct, (0,269)',
+        probe: 750,
+        partNumber: '5406(975)',
+        weight: 6.67,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', '6B8D89'], ['url(~/images/red.jpg)', '4AD6DF']],
+        img: 'ring-butterfly-gold',
+        id:'ring3'
+    },
+
+    {
+        category: 'jewellery',
+        subcategory: 'rings',
+        material: 'gold',
+        description: 'Кольцо «IF8» Турмалин 1,51 ct',
+        probe: 750,
+        partNumber: '5311(956)',
+        weight: 4.545,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', '769C9E'], ['url(~/images/red.jpg)', '1ED2DD'], ['url(~/images/red.jpg)', 'C9E4ED'], ['url(~/images/red.jpg)', '10976E'], ['url(~/images/red.jpg)', '850020'], ['url(~/images/red.jpg)', '0A0264']],
+        img: 'ring-if8-gold',
+        id:'ring4'
     },
 
     {
         category: 'jewellery',
         subcategory: 'earrings',
         material: 'gold',
-        description: 'Серьги  «Красная клетка». Везувиан 16,5 ct',
-        probe: 585,
-        partNumber: 4547878,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'peripheral1',
-        id:'fdg'
+        description: 'Пусеты из коллекции «IF8» бирюза, лунный 0,76 ct',
+        probe: 750,
+        partNumber: '5373(944)',
+        weight: 4.07,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', '3FDCD3'], ['url(~/images/red.jpg)', '000000']],
+        img: 'pusetas-pillow-if8-gold',
+        id:'pusetas1'
+    },
+
+    {
+        category: 'jewellery',
+        subcategory: 'earrings',
+        material: 'gold',
+        description: 'Пусеты синие сапфирин 16,20 ct',
+        probe: 750,
+        partNumber: '5390(966)',
+        weight: 9.68,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', '103CD9'], ['url(~/images/red.jpg)', '119676'], ['url(~/images/red.jpg)', 'C6651E']],
+        img: 'pusetas-blue-sapfirin-gold',
+        id:'pusetas2'
+    },
+
+    {
+        category: 'jewellery',
+        subcategory: 'earrings',
+        material: 'gold',
+        description: 'Серьги из коллекции «Перу» кварц 9,15 ct, Лунные 5,25 ct',
+        probe: 750,
+        partNumber: '5252(929)',
+        weight: 7.8,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', 'BDD7FF'], ['url(~/images/red.jpg)', 'EAC5E6'], ['url(~/images/red.jpg)', 'CAE3E2']],
+        img: 'earrings-peru-gold-moon',
+        id:'earrings1'
+    },
+
+    {
+        category: 'jewellery',
+        subcategory: 'earrings',
+        material: 'gold',
+        description: 'Серьги «Красная клетка» везувиан 16,5 ct',
+        probe: 750,
+        partNumber: '5376(945)',
+        weight: 18.8,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', 'BDD7FF'], ['url(~/images/red.jpg)', 'EAC5E6'], ['url(~/images/red.jpg)', 'CAE3E2']],
+        img: 'earrings-red-cell-gold2',
+        id:'earrings2'
+    },
+
+    {
+        category: 'jewellery',
+        subcategory: 'earrings',
+        material: 'gold',
+        description: 'Серьги «Сфера» Цавориты 16 – 0,096 ct, 12 - 0,12сt, 40 - 0,56сt, 272 - 5,44сt, 25 - 0,75сt (6,966)',
+        probe: 750,
+        partNumber: '5341(942)',
+        weight: 13.63,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', 'BDD7FF'], ['url(~/images/red.jpg)', 'EAC5E6'], ['url(~/images/red.jpg)', 'CAE3E2']],
+        img: 'earrings-sphere-gold-green2',
+        id:'earrings3'
+    },
+
+    {
+        category: 'jewellery',
+        subcategory: 'earrings',
+        material: 'gold',
+        description: 'Серьги «Спираль.Перу» Бр-ты 316кр57 – 1,896 ct, 4кр57 – 0,026 ct (1,922)',
+        probe: 750,
+        partNumber: '5111(909)',
+        weight: 10.62,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', 'B70000'], ['url(~/images/red.jpg)', '1E2CAA']],
+        img: 'earrings-spiral-peru-gold-red',
+        id:'earrings4'
+    },
+
+    {
+        category: 'jewellery',
+        subcategory: 'earrings',
+        material: 'gold',
+        description: 'Серьги «Кипу» бирюза, жемчуг 2,0 ct',
+        probe: 750,
+        partNumber: '5388(964)',
+        weight: 10.27,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', '34E4E4'], ['url(~/images/red.jpg)', '00854D'], ['url(~/images/red.jpg)', '8F0808'], ['url(~/images/red.jpg)', '000000']],
+        img: 'earrings-kipu-turquoise-gold',
+        id:'earrings5'
+    },
+
+    {
+        category: 'jewellery',
+        subcategory: 'earrings',
+        material: 'gold',
+        description: 'Серьги «Кипу» чёрные, муассониты 0,6 ct',
+        probe: 750,
+        partNumber: '5275(961)',
+        weight: 9.35,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', '34E4E4'], ['url(~/images/red.jpg)', '00854D'], ['url(~/images/red.jpg)', '8F0808'], ['url(~/images/red.jpg)', '000000']],
+        img: 'earrings-kipu-black-gold',
+        id:'earrings6'
     },
 
     {
         category: 'jewellery',
         subcategory: 'neck',
+        material: 'gold',
+        description: 'Подвеска «Подушка» «IF8» красная, везувиан 0,55 ct, шнурок 0,41гр',
+        probe: 750,
+        partNumber: '5412(979)',
+        weight: 4.23,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', '34E4E4'], ['url(~/images/red.jpg)', '00854D'], ['url(~/images/red.jpg)', '8F0808'], ['url(~/images/red.jpg)', '000000']],
+        img: 'pendant-pillow-gold-red',
+        id:'neck1'
+    },
+
+    {
+        category: 'jewellery',
+        subcategory: 'corporate',
         material: 'silver',
-        description: 'Серьги  «IF8» "Цепь" черные. Бр-ты 40Кр57-0,24ct, Нефрит 23,1ct',
-        probe: 585,
-        partNumber: 21214352,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'bio_cargrab',
-        id:'dg2g2'
+        description: 'Запонки «IF8» (Черно-зеленые)',
+        partNumber: '5380',
+        weight: 13.57,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', '127149']],
+        img: 'cufflinks-green-silver',
+        id:'corporate1'
     },
 
     {
         category: 'jewellery',
-        subcategory: 'brooches',
+        subcategory: 'bracelets',
         material: 'gold',
-        description: 'Кольцо  «IF8» "Хризантема" белая. Хризолит 1,32 ct',
-        probe: 585,
-        partNumber: 66663463,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'vagrant_magpie',
-        id:'5554'
+        description: 'Браслет голубой',
+        partNumber: '5227',
+        weight: 4.88,
+        price: 1000,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', '00F0FF']],
+        img: 'bracelet-gold-skyblue',
+        id:'bracelets1'
     },
 
-    {
-        category: 'jewellery',
-        subcategory: 'neck',
-        material: 'silver',
-        description: 'Кольцо «IF8» (неделька). Бирюза',
-        probe: 585,
-        partNumber: 30087978543,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'bio_stereo',
-        id:'sd1'
-    },
-
-    {
-        category: 'jewellery',
-        subcategory: 'brooches',
-        material: 'gold',
-        description: 'Серьги из коллекции «Перу». Аметист 9,2 ct, Лунный 6,0 ct',
-        probe: 585,
-        partNumber: 23232222,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'bio_modem',
-        id:'889gg'
-    },
-
-    {
-        category: 'jewellery',
-        subcategory: 'brooches',
-        material: 'gold',
-        description: 'Серьги «Солнце» (зеленые). Бр-ты 90кр57 – 0,54 ct, 18кр57 – 0,225. ct (0,765)',
-        probe: 585,
-        partNumber: 774563,
-        price: 3300,
-        availability: 30,
-        colors: [['url(~/images/yellow.jpg)', 'C4C4C4'], ['url(~/images/red.jpg)', 'EFD3AB'], ['url(~/images/blue.jpg)', 'EBAF92']],
-        img: 'bio_tv',
-        id:'sff888'
-    },
+    
 ]
 
 import keyBy from 'lodash/keyBy'
