@@ -1,32 +1,32 @@
 export default [
     {
-        text: 'Другой пример — японцы.',
-        image: 'bio_gameboy',
+        text: 'Зелёные запонки из серебра',
+        image: 'cufflinks-green-silver',
     },
 
     {
-        text: 'Американские генетики',
-        image: 'bio_modem',
+        text: 'Золотая подвеска "Подушка"',
+        image: 'pendant-pillow-gold-red',
     },
 
     {
-        text: 'Упваыпырвапраплр самцов с ценными качествами и редактировать эмбрионы',
-        image: 'bio_sandal',
+        text: 'Кольцо "Бабочка" из золота',
+        image: 'ring-butterfly-gold',
     },
 
     {
-        text: 'Американские генетики',
-        image: 'bio_stereo',
+        text: 'Серебряные серьги с малахитом',
+        image: 'earrings-if8-silver-rose2',
     },
 
     {
-        text: 'Американские генетики',
-        image: 'bio_cargrab',
+        text: 'Кольцо "Солнце" серебро/красное',
+        image: 'ring-sun-grey',
     },
 
     {
-        text: 'АБРАКАДАБРА хозяйничала около 23 столетий назад сюда',
-        image: 'bio_tv',
+        text: 'Серьги "Красная клетка"',
+        image: 'earrings-red-cell-gold',
     },
 
 ]

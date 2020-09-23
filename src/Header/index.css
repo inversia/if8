@@ -28,3 +28,25 @@
     flex:0.65;
     background-position: right;
 }
+
+/* @media all and (max-width: 865px) {
+
+    .tagline {
+        height: 5vw;
+        width: 23.750vw;
+        display: flex;
+        flex:0.85;
+        position: absolute;
+        right:7vw;
+    }
+
+    .logo {
+        height: 15vw;
+        width: 15vw;
+        flex:0.65;
+        background-position: right;
+        position: absolute;
+        right:7vw;
+        top:12vw;
+    }
+} */

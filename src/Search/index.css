@@ -29,3 +29,30 @@
     left: 0vw;
     /* border: 1px solid salmon; */
 }
+
+
+
+/* @media all and (max-width: 865px) {
+
+.search {
+    --mobile-search-height: 4.46vw;
+}
+    
+    .search input {
+        width: 52.125vw;
+        height: 5vw;
+        position: relative;
+        left:-27vw;
+        font-size: 3.7vw;
+    }
+
+    .search::before {
+        content: '';
+        display: block;
+        width: var(--mobile-search-height);
+        height: var(--mobile-search-height);
+        position: absolute;
+        left: 5vw;
+        top:5vw;
+    }
+} */
