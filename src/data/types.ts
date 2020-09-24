@@ -4,6 +4,8 @@ export const jewelleryTypes = {
     earrings: 'серьги',
     neck: 'цепочки и подвески',
     brooches: 'броши',
+    corporate: 'корпоративные подарки',
+    exclusive: 'эксклюзив'
 } as const
 
 export const interiorTypes = {
@@ -11,6 +13,7 @@ export const interiorTypes = {
     tables:'столы',
     chairs:'стулья',
     statuettes: 'статуэтки',
+    exclusive: 'эксклюзив'
 } as const
 
 export const subcategories = {
@@ -48,11 +51,12 @@ export type Product = {
     subcategory: Subcategory
     material: Material
     description: string
-    probe: number
-    partNumber: number
+    probe?: number
+    partNumber: string
+    weight?: number
     price:number
-    availability: number
-    colors:[string, string][]
+    availability?: number
+    colors?:[string, string][]
     img:string
     id:ProductId
 }

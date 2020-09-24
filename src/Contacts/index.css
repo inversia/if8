@@ -22,7 +22,6 @@
     background-color: white;
     height:8vw;
     position: relative;
-    /* z-index: 4; */
 }
 
 .contacts-footer-wrapper .contacts,
@@ -47,7 +46,5 @@
 
 .map {
     height: 65.6vh;
-    /* filter: invert(0.96) hue-rotate(145deg); */
-    /* filter: grayscale(100%); */
-    filter: invert(100%) grayscale(100%);
+    filter:  invert(17%) grayscale(80%) hue-rotate(240deg) brightness(72%) contrast(500%);;
 }

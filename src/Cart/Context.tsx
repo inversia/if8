@@ -1,5 +1,5 @@
 import React, { useContext, createContext, useState } from 'react'
-import {ProductId} from '~/data'
+import {ProductId, productsById} from '~/data'
 import produce from 'immer'
 
 type CartItems = Record<ProductId, number> // number is a count of purchased products
@@ -8,16 +8,24 @@ type CartContext = {
     cartItems: CartItems
     addToCart(id: ProductId): void
     removeFromCart(id: ProductId): void
+    totalItems (): number
 }
 
 export const cartContext = createContext<CartContext> (null as CartContext)
 
-export function useCartContext () {
-    return useContext (cartContext)
+export const useCartContext = () => useContext (cartContext)
+
+const savedProducts = (JSON.parse (localStorage.getItem ('cartItems')) || {}) as CartItems
+
+for (const id in savedProducts) {
+    if (!(id in productsById)) {
+        console.warn ('Unknown product:', id)
+        delete savedProducts[id]
+    }
 }
 
 export function CartContextProvider ({ children = null as React.ReactChild }) {
-    const [items, setItems] = useState<CartItems> (JSON.parse (localStorage.getItem ('cartItems')) || {})
+    const [items, setItems] = useState (savedProducts)
 
     function setCartItems (newItems: CartItems) {
         setItems (newItems)
@@ -39,8 +47,10 @@ export function CartContextProvider ({ children = null as React.ReactChild }) {
         }))
     }
 
+    const totalItems = () => Object.keys (items).length
+
     return (
-        <cartContext.Provider value={{ cartItems: items, addToCart, removeFromCart }}>
+        <cartContext.Provider value={{ cartItems: items, addToCart, removeFromCart, totalItems }}>
             {children}
         </cartContext.Provider>
     )
