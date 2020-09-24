@@ -40,7 +40,7 @@
 @media all and (max-width: 565px) {
     .items-container {
         width:80vw;
-        margin: 18.5vw auto;
+        margin: 0.5vw auto;
         display: grid;
         grid-template-columns: 100%;
         grid-gap: 3vw;

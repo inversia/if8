@@ -1,0 +1,93 @@
+.mob-menu-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+    .mob-menu-container .menu {
+        /* margin-top: 5vh; */
+        padding-top: 10vw;
+        padding-bottom: 5vh;
+        width: 90vw;
+        margin: 0 auto;
+        /* border:solid 1px salmon; */
+    }
+
+        .mob-menu-container .menu ul {
+            display: flex;
+            flex-direction: row!important;
+            /* border:solid 1px salmon; */
+            white-space: nowrap;
+            justify-content: space-between;
+            font-size:2.7vh;
+        }
+
+            .mob-menu-container .menu ul * {
+                color:rgb(0, 0, 0);
+                cursor: pointer;
+            }
+
+            .mob-menu-container .menu-item-_cart {
+                /* border:solid 1px salmon; */
+                width: 2.65vh;
+                background-image: url(~/icons/cart.svg);
+                background-size: cover;
+            }
+
+            .mob-menu-container .menu-item-_contacts {
+                width: 2.9vh;
+                background-image: url(~/icons/contacts.svg);
+                background-size: cover;
+            }
+
+.mob-menu-container .dropdown-menu-container {
+    display: none;
+    background-image: url(~/icons/dropdownMenu.svg);
+    background-size: 100% 148%;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-bottom: 20vw;
+    /* height: 44.2vh; */
+    /* border:1px solid salmon; */
+}
+
+.mob-menu-container .dropdown-menu-container.visible {
+    display: flex;
+    z-index: 20;
+}
+
+    .mob-menu-container .dropdown-menu {
+        width: 77.5%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* border:1px solid salmon; */
+    }
+
+        .mob-menu-container .dropdown-menu > div {
+            display: flex;
+            flex-direction: column;
+            /* padding-right: 2vh; */
+        }
+
+            .mob-menu-container .dropdown-menu label {
+                font-family: 'Forward';
+                padding-bottom: 1em;
+                
+            }
+
+            .mob-menu-container .menu ul > * {
+                text-transform: uppercase;
+            }
+
+            .mob-menu-container .dropdown-menu ul * {
+                color:rgb(0, 0, 0);
+                padding-bottom: 1em;
+            }
+
+            .mob-menu-container .dropdown-menu ul > * {
+                display: flex;
+                /* border:1px solid salmon; */
+                flex-direction: column!important;
+            }
+

@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState} from 'react'
 import { Header } from '~/Header'
 import { HeaderMobile } from '~/HeaderMobile'
 import { Menu } from '~/Menu'
+import { MenuMobile } from '~/MenuMobile'
 import { Main } from '~/Main'
 import { ItemInfo } from '~/ItemInfo'
 import { Items } from '~/Items'
@@ -30,7 +31,8 @@ function makePage (Content: React.JSXElementConstructor<Record<string, unknown>>
         return <>
             {/* <Header/> */}
             <HeaderMobile/>
-            <Menu {...props} />
+            {/* <Menu {...props} /> */}
+            <MenuMobile {...props} />
             <Content {...props} />
         </>
     }
