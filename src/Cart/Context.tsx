@@ -8,6 +8,7 @@ type CartContext = {
     cartItems: CartItems
     addToCart(id: ProductId): void
     removeFromCart(id: ProductId): void
+    clearCart(): void
     totalItems (): number
 }
 
@@ -47,10 +48,14 @@ export function CartContextProvider ({ children = null as React.ReactChild }) {
         }))
     }
 
+    const clearCart = () => {
+        setCartItems ({})
+    }
+
     const totalItems = () => Object.keys (items).length
 
     return (
-        <cartContext.Provider value={{ cartItems: items, addToCart, removeFromCart, totalItems }}>
+        <cartContext.Provider value={{ cartItems: items, addToCart, removeFromCart, clearCart, totalItems }}>
             {children}
         </cartContext.Provider>
     )

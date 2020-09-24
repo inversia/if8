@@ -17,7 +17,7 @@ export function ItemInfo ({ id }: FilterProps) {
 				<ul>
 					<li>
 						<label>Описание</label>
-						<span>{chosenProduct.description}</span>
+						<span><strong>{chosenProduct.title}</strong>{chosenProduct.description && (', ' + chosenProduct.description)}</span>
 					</li>
 					<li>
 						<label>Артикул</label>

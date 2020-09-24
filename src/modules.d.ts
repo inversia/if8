@@ -10,6 +10,7 @@ type Entries<T> = {
 
 interface ObjectConstructor {
     entries<T>(obj: T): Entries<T>
+    fromEntries<T>(entries: [string, unknown][]): T
 }
 
 interface String {

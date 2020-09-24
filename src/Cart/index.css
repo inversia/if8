@@ -1,11 +1,11 @@
-body .cart-wrapper {
+body .cart-content {
     /* background-image: url(~/icons/sharp.svg);
     background-size: 100% 100%;
     background-position: center center; */
 
 }
 
-.cart-wrapper {
+.cart-content {
     padding-top: 3vw;
     width:100%;
     height: 100%;
@@ -17,7 +17,7 @@ body .cart-wrapper {
     padding-bottom: 13vw;
 }
 
-.cart-wrapper::after {
+.cart-content::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -135,7 +135,7 @@ body .cart-wrapper {
             margin-right: 0.5em;
         }
 
-.cart-wrapper h1 {
+.cart-content h1 {
     margin-top: 7vw;
 }
 
@@ -153,6 +153,8 @@ body .cart-wrapper {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        --placeholder-color: rgb(0,0,0,0.5);
+        --text-color: rgb(37,37,37);
     }
 
         .form-wrapper .fields > * {
@@ -160,10 +162,32 @@ body .cart-wrapper {
             padding: 1.4vw 0vw;
             font-family: 'Forward-extra';
             font-size: 1.7vw;
-            border-bottom:1px solid rgb(37, 35, 35);
+            border-bottom:1px solid var(--text-color);
+            margin-bottom:3px;
             width: 80%;
-            background-color: rgba(255, 99, 71, 0);
             outline: none;
+            background-color: rgba(255, 99, 71, 0);
+        }
+
+        .form-wrapper input[data-empty] {
+            border-bottom-color: var(--placeholder-color);
+        }
+
+        .form-wrapper input::placeholder {
+            color: var(--placeholder-color);
+        }
+
+        .form-wrapper input:focus {
+            outline:none;
+            border-bottom-width: 4px;
+            margin-bottom: 0;
+            font-weight: bold;
+        }
+
+        .form-wrapper input[data-edited]:invalid,
+        .form-wrapper input[data-edited]:invalid::placeholder {
+            color: red;
+            border-bottom-color: red !important;
         }
 
     .form-wrapper .submit {
@@ -183,3 +207,41 @@ body .cart-wrapper {
         color:white;
         outline: none;
     }
+
+    .form-wrapper .submit::before {
+        content: 'ОТПРАВИТЬ';
+    }
+
+        .form-loading .form-wrapper button.submit::before {
+            content: 'Отправляется...';
+        }
+
+        .cart-content.done .form-wrapper button.submit::before {
+            content: 'Заказ отправлен!';
+        }
+
+.form-loading {
+    /* animation: loading-pulse 1.0s ease-in-out alternate infinite; */
+}
+
+.form-loading input:disabled {
+    opacity: 0.55;
+}
+
+.form-loading button.submit {
+    animation: loading-pulse 1.0s ease-in-out alternate infinite;
+}
+
+.cart-content.done button.submit {
+    pointer-events: none;
+}
+
+.cart-content form:not(:valid) ~ button {
+    pointer-events: none;
+    opacity: 0.75;
+    transform: scale(1);
+}
+
+.cart-content form:not(:valid) ~ button:before {
+    content: 'Заполните поля';
+}

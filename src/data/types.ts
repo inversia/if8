@@ -50,7 +50,8 @@ export type Product = {
     category: Category
     subcategory: Subcategory
     material: Material
-    description: string
+    title: string
+    description?: string
     probe?: number
     partNumber: string
     weight?: number

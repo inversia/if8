@@ -50,3 +50,7 @@ h1::after {
     border-radius: 100%; */
     display: block;
 }
+
+strong {
+    font-weight: bold;
+}

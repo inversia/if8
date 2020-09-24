@@ -74,6 +74,7 @@
         "@typescript-eslint/unbound-method": 0, // gives false positives with useContext
 
         "no-empty-function": 0,
-        "@typescript-eslint/no-empty-function": ["off"]
+        "@typescript-eslint/no-empty-function": ["off"],
+        "@typescript-eslint/no-explicit-any": ["off"]
     }
 }
