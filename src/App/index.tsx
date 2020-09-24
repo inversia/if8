@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState} from 'react'
 import { Header } from '~/Header'
+import { HeaderMobile } from '~/HeaderMobile'
 import { Menu } from '~/Menu'
 import { Main } from '~/Main'
 import { ItemInfo } from '~/ItemInfo'
@@ -27,7 +28,8 @@ function makePage (Content: React.JSXElementConstructor<Record<string, unknown>>
     return function Page (props: Record<string, unknown>) {
         props = replaceAllWithUndefined (props)
         return <>
-            <Header/>
+            {/* <Header/> */}
+            <HeaderMobile/>
             <Menu {...props} />
             <Content {...props} />
         </>

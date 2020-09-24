@@ -41,11 +41,10 @@
     }
 
     .logo {
-        height: 15vw;
-        width: 15vw;
+        height: 5vh;
+        width: 5vh;
         flex:0.65;
         background-position: right;
-        position: absolute;
         right:7vw;
         top:12vw;
     }

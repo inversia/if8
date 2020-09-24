@@ -27,6 +27,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     left: 0vw;
+    
     /* border: 1px solid salmon; */
 }
 
@@ -42,8 +43,9 @@
         width: 52.125vw;
         height: 5vw;
         position: relative;
-        left:-27vw;
+        left:0vw;
         font-size: 3.7vw;
+        border: black 1px solid;
     }
 
     .search::before {
@@ -52,7 +54,9 @@
         width: var(--mobile-search-height);
         height: var(--mobile-search-height);
         position: absolute;
+        height: 50%;
         left: 5vw;
         top:5vw;
+        border: black 1px solid;
     }
 } */
