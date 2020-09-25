@@ -21,7 +21,8 @@ const MenuContext = createContext ({ hideDropdown: () => {} })
 
 function MenuLink ({
     path = '',
-    children = null as React.ReactChild
+    children = null as React.ReactChild,
+    customFunction = () => {}
 }) {
     const currentPath = usePath ()
     const className = path.replace (/\//g, '_')
@@ -31,8 +32,8 @@ function MenuLink ({
     return (
         <A
             className={ cls ({ active, [('menu-item-' + className)]: 1 }) }
-            href={path}
-            onClick={() => hideDropdown ()}
+            href={ path }
+            onClick={() => { hideDropdown (); customFunction ()} }
         >
             {children}
         </A>
@@ -77,9 +78,12 @@ export function Menu ({ category, subcategory, material, id }: FilterProps) {
             <div className='menu'>
                 <ul>
                     <MenuLink path='/about'>о компании</MenuLink>
-                    <li onClick={() => toggleDropdown ('jewellery')}>ювелирные украшения</li>
-                    <li onClick={() => toggleDropdown ('interior')}>интерьер</li>
-                    <A href='/' onClick={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</A>
+                    {/* <a className={ cls ({ active: dropdownCategory === 'jewellery' }) } onClick={() => toggleDropdown ('jewellery')}>ювелирные украшения</a>
+                    <a className={ cls ({ active: dropdownCategory === 'interior'  }) } onClick={() => toggleDropdown ('interior')}>интерьер</a>
+                    <A href='/' onClick={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</A> */}
+                    <MenuLink path='/items/jewellery' customFunction={() => toggleDropdown ('jewellery')}>ювелирные украшения</MenuLink>
+                    <MenuLink path='/items/interior'  customFunction={() => toggleDropdown ('interior')} >интерьер</MenuLink>
+                    <MenuLink path='/#events'         customFunction={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</MenuLink>
                     <MenuLink path='/contacts'>контакты</MenuLink>
                     <MenuLink path='/cart'>сделать заказ</MenuLink>
                 </ul>

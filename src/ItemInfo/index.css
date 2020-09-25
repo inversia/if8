@@ -59,18 +59,16 @@
 
 				.item-info li label {
 					font-family: 'Forward' ,sans-serif;
-					padding-right: 1em;
+					padding-right: 1.2em;
 					flex: 1;
 				}
 
 				.item-info li span,
 				.item-info li .products-colors { 
-					flex: 2.5;
+					flex: 2.0;
 				}
 
 				.item-info li .products-colors {
-					/* width: 10vw; */
-					/* border: black 1px solid; */
 					display: flex;
 					flex-direction: row;
 				}
@@ -90,12 +88,19 @@
 	}
 
 	.illustration {
-		height: 50vw;
+		height: 70vw;
 	}
 
 		.item-info ul {
-			font-size: 2.4vw;
+			font-size: 3.3vh;
 		}
+
+				.item-info li .products-colors > *{
+					width: 2.4vh;
+					height: 2.4vh;
+					border-radius: 50%;
+					margin-right: 1vh;
+				}
 
 		.item-info button {
 			margin-top: 1em;

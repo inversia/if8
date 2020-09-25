@@ -4,7 +4,6 @@ import './index.css'
 export default function About () {
     return <div className='about-container'>
         <div className='about'>
-            <h1>О НАС</h1>
             <p>Наступил момент, когда стоит <span style={{fontSize:'3vh'}}>подумать о <span style={{fontSize:'6.5vh'}}>сохранении</span></span> прикладного искусства, как <span style={{fontSize:'5vh'}}>кода нашей цивилизации</span>.</p>
             <p> Компания IF8 ставит своей задачей, <span style={{fontSize:'5vh'}}>объединить талантливых художников</span> России, работающих в разных областях прикладного искусства.
             <span> Дать</span> <span style={{fontSize:'6vh'}}>возможность</span> мастерам <span style={{fontSize:'8vh'}}>выразить</span> <span style={{fontSize:'3vh'}}>себя</span> в современных творческих работах, и тем самым обогатить наше культурное наследие.</p>

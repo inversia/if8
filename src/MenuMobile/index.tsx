@@ -21,7 +21,8 @@ const MenuContext = createContext ({ hideDropdown: () => {} })
 
 function MenuLink ({
     path = '',
-    children = null as React.ReactChild
+    children = null as React.ReactChild,
+    customFunction = () => {}
 }) {
     const currentPath = usePath ()
     const className = path.replace (/\//g, '_')
@@ -31,8 +32,8 @@ function MenuLink ({
     return (
         <A
             className={ cls ({ active, [('menu-item-' + className)]: 1 }) }
-            href={path}
-            onClick={() => hideDropdown ()}
+            href={ path }
+            onClick={() => { hideDropdown (); customFunction ()} }
         >
             {children}
         </A>
@@ -76,12 +77,12 @@ export function MenuMobile ({ category, subcategory, material, id }: FilterProps
         <div ref={menuContainerRef} className='mob-menu-container'>
             <div className='menu'>
                 <ul>
-                    <MenuLink path='/cart'></MenuLink>
+                    <MenuLink path='/contacts'/>
                     <MenuLink path='/about'>о нас</MenuLink>
-                    <li onClick={() => toggleDropdown ('jewellery')}>украшения</li>
-                    <li onClick={() => toggleDropdown ('interior')}>интерьер</li>
-                    <A href='/' onClick={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</A>
-                    <MenuLink path='/contacts'></MenuLink>
+                    <MenuLink path='/items/jewellery' customFunction={() => toggleDropdown ('jewellery')}>украшения</MenuLink>
+                    <MenuLink path='/items/interior'  customFunction={() => toggleDropdown ('interior')} >интерьер</MenuLink>
+                    <MenuLink path='/#events'         customFunction={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</MenuLink>
+                    <MenuLink path='/cart'/>
                 </ul>
             </div>
         <div className={ cls ('dropdown-menu-container', { visible: !!dropdownCategory })} onClick={hideIfClickedAtBottom}>
