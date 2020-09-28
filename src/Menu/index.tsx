@@ -32,6 +32,7 @@ function MenuLink ({
 
     return (
         <A
+            key={className}
             className={ cls ({ active, [('menu-item-' + className)]: 1 }) }
             href={ path }
             onClick={() => { hideDropdown (); customFunction ()} }
