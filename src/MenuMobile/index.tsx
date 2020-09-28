@@ -2,6 +2,7 @@ import React, { createContext, useRef, useLayoutEffect, useState, useCallback, u
 import './index.css'
 import cls from 'classnames'
 import { A, usePath } from 'hookrouter'
+import { CartCounter } from '~/CartCounter'
 import { Category, subcategories, materials, FilterProps } from '~/data'
 import { useOnClickOutside } from 'use-hooks'
 // import RubberSlider from '@shwilliam/react-rubber-slider'
@@ -82,7 +83,7 @@ export function MenuMobile ({ category, subcategory, material, id }: FilterProps
                     <MenuLink path='/items/jewellery' customFunction={() => toggleDropdown ('jewellery')}>украшения</MenuLink>
                     <MenuLink path='/items/interior'  customFunction={() => toggleDropdown ('interior')} >интерьер</MenuLink>
                     <MenuLink path='/#events'         customFunction={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</MenuLink>
-                    <MenuLink path='/cart'/>
+                    <MenuLink path='/cart'><CartCounter/></MenuLink>
                 </ul>
             </div>
         <div className={ cls ('dropdown-menu-container', { visible: !!dropdownCategory })} onClick={hideIfClickedAtBottom}>

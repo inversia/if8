@@ -1,6 +1,7 @@
 import React, { createContext, useRef, useLayoutEffect, useState, useCallback, useContext } from 'react'
 import './index.css'
 import cls from 'classnames'
+import CartCounter from '~/CartCounter'
 import { A, usePath } from 'hookrouter'
 import { Category, subcategories, materials, FilterProps } from '~/data'
 import { useOnClickOutside } from 'use-hooks'
@@ -86,6 +87,7 @@ export function Menu ({ category, subcategory, material, id }: FilterProps) {
                     <MenuLink path='/#events'         customFunction={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</MenuLink>
                     <MenuLink path='/contacts'>контакты</MenuLink>
                     <MenuLink path='/cart'>сделать заказ</MenuLink>
+                    <CartCounter />
                 </ul>
             </div>
         <div className={ cls ('dropdown-menu-container', { visible: !!dropdownCategory })} onClick={hideIfClickedAtBottom}>
