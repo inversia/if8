@@ -1,7 +1,7 @@
-import React, { createContext, useRef, useLayoutEffect, useState, useCallback, useContext } from 'react'
+import React  from 'react'
 import './index.css'
 // import cls from 'classnames'
-import { A, usePath } from 'hookrouter'
+import { usePath } from 'hookrouter'
 
 
 export default function NavigationBar () {

@@ -29,10 +29,19 @@
 	.contacts .phone {
 		display: flex;
 	}
+
+	.contacts .phone a {
+		padding-right: 2em;
+	}
 	
 	.contacts .address {
 		display: flex;
 	}
+
+		.contacts .address a {
+			cursor: pointer;
+			
+		}
 	
 	.contacts a {
 		text-decoration: none;
@@ -64,8 +73,8 @@
 		cursor: pointer;
 		mask-mode: alpha;
 		mask-repeat: no-repeat;
-		mask-size: contain;
-		mask-position: center;
+		mask-size: 99.0% 99.0%;
+		mask-position: center center;
 		background-color: rgb(255, 255, 255);
 	}
 	
@@ -89,8 +98,65 @@
   
 
 @media all and (max-width: 665px) { 
-	.contacts * {
-		padding-bottom: 1.61em;
-		font-size: 3vw;
+
+	.footer-wrapper {
+		height: 60vw;
+		background-position: 20% center;
+		/* border:1px solid salmon; */
 	}
+
+	.contacts {
+		display: flex;
+		flex-direction: column;
+	}
+
+		.contacts > * {
+			/* padding-bottom: 1.1em; */
+			font-size: 3vw;
+			position: relative;
+			bottom: -8vw;
+			/* border:red 1px solid; */
+			/* border: 1px solid salmon; */
+		}
+
+			.contacts .phone {
+				/* border: 1px solid salmon; */
+				display: flex;
+				flex-direction: column;
+			}
+		
+				.contacts .phone a {
+					padding-right: 1.2em;
+					font-size: 7vw;
+				}
+
+			.contacts .address a {
+				font-size: 4.6vw;
+				padding-top: 3vw;
+				/* color:red; */
+			}
+
+			.contacts span {
+				font-size: 2.5vw;
+				padding-top: 1em;
+			}
+
+	.social {
+		display: flex;
+		flex-direction: column;
+		height: 42vw;
+		/* border:1px solid salmon; */
+		right:-0.5vw;
+		top:20%;
+		flex:0.43;
+	}
+
+		.social * {
+			display: flex;
+			flex:1;
+			/* border:1px solid salmon; */
+			margin: 0.1vw;
+		}
+
+
 }
