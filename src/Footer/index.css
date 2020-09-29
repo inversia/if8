@@ -1,5 +1,5 @@
 .footer-wrapper {
-    height: 19vw;
+    height: 23vw;
     background-image: url("data:image/svg+xml,%3Csvg width='1438' height='309' viewBox='0 0 1438 309' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1438 45.9516L302.5 0L-2 30.8212L-2 309L1438 309L1438 45.9516Z' fill='%23121111'/%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
     background-size: cover;
@@ -28,10 +28,16 @@
 	
 	.contacts .phone {
 		display: flex;
+		flex-direction: column;
 	}
 
 	.contacts .phone a {
 		padding-right: 2em;
+		font-size: 2.2vw;
+	}
+
+	.self-delivery {
+		font-size: 1.3vw;
 	}
 	
 	.contacts .address {
@@ -40,7 +46,7 @@
 
 		.contacts .address a {
 			cursor: pointer;
-			
+			font-size: 3vw;
 		}
 	
 	.contacts a {
@@ -50,7 +56,7 @@
 	
 	.contacts span {
 		font-size: 1.4vw;
-		padding-top: 1em;
+		padding-bottom: 1.0em;
 	}
 
 
