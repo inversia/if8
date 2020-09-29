@@ -2,45 +2,86 @@
     width: 85.5%;
     margin-bottom: 10vw;
     /* border: 1px solid salmon; */
-  }
+}
 
-  .novelty-wrapper {
-    white-space: nowrap;
-    scroll-snap-type: x mandatory;
-  }
+	.novelty-wrapper {
+		white-space: nowrap;
+		scroll-snap-type: x mandatory;
+	}
 
-  .novelty-wrapper .carousel {
-    height: 32vw;
-  }
+		.novelty-wrapper .carousel {
+			height: 32vw;
+		}
 
-  .novelty-wrapper .carousel-item {
-    /* margin: 3vw; */
-  }
+			.novelty-wrapper .carousel-item {
+				/* margin: 3vw; */
+			}
 
-  .novelty-wrapper .carousel-item > * { 
-    /* margin:3vw; */
-    margin:2vw;
-    /* width:22.6vw; */
-    width:24.5vw;
-    display: flex;
-    /* flex:0.9; */
-  }
+				.novelty-wrapper .carousel-item > * { 
+					/* margin:3vw; */
+					margin:2vw;
+					/* width:22.6vw; */
+					width:24.5vw;
+					display: flex;
+					/* flex:0.9; */
+				}
 
-  .novelty {
-    display: inline-block;
-    scroll-snap-align: start;
-    white-space: normal;
-    position: relative;
-    overflow-y: hidden;
-    /* background-color: #ffacc7; */
-    box-shadow: 0vw 0vw 1.9vw rgba(0, 0, 0, 0.205);
-  }
+					.novelty {
+						display: inline-block;
+						scroll-snap-align: start;
+						white-space: normal;
+						position: relative;
+						overflow-y: hidden;
+						/* background-color: #ffacc7; */
+						box-shadow: 0vw 0vw 1.9vw rgba(0, 0, 0, 0.205);
+					}
 
-  .novelty-image {
-    /* box-shadow: var(--global-shadow); */
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
+						.novelty-image {
+							/* box-shadow: var(--global-shadow); */
+							width: 100%;
+							background-size: cover;
+							background-repeat: no-repeat;
+							background-position: center center;
+						}
 
+
+@media all and (max-width: 665px) { 
+	
+	.carousel-wrapper-novelties {
+		width: 91.4%;
+		/* border: 1px solid salmon; */
+	}
+
+		.novelty-wrapper .carousel {
+			height: 77vw;
+			/* border: 1px solid salmon; */
+		}
+
+				.novelty-wrapper .carousel-item > * { 
+					margin:2vw;
+					width:85vw;
+					/* border: 1px solid salmon; */
+				}
+
+}
+
+
+@media all and (max-width: 455px) { 
+	
+	.carousel-wrapper-novelties {
+		width: 92.4%;
+		/* border: 1px solid salmon; */
+	}
+
+		.novelty-wrapper .carousel {
+			height: 77vw;
+			/* border: 1px solid salmon; */
+		}
+
+				.novelty-wrapper .carousel-item > * { 
+					margin:2vw;
+					width:88.5vw;
+					/* border: 1px solid salmon; */
+				}
+
+}
