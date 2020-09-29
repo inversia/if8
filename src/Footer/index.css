@@ -7,9 +7,9 @@
     bottom: 0;
     display: flex;
     padding: 0vw var(--mega-padding);
-  }
+}
   
-  .contacts {
+.contacts {
     display: flex;
     /* border: solid salmon 1px; */
     flex: 2.8;
@@ -20,69 +20,77 @@
     font-size: 2.0vw;
     padding-top: 5vw;
     font-family: 'Forward-extra';
-  }
+}
   
-  .contacts * {
-    padding-bottom: 1vw;
-  }
-  
-  .contacts .phone {
-    display: flex;
-  }
-  
-  .contacts .address {
-    display: flex;
-  }
-  
-  .contacts a {
-    text-decoration: none;
-    color: white;
-  }
-  
-  .contacts span {
-    font-size: 1.4vw;
-  }
+	.contacts * {
+		padding-bottom: 0.5em;
+	}
+	
+	.contacts .phone {
+		display: flex;
+	}
+	
+	.contacts .address {
+		display: flex;
+	}
+	
+	.contacts a {
+		text-decoration: none;
+		color: white;
+	}
+	
+	.contacts span {
+		font-size: 1.4vw;
+		padding-top: 1em;
+	}
 
 
-  
-  .social {
-    display: flex;
-    /* border: solid salmon 1px; */
-    flex: 1;
-    height: 5vw;
-    position: relative;
-    top: 10vw;
-  }
-  
-  .social * {
-    display: flex;
-    flex: 1;
-    /* background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center right; */
-    cursor: pointer;
-    mask-mode: alpha;
-    mask-repeat: no-repeat;
-    mask-size: contain;
-    mask-position: center;
-    background-color: rgb(255, 255, 255);
-  }
-  
-  .telegram {
+	
+	.social {
+		display: flex;
+		/* border: solid salmon 1px; */
+		flex: 1;
+		height: 5vw;
+		position: relative;
+		top: 10vw;
+	}
+	
+	.social * {
+		display: flex;
+		flex: 1;
+		/* background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center right; */
+		cursor: pointer;
+		mask-mode: alpha;
+		mask-repeat: no-repeat;
+		mask-size: contain;
+		mask-position: center;
+		background-color: rgb(255, 255, 255);
+	}
+	
+	.telegram {
 
-    mask-image: url(~/icons/telegram.svg);
-    mask-mode: alpha;
-    mask-repeat: no-repeat;
-    mask-size: contain;
-    mask-position: center;
-    background-color: rgb(255, 255, 255);
-  }
+		mask-image: url(~/icons/telegram.svg);
+		mask-mode: alpha;
+		mask-repeat: no-repeat;
+		mask-size: contain;
+		mask-position: center;
+		background-color: rgb(255, 255, 255);
+	}
+	
+	.facebook {
+		mask-image: url(~/icons/facebook.svg); 
+	}
+	
+	.instagram {
+		mask-image: url(~/icons/instagram.svg); 
+	}
   
-  .facebook {
-    mask-image: url(~/icons/facebook.svg); 
-  }
-  
-  .instagram {
-    mask-image: url(~/icons/instagram.svg); 
-  }
-  
+
+@media all and (max-width: 665px) { 
+	.contacts * {
+		padding-bottom: 1.61em;
+		font-size: 3vw;
+	}
+}

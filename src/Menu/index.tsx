@@ -1,7 +1,7 @@
 import React, { createContext, useRef, useLayoutEffect, useState, useCallback, useContext } from 'react'
 import './index.css'
 import cls from 'classnames'
-import CartCounter from '~/CartCounter'
+import { CartCounter } from '~/CartCounter'
 import { A, usePath } from 'hookrouter'
 import { Category, subcategories, materials, FilterProps } from '~/data'
 import { useOnClickOutside } from 'use-hooks'
@@ -79,16 +79,23 @@ export function Menu ({ category, subcategory, material, id }: FilterProps) {
         <div ref={menuContainerRef} className='menu-container'>
             <div className='menu'>
                 <ul>
-                    <MenuLink path='/about'>о компании</MenuLink>
+                    {/* <MenuLink path='/about'>о компании</MenuLink> */}
                     {/* <a className={ cls ({ active: dropdownCategory === 'jewellery' }) } onClick={() => toggleDropdown ('jewellery')}>ювелирные украшения</a>
                     <a className={ cls ({ active: dropdownCategory === 'interior'  }) } onClick={() => toggleDropdown ('interior')}>интерьер</a>
                     <A href='/' onClick={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</A> */}
-                    <MenuLink path='/items/jewellery' customFunction={() => toggleDropdown ('jewellery')}>ювелирные украшения</MenuLink>
+                    {/* <MenuLink path='/items/jewellery' customFunction={() => toggleDropdown ('jewellery')}>ювелирные украшения</MenuLink>
                     <MenuLink path='/items/interior'  customFunction={() => toggleDropdown ('interior')} >интерьер</MenuLink>
                     <MenuLink path='/#events'         customFunction={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</MenuLink>
                     <MenuLink path='/contacts'>контакты</MenuLink>
-                    <MenuLink path='/cart'>сделать заказ</MenuLink>
-                    <CartCounter />
+                    <MenuLink path='/cart'>сделать заказ</MenuLink> */}
+
+        
+                    <MenuLink path='/about'>о компании</MenuLink>
+                    <MenuLink path='/items/jewellery/:subcategory' customFunction={() => toggleDropdown ('jewellery')}>ювелирные украшения</MenuLink>
+                    <MenuLink path='/items/interior/:subcategory'  customFunction={() => toggleDropdown ('interior')} >интерьер</MenuLink>
+                    <MenuLink path='/#events'         customFunction={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</MenuLink>
+                    <MenuLink path='/contacts'>контакты</MenuLink>
+                    <MenuLink path='/cart'><CartCounter/></MenuLink>
                 </ul>
             </div>
         <div className={ cls ('dropdown-menu-container', { visible: !!dropdownCategory })} onClick={hideIfClickedAtBottom}>

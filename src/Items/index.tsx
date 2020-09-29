@@ -3,6 +3,7 @@ import './index.css'
 import { A } from 'hookrouter'
 import { products, Product, FilterProps, FilterProp } from '~/data'
 import images from '~/images'
+import NavigationBar from '~/NavigationBar'
 
 function productMatches (item: Product, filterProps: FilterProps) {
     for (const k of ['category', 'subcategory', 'material'] as FilterProp[]) {
@@ -14,6 +15,7 @@ function productMatches (item: Product, filterProps: FilterProps) {
 export function Items (filterProps: FilterProps) {
 
     return <div className='items-wrapper'>
+        <NavigationBar />
         <div className='items-container'>
             {products
                 .filter (x => productMatches (x, filterProps))
