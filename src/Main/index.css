@@ -8,13 +8,8 @@
     .main-wrapper h1 {
         font-size: 7vw;
         margin-top: 8vw;
-        /* border: 1px solid salmon; */
-        /* color:pink; */
     }
 }
 
 @media all and (max-width: 455px) { 
-    .main-wrapper h1 {
-        /* font-size: 7vw; */
-    }
 }
