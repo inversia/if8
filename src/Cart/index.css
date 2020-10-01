@@ -415,7 +415,7 @@ body .cart-content {
         padding-top: 9.5vw;
         width:90%;
         position: relative;
-        left: -0.8vw;
+        /* left: -0.8vw; */
     }
 
         .total-price span {

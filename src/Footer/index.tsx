@@ -21,7 +21,7 @@ export function Footer () {
 				<div className='social'>
 					<div className='telegram' />
 					<div className='facebook' />
-					<div className='instagram'><a href=''></a></div>
+					<a href='https://www.instagram.com/art_if8/'><div className='instagram'></div></a>
 				</div>
 			</div>
 		</>

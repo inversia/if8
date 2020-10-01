@@ -6,7 +6,7 @@
     position: relative;
     bottom: 0;
     display: flex;
-    padding: 0vw var(--mega-padding);
+	padding: 0vw var(--mega-padding);
 }
   
 .contacts {
@@ -52,14 +52,13 @@
 	.contacts a {
 		text-decoration: none;
 		color: white;
+		
 	}
 	
 	.contacts span {
 		font-size: 1.4vw;
 		padding-bottom: 1.0em;
 	}
-
-
 	
 	.social {
 		display: flex;
@@ -82,6 +81,10 @@
 		mask-size: 99.0% 99.0%;
 		mask-position: center center;
 		background-color: rgb(255, 255, 255);
+	}
+
+	.social a {
+		background-color: rgb(17, 17, 17);
 	}
 	
 	.telegram {
@@ -108,6 +111,7 @@
 	.footer-wrapper {
 		height: 60vw;
 		background-position: 20% center;
+		margin-top: 5vw;
 		/* border:1px solid salmon; */
 	}
 
@@ -162,6 +166,10 @@
 			flex:1;
 			/* border:1px solid salmon; */
 			margin: 0.1vw;
+		}
+
+		.social a {
+			background-color: rgb(17, 17, 17);
 		}
 
 

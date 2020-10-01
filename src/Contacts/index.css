@@ -48,3 +48,30 @@
     height: 65.6vh;
     filter:  invert(17%) grayscale(80%) hue-rotate(240deg) brightness(72%) contrast(500%);;
 }
+
+
+@media all and (max-width: 725px) { 
+    
+    .decoration-corner {
+        /* border:1px solid salmon; */
+        height: 10vw;
+        width: 100%;
+        transform: rotate(-5deg) scale(2.3);
+        background-color: white;
+        position: relative;
+        z-index: 2;
+        top:12.3vw;
+        /* box-shadow: 0vw 0vw 1vw 0.8vw rgba(0, 0, 0, 0.342); */
+    }
+    
+    .contacts-footer-wrapper .footer-wrapper {
+        background-image: none;
+        background-color: white;
+        height:28vw;
+        position: relative;
+    }
+}
+
+@media all and (max-width: 455px) { 
+
+}

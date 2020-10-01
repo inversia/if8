@@ -34,7 +34,7 @@
 	
 				.event-wrapper .carousel-item > * {
 					flex: 1;
-					margin-right: 0vw;
+					margin-right: 0.5vw;
 				}
 
 					.event {
