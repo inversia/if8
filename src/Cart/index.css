@@ -186,8 +186,8 @@ body .cart-content {
 
         .form-wrapper input[data-edited]:invalid,
         .form-wrapper input[data-edited]:invalid::placeholder {
-            color: red;
-            border-bottom-color: red !important;
+            color: rgb(216, 39, 39);
+            border-bottom-color:rgb(216, 39, 39)!important;
         }
 
     .form-wrapper .submit {
@@ -291,25 +291,75 @@ body .cart-content {
                     /* flex: 0.011; */
                     flex: 0.025;
                     position: relative;
+                    height: 11vw;
                     top:-0.34vw;
-                    right: -2.3vw;
+                    right: -2.0vw;
+                    align-self: flex-start;
+                    align-items: center;
+                    /* right: 0vw; */
                 }
 
             .num-item {
-                font-size: 1.5vw;
-                top:0.5em;
-                left:-0.2em;
+                font-size: 2.5vw;
+                top:0.3em;
+                left:0.6em;
             }
 
+    .cart-content h1 {
+        margin-top: 15vw;
+        font-size: 7vw;
+    }
+
     .total-price {
-        font-size: 3.5vw;
-        padding-top: 3.5vw;
-        width:80%;
+        font-size: 5vw;
+        padding-top: 6.5vw;
+        width:90%;
         
     }
 
         .total-price span {
-            margin-right: 0.5em;
+            margin-right: 0.4em;
+        }
+
+
+    .form-wrapper {
+        width: 98.2%;
+    }
+    
+        .form-wrapper .fields {
+            /* display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; */
+        }
+    
+            .form-wrapper .fields > * {
+                border:0.1vw solid rgba(255, 255, 255, 0);
+                padding: 2.4vw 0vw;
+                font-size: 4.7vw;
+                border-bottom:0.1vw solid var(--text-color);
+                margin-bottom:2vw;
+                width: 90%;
+                /* outline: none;
+                background-color: rgba(255, 99, 71, 0); */        
+            }
+
+        .form-wrapper .submit {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 5vw;
+            padding:3vw;
+            text-align: center;
+            font-family: 'Fractal';
+            font-size: 6vw;
+            border:solid 1px rgb(0, 0, 0);
+            border-radius: 1vw;
+            background-color: white;
+            background-color: rgb(37, 35, 35);
+            box-shadow: 0vw 0vw 2.0vw 0.3vw rgba(0, 0, 0, 0.068);
+            cursor: pointer;
+            color:white;
+            outline: none;
         }
 }
 
@@ -318,20 +368,14 @@ body .cart-content {
     .chosen-products {
         width:90%;
     }
-    
-    .chosen-products > * {
-    }
 
         .chosen-item {
             padding-bottom: 2.5vw;
             /* border: tan 1px solid; */
         }
             .chosen-item .item-background {
-                height: 10vw;
-                width: 10vw;
-            }
-
-            .chosen-item .item-info-wrapper {
+                height: 12vw;
+                width: 12vw;
             }
 
                 .item-info-wrapper .description {
@@ -341,18 +385,23 @@ body .cart-content {
                     line-height: 1.3em;
                 }
 
-                    .item-info-wrapper .description p {
-
-                    }
-
                 .item-info-wrapper .price {
                     display: flex;
                     flex:0.05;
-                    font-size: 2.8vw;
+                    font-size: 7vw;
+                    align-items: flex-start;
                 }
 
                 .item-info-wrapper .delete {
-                    flex: 0.011;
+                    /* flex: 0.011; */
+                    /* flex: 0.1; */
+                    height: 7vw;
+                    display: flex;
+                    /* align-items: flex-start;
+                    align-items: baseline; */
+                    /* border: solid 1px rebeccapurple; */
+                    align-self: flex-start;
+                    align-items: center;
                 }
 
             .num-item {
@@ -362,9 +411,11 @@ body .cart-content {
             }
 
     .total-price {
-        font-size: 3.5vw;
-        padding-top: 3.5vw;
-        width:80%;
+        font-size: 7vw;
+        padding-top: 9.5vw;
+        width:90%;
+        position: relative;
+        left: -0.8vw;
     }
 
         .total-price span {
