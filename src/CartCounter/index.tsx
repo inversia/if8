@@ -16,9 +16,12 @@ export function CartCounter () {
     const offset = offsets[cartItems.length] || 0
 
     useEffect (() => {
-        el.current.classList.remove ('pulse-alert')
-        el.current.getBoundingClientRect () // вызывает reflow для рестарта анимации pulse-alert
-        el.current.classList.add ('pulse-alert')
+
+        if (el.current) {
+            el.current.classList.remove ('pulse-alert')
+            el.current.getBoundingClientRect () // вызывает reflow для рестарта анимации pulse-alert
+            el.current.classList.add ('pulse-alert')
+        }
         
     }, [totalItems])
 

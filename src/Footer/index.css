@@ -7,6 +7,7 @@
     bottom: 0;
     display: flex;
 	padding: 0vw var(--mega-padding);
+	/* overflow-x: hidden; */
 }
   
 .contacts {
@@ -23,7 +24,7 @@
 }
   
 	.contacts * {
-		padding-bottom: 0.5em;
+		padding-bottom: 1vw;
 	}
 	
 	.contacts .phone {
@@ -36,8 +37,8 @@
 		font-size: 2.2vw;
 	}
 
-	.self-delivery {
-		font-size: 1.3vw;
+	.contacts .self-delivery {
+		font-size: 1.4vw;
 	}
 	
 	.contacts .address {
@@ -55,7 +56,7 @@
 		
 	}
 	
-	.contacts span {
+	.contacts .company-info {
 		font-size: 1.4vw;
 		padding-bottom: 1.0em;
 	}
@@ -102,7 +103,7 @@
 	}
 	
 	.instagram {
-		mask-image: url(~/icons/instagram.svg); 
+		mask-image: url(~/icons/instagram.svg);
 	}
   
 
@@ -124,9 +125,10 @@
 			/* padding-bottom: 1.1em; */
 			font-size: 3vw;
 			position: relative;
-			bottom: -8vw;
+			bottom: -4.5vw;
 			/* border:red 1px solid; */
 			/* border: 1px solid salmon; */
+			padding-bottom: 4vw;
 		}
 
 			.contacts .phone {
@@ -140,13 +142,16 @@
 					font-size: 7vw;
 				}
 
+				.contacts .self-delivery {
+					font-size: 2.5vw;
+				}
+
 			.contacts .address a {
 				font-size: 4.6vw;
 				padding-top: 3vw;
-				/* color:red; */
 			}
 
-			.contacts span {
+			.contacts .company-info {
 				font-size: 2.5vw;
 				padding-top: 1em;
 			}
@@ -165,12 +170,62 @@
 			display: flex;
 			flex:1;
 			/* border:1px solid salmon; */
-			margin: 0.1vw;
+			/* margin: 0.1vw; */
 		}
 
 		.social a {
 			background-color: rgb(17, 17, 17);
 		}
+}
 
+@media all and (max-width: 455px) { 
+	
+	.footer-wrapper {                            
+		height: 72vw;
+		background-position: 17% center;
+		margin-top: 6vw;
+		
+	}
 
+			.contacts > * {
+				padding-bottom: 3vw;
+			}
+
+			.contacts .phone {
+				display: flex;
+				flex-direction: column;
+				/* margin-bottom: 6vw; */
+			}
+
+			.contacts .phone a {
+				padding-right: 2em;
+				font-size: 7.2vw;
+				padding-bottom: 2vw;
+			}
+
+			.contacts .self-delivery {
+				font-size: 3.5vw;
+				padding-top: 0vw;
+			}
+
+			.contacts .address a {
+				font-size: 8.3vw!important;
+				/* border:1px solid salmon; */
+			}
+
+			.contacts .company-info {
+				font-size: 3.5vw;
+				padding-top: 3vw;
+			}
+
+		.social {
+			height: 61vw;
+			right:1vw;
+			top:12.5%;
+			flex:0.67;
+		}
+	
+			.social * {
+				padding-bottom: 1.9vw;
+			}
 }
