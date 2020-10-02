@@ -50,7 +50,7 @@
     filter:  invert(17%) grayscale(80%) hue-rotate(240deg) brightness(72%) contrast(500%);;
 }
 
-@media all and (max-width: 725px) { 
+@media all and (max-width: 665px) { 
     
     .decoration-corner {
         /* border:1px solid salmon; */
