@@ -32,6 +32,20 @@ body .cart-content {
     /* filter: opacity(0.3); */
 }
 
+    .exclusive-order {
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 7vh;
+        padding-top: 1vh;
+        text-align: center;
+        font-size: 1.95vh;
+        /* font-weight: bold; */
+        text-transform: uppercase;
+        font-family: 'Forward';
+        text-decoration: underline;
+        line-height: 1.3em;
+    }
+
     .chosen-products {
         width:80%;
         margin: 0 auto;

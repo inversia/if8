@@ -83,7 +83,7 @@ export function MenuMobile ({ category, subcategory, material }: FilterProps) {
                     <MMenuLink path='/contacts'/>
                     <MMenuLink path='/about'>о нас</MMenuLink>
                     <MMenuLink component='a' path={`/items/jewellery/${subcategory}`} onClick={ toggleMDropdown ('jewellery')}>украшения</MMenuLink>
-                    <MMenuLink component='a' path={`/items/interior/${subcategory}`}  onClick={ toggleMDropdown ('interior')} >интерьер</MMenuLink>
+                    {/* <MMenuLink component='a' path={`/items/interior/${subcategory}`}  onClick={ toggleMDropdown ('interior')} >интерьер</MMenuLink> */}
                     <MMenuLink path='/#events'         onClick={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</MMenuLink>
                     <MMenuLink path='/cart'><CartCounter/></MMenuLink>
                 </ul>

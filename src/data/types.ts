@@ -3,7 +3,7 @@ export const jewelleryTypes = {
     bracelets: 'браслеты',
     earrings: 'серьги',
     neck: 'цепочки и подвески',
-    brooches: 'броши',
+    // brooches: 'броши',
     corporate: 'корпоративные',
     exclusive: 'эксклюзив'
 } as const
@@ -24,7 +24,7 @@ export const subcategories = {
 export const jewelleryMaterials = {
     gold: 'золото',
     silver: 'серебро',
-    platinum: 'платина',
+    // platinum: 'платина',
 } as const
 
 export const interiorMaterials = {

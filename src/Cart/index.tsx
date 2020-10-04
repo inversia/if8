@@ -47,6 +47,7 @@ export default function Cart () {
 
     return <>
         <div className={cls ('cart-content', { 'form-loading': isLoading, 'done': isDone }) }>
+            <p className='exclusive-order'>Мы можем изготовить эксклюзивные украшения по Вашему эскизу из любых материалов</p>
             <div className='chosen-products'>
                 {products.map (prdct => <div className='chosen-item' key={prdct.id}>
                                             <div style={{ backgroundImage: `url(${images[prdct.img]})`}}
@@ -62,7 +63,7 @@ export default function Cart () {
                                         </div>
                 )}
             </div>
-            {totalPrice && <div className='total-price'><span>ИТОГО:</span>{totalPrice}</div>}
+            {totalPrice > 0 && <div className='total-price'><span>ИТОГО:</span>{totalPrice}</div>}
             <h1>ФОРМА</h1>
             <div className='form-wrapper'>
                 <form ref={form} className='fields'>

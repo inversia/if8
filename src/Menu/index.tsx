@@ -103,10 +103,8 @@ export function Menu ({ category, subcategory, material }: FilterProps) {
             <div className='menu'>
                 <ul>
                     <MenuLink path='/about'>о компании</MenuLink>
-                    {/* <MenuLink path='/items/jewellery/:subcategory' onClick={() => toggleDropdown ('jewellery')}>ювелирные украшения</MenuLink> */}
                     <MenuLink component='a' path={`/items/jewellery/${subcategory}`} onClick={ toggleDropdown ('jewellery')}>ювелирные украшения</MenuLink>
-                    {/* <MenuLink path='/items/interior/:subcategory'  onClick={() => toggleDropdown ('interior')} >интерьер</MenuLink> */}
-                    <MenuLink component='a' path={`/items/interior/${subcategory}`}  onClick={ toggleDropdown ('interior')} >интерьер</MenuLink>
+                    {/* <MenuLink component='a' path={`/items/interior/${subcategory}`}  onClick={ toggleDropdown ('interior')} >интерьер</MenuLink> */}
                     <MenuLink path='/#events'                      onClick={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</MenuLink>
                     <MenuLink path='/contacts'>контакты</MenuLink>
                     <MenuLink path='/cart'>сделать заказ</MenuLink><CartCounter/>
