@@ -38,7 +38,7 @@ function MMenuLink ({
     }, children)
 }
 
-export function MenuMobile ({ category, subcategory, material, id }: FilterProps) {
+export function MenuMobile ({ category, subcategory, material }: FilterProps) {
 
     const [value, setValue] = useState (0.5)
 

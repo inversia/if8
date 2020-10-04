@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react'
 import './index.css'
 import { useCartContext } from '~/Cart/Context'
+import { useAppContext } from '~/App/Context'
+
 import cls from 'classnames'
 
 
@@ -15,6 +17,8 @@ export function CartCounter () {
     const offsets = [0, 0.3, 0, 0.08, 0.2, 0, 0, 0, 0.05, 0, 0]
     const offset = offsets[cartItems.length] || 0
 
+    const { isMobile, windowWidth } = useAppContext ()
+
     useEffect (() => {
         if (el.current) {
             el.current.classList.remove ('pulse-alert')
@@ -25,7 +29,7 @@ export function CartCounter () {
     }, [totalItems])
 
     return <>
-        { notEmpty && <div ref={el} className={ cls ({ 'cart-counter': 1, 'more-than-10': totalItems > 9, 'more-than-20':  totalItems > 19 }) }
+        { notEmpty && <div ref={el} className={ cls ({ 'cart-counter': 1, 'mobile': isMobile, 'desktop': !isMobile, 'more-than-10': totalItems > 9, 'more-than-20':  totalItems > 19 }) }
              onAnimationEnd={ e => { e.currentTarget.classList.remove ('pulse-alert')} }
              style={{paddingRight: `${offset}vw`}}>
             <span>{ totalItems }</span>

@@ -3,7 +3,7 @@
     bottom: -0.8em;
     width: 80vw;
     /* border:red 1px solid; */
-    margin: 0vw auto;
+    margin: 2vw auto;
     padding-bottom: 0vw;
     font-size: 1.5vw;
 }
@@ -11,13 +11,19 @@
 @media all and (max-width: 894px) { 
 	.navigation-bar {
         bottom: 0.0em;
-        font-size: 2vw;
+        font-size: 2.2vw;
     }
 }
 
 @media all and (max-width: 565px) { 
 	.navigation-bar {
         bottom: 1.0em;
-        font-size: 3vw;
+        font-size: 3.5vw;
+    }
+}
+
+@media all and (max-width: 465px) { 
+	.navigation-bar {
+        font-size: 4.5vw;
     }
 }

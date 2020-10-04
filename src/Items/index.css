@@ -44,6 +44,7 @@
         display: grid;
         grid-template-columns: 100%;
         grid-gap: 3vw;
+        margin-bottom: 5vw;
     }
 
     .product-item {

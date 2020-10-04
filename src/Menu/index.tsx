@@ -60,21 +60,13 @@ function MenuLink ({
     }, children)
 }
 
-export function Menu ({ category, subcategory, material, id }: FilterProps) {
+export function Menu ({ category, subcategory, material }: FilterProps) {
 
     const [value, setValue] = useState (0.5)
 
     const [dropdownCategory, setDropdownCategory] = useState<Category|null> ()
     
     const hideDropdown = () => setDropdownCategory (null)
-
-    // const toggleDropdown = (newCategory: Category|null) => {
-    //     if (dropdownCategory && dropdownCategory === newCategory) {
-    //         hideDropdown ()
-    //     } else {
-    //         setDropdownCategory (newCategory)
-    //     }
-    // }
 
     const toggleDropdown = (newCategory: Category|null) => {
 
