@@ -18,9 +18,9 @@ function smoothScrollTo (hash:string) {
     })
 }
 
-const MenuContext = createContext ({ hideDropdown: () => {} })
+const MMenuContext = createContext ({ hideMDropdown: () => {} })
 
-function MenuLink ({
+function MMenuLink ({
     path = '',
     component = A as (typeof A | string),
     children = null as React.ReactChild,
@@ -29,12 +29,12 @@ function MenuLink ({
     const currentPath = usePath ()
     const className = path.replace (/\//g, '_')
     const active = currentPath.startsWith (path)
-    const { hideDropdown } = useContext (MenuContext)
+    const { hideMDropdown } = useContext (MMenuContext)
 
     return React.createElement (component, {
-        className: cls ({ active, [('menu-item-' + className)]: 1 }),
+        className: cls ({ active, [('m-menu-item-' + className)]: 1 }),
         href: path,
-        onClick: (e) => { hideDropdown (); onClick (e) }
+        onClick: (e) => { hideMDropdown (); onClick (e) }
     }, children)
 }
 
@@ -42,59 +42,61 @@ export function MenuMobile ({ category, subcategory, material, id }: FilterProps
 
     const [value, setValue] = useState (0.5)
 
-    const [dropdownCategory, setDropdownCategory] = useState<Category|null> ()
+    const [mDropdownCategory, setMDropdownCategory] = useState<Category|null> ()
     
-    const hideDropdown = () => setDropdownCategory (null)
+    const hideMDropdown = () => setMDropdownCategory (null)
 
-    const toggleDropdown = (newCategory: Category|null) => {
+    const toggleMDropdown = (newCategory: Category|null) => {
+
         return function onClick (e: React.MouseEvent) {
-            if (dropdownCategory && dropdownCategory === newCategory) {
-                hideDropdown ()
+
+            if (mDropdownCategory && mDropdownCategory === newCategory) {
+                hideMDropdown ()
             } else {
-                setDropdownCategory (newCategory)
+                setMDropdownCategory (newCategory)
             }
             e.preventDefault ()
         }
     }
 
-    const menuContainerRef = useRef<HTMLDivElement> ()
-    useOnClickOutside (menuContainerRef, () => {
-        hideDropdown ()
+    const mMenuContainerRef = useRef<HTMLDivElement> ()
+    useOnClickOutside (mMenuContainerRef, () => {
+        hideMDropdown ()
     })
 
     const hideIfClickedAtBottom = useCallback ((e: React.MouseEvent) => {
         const distanceFromBottom = e.currentTarget.getBoundingClientRect ().bottom - e.clientY
         const distanceFromBottomRel = distanceFromBottom / e.currentTarget.clientHeight // relative to height (0...1)
         if (distanceFromBottomRel < 0.24) {
-            hideDropdown ()
+            hideMDropdown ()
         }
     }, [])
 
     useLayoutEffect (() => {
-        if (!category) hideDropdown ()
+        if (!category) hideMDropdown ()
     }, [category])
 
-    return <MenuContext.Provider value={{ hideDropdown }}>
-        <div ref={menuContainerRef} className='mob-menu-container'>
+    return <MMenuContext.Provider value={{ hideMDropdown }}>
+        <div ref={mMenuContainerRef} className='mob-menu-container'>
             <div className='m-menu'>
                 <ul>
-                    <MenuLink path='/contacts'/>
-                    <MenuLink path='/about'>о нас</MenuLink>
-                    <MenuLink component='a' path={`/items/jewellery/${subcategory}`} onClick={toggleDropdown ('jewellery')}>украшения</MenuLink>
-                    <MenuLink component='a' path={`/items/interior/${subcategory}`}  onClick={toggleDropdown ('interior')} >интерьер</MenuLink>
-                    <MenuLink path='/#events'         onClick={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</MenuLink>
-                    <MenuLink path='/cart'><CartCounter/></MenuLink>
+                    <MMenuLink path='/contacts'/>
+                    <MMenuLink path='/about'>о нас</MMenuLink>
+                    <MMenuLink component='a' path={`/items/jewellery/${subcategory}`} onClick={ toggleMDropdown ('jewellery')}>украшения</MMenuLink>
+                    <MMenuLink component='a' path={`/items/interior/${subcategory}`}  onClick={ toggleMDropdown ('interior')} >интерьер</MMenuLink>
+                    <MMenuLink path='/#events'         onClick={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</MMenuLink>
+                    <MMenuLink path='/cart'><CartCounter/></MMenuLink>
                 </ul>
             </div>
-        <div className={ cls ('dropdown-menu-container', { visible: !!dropdownCategory })} onClick={hideIfClickedAtBottom}>
-            <div className='dropdown-menu'>
+        <div className={ cls ('m-dropdown-menu-container', { visible: !!mDropdownCategory })} onClick={hideIfClickedAtBottom}>
+            <div className='m-dropdown-menu'>
                 <div className='categories'>
                     <label>Категории</label>
                     <ul>
-                        <MenuLink path={`/items/${dropdownCategory}/all`}>все</MenuLink>
+                        <MMenuLink path={`/items/${mDropdownCategory}/all`}>все</MMenuLink>
                         <div className='subcategories'>{
-                            dropdownCategory && Object.entries (subcategories[dropdownCategory]).map (([subcategory, label]: [string, string]) =>
-                                <MenuLink path={`/items/${dropdownCategory}/${subcategory}`} key={ subcategory }>{ label }</MenuLink>
+                            mDropdownCategory && Object.entries (subcategories[mDropdownCategory]).map (([subcategory, label]: [string, string]) =>
+                                <MMenuLink path={`/items/${mDropdownCategory}/${subcategory}`} key={ subcategory }>{ label }</MMenuLink>
                             )
                         }</div>
                     </ul>
@@ -102,9 +104,9 @@ export function MenuMobile ({ category, subcategory, material, id }: FilterProps
                 <div className='materials'>
                     <label>Материал</label>
                     <ul>
-                        <MenuLink path={`/items/${dropdownCategory}/${subcategory || 'all'}`} key={ material }>все</MenuLink>
-                        {dropdownCategory && Object.entries (materials[dropdownCategory]).map (([material, label]: [string, string]) =>
-                            <MenuLink path={`/items/${dropdownCategory}/${subcategory || 'all'}/${material}`} key={ material }>{ label }</MenuLink>)}
+                        <MMenuLink path={`/items/${mDropdownCategory}/${subcategory || 'all'}`} key={ material }>все</MMenuLink>
+                        {mDropdownCategory && Object.entries (materials[mDropdownCategory]).map (([material, label]: [string, string]) =>
+                            <MMenuLink path={`/items/${mDropdownCategory}/${subcategory || 'all'}/${material}`} key={ material }>{ label }</MMenuLink>)}
                     </ul>
                 </div>
                 {/* <div className='price'>
@@ -114,5 +116,5 @@ export function MenuMobile ({ category, subcategory, material, id }: FilterProps
             </div>
         </div>
     </div>
-    </MenuContext.Provider>
+    </MMenuContext.Provider>
 }

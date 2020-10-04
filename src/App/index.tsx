@@ -34,13 +34,14 @@ function makePage (Content: React.JSXElementConstructor<Record<string, unknown>>
         
         return <>
             {/* <h1>{JSON.stringify({ isMobile, windowWidth })}</h1> */}
-            {isMobile ? <><HeaderMobile/><MenuMobile {...props} /></> : <><Header/><Menu {...props} /></>}
+            
+            {isMobile ? <><HeaderMobile/><MenuMobile {...replaceAllWithUndefined (props)} /></> : <><Header/><Menu {...replaceAllWithUndefined (props)} /></>}
+            {/* {isMobile ? <><HeaderMobile/><MenuMobile {...props} /></> : <><Header/><Menu {...props} /></>} */}
             <Content {...props} />
-    
         </>
     }
 
-    return (props: Record<string, unknown>) => <Page {...props} />
+    return (props: Record<string, unknown>) => <Page {...replaceAllWithUndefined (props)} />
 }
 
 function replaceAllWithUndefined (props: Record<string, unknown>) {

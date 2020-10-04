@@ -20,26 +20,44 @@ function smoothScrollTo (hash:string) {
 
 const MenuContext = createContext ({ hideDropdown: () => {} })
 
+// function MenuLink1 ({
+//     path = '',
+//     children = null as React.ReactChild,
+//     customFunction = () => {}
+// }) {
+//     const currentPath = usePath ()
+//     const className = path.replace (/\//g, '_')
+//     const active = currentPath.startsWith (path)
+//     const { hideDropdown } = useContext (MenuContext)
+
+//     return (
+//         <A
+//             key={className}
+//             className={ cls ({ active, [('menu-item-' + className)]: 1 }) }
+//             href={ path }
+//             onClick={() => { hideDropdown (); customFunction ()} }
+//         >
+//             {children}
+//         </A>
+//     )
+// }
+
 function MenuLink ({
     path = '',
+    component = A as (typeof A | string),
     children = null as React.ReactChild,
-    customFunction = () => {}
+    onClick = (_e: React.MouseEvent) => {}
 }) {
     const currentPath = usePath ()
     const className = path.replace (/\//g, '_')
     const active = currentPath.startsWith (path)
     const { hideDropdown } = useContext (MenuContext)
 
-    return (
-        <A
-            key={className}
-            className={ cls ({ active, [('menu-item-' + className)]: 1 }) }
-            href={ path }
-            onClick={() => { hideDropdown (); customFunction ()} }
-        >
-            {children}
-        </A>
-    )
+    return React.createElement (component, {
+        className: cls ({ active, [('menu-item-' + className)]: 1 }),
+        href: path,
+        onClick: (e) => { hideDropdown (); onClick (e) }
+    }, children)
 }
 
 export function Menu ({ category, subcategory, material, id }: FilterProps) {
@@ -50,11 +68,24 @@ export function Menu ({ category, subcategory, material, id }: FilterProps) {
     
     const hideDropdown = () => setDropdownCategory (null)
 
+    // const toggleDropdown = (newCategory: Category|null) => {
+    //     if (dropdownCategory && dropdownCategory === newCategory) {
+    //         hideDropdown ()
+    //     } else {
+    //         setDropdownCategory (newCategory)
+    //     }
+    // }
+
     const toggleDropdown = (newCategory: Category|null) => {
-        if (dropdownCategory && dropdownCategory === newCategory) {
-            hideDropdown ()
-        } else {
-            setDropdownCategory (newCategory)
+
+        return function onClick (e: React.MouseEvent) {
+
+            if (dropdownCategory && dropdownCategory === newCategory) {
+                hideDropdown ()
+            } else {
+                setDropdownCategory (newCategory)
+            }
+            e.preventDefault ()
         }
     }
 
@@ -79,23 +110,14 @@ export function Menu ({ category, subcategory, material, id }: FilterProps) {
         <div ref={menuContainerRef} className='menu-container'>
             <div className='menu'>
                 <ul>
-                    {/* <MenuLink path='/about'>о компании</MenuLink> */}
-                    {/* <a className={ cls ({ active: dropdownCategory === 'jewellery' }) } onClick={() => toggleDropdown ('jewellery')}>ювелирные украшения</a>
-                    <a className={ cls ({ active: dropdownCategory === 'interior'  }) } onClick={() => toggleDropdown ('interior')}>интерьер</a>
-                    <A href='/' onClick={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</A> */}
-                    {/* <MenuLink path='/items/jewellery' customFunction={() => toggleDropdown ('jewellery')}>ювелирные украшения</MenuLink>
-                    <MenuLink path='/items/interior'  customFunction={() => toggleDropdown ('interior')} >интерьер</MenuLink>
-                    <MenuLink path='/#events'         customFunction={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</MenuLink>
-                    <MenuLink path='/contacts'>контакты</MenuLink>
-                    <MenuLink path='/cart'>сделать заказ</MenuLink> */}
-
-        
                     <MenuLink path='/about'>о компании</MenuLink>
-                    <MenuLink path='/items/jewellery/:subcategory' customFunction={() => toggleDropdown ('jewellery')}>ювелирные украшения</MenuLink>
-                    <MenuLink path='/items/interior/:subcategory'  customFunction={() => toggleDropdown ('interior')} >интерьер</MenuLink>
-                    <MenuLink path='/#events'         customFunction={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</MenuLink>
+                    {/* <MenuLink path='/items/jewellery/:subcategory' onClick={() => toggleDropdown ('jewellery')}>ювелирные украшения</MenuLink> */}
+                    <MenuLink component='a' path={`/items/jewellery/${subcategory}`} onClick={ toggleDropdown ('jewellery')}>ювелирные украшения</MenuLink>
+                    {/* <MenuLink path='/items/interior/:subcategory'  onClick={() => toggleDropdown ('interior')} >интерьер</MenuLink> */}
+                    <MenuLink component='a' path={`/items/interior/${subcategory}`}  onClick={ toggleDropdown ('interior')} >интерьер</MenuLink>
+                    <MenuLink path='/#events'                      onClick={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</MenuLink>
                     <MenuLink path='/contacts'>контакты</MenuLink>
-                    <MenuLink path='/cart'><CartCounter/></MenuLink>
+                    <MenuLink path='/cart'>сделать заказ</MenuLink><CartCounter/>
                 </ul>
             </div>
         <div className={ cls ('dropdown-menu-container', { visible: !!dropdownCategory })} onClick={hideIfClickedAtBottom}>
