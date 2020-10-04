@@ -101,12 +101,16 @@
 
             .mob-menu-container .m-dropdown-menu ul * {
                 color:rgb(0, 0, 0);
-                padding-bottom: 1em;
+                /* margin: 0.5em 0em; */
             }
 
             .mob-menu-container .m-dropdown-menu ul > * {
                 display: flex;
-                /* border:1px solid salmon; */
                 flex-direction: column!important;
+                margin: 0.9em 0em;
+            }
+
+            .m-dropdown-menu .subcategories > * {
+                margin-bottom: 0.9em;
             }
 

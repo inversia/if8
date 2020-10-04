@@ -122,8 +122,8 @@
 
 			.dropdown-menu ul a,
 			.categories ul > * {
-                cursor: pointer;
-                margin: 0.5em 0em;
+        cursor: pointer;
+        margin: 0.5em 0em;
 				white-space: nowrap;
 				display: flex;
 				flex-direction: column;
