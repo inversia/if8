@@ -76,7 +76,7 @@ export function MenuMobile ({ category, subcategory, material, id }: FilterProps
 
     return <MenuContext.Provider value={{ hideDropdown }}>
         <div ref={menuContainerRef} className='mob-menu-container'>
-            <div className='menu'>
+            <div className='m-menu'>
                 <ul>
                     <MenuLink path='/contacts'/>
                     <MenuLink path='/about'>о нас</MenuLink>

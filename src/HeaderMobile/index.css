@@ -17,7 +17,7 @@
         /* border:1px solid rgb(114, 150, 250); */
     }
 
-        .mobile-header-wrapper .tagline {
+        .mobile-header-wrapper .mobile-tagline {
             background-image: url(~/icons/tagline.svg);
             background-repeat: no-repeat;
             background-size: 99.9% 99.9%;
@@ -64,7 +64,7 @@
                 /* border: 1px solid salmon; */
             }
 
-    .mobile-header-wrapper .logo {
+    .mobile-header-wrapper .mobile-logo {
         display: flex;
         flex:0.45;
         background-image: url(~/icons/logo.svg);

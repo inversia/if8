@@ -8,11 +8,6 @@ type Entries<T> = {
     [K in keyof T]: [K, T[K]]
 }[keyof T][]
 
-interface ObjectConstructor {
-    entries<T>(obj: T): Entries<T>
-    fromEntries<T>(entries: [string, unknown][]): T
-}
-
 interface String {
     startsWith(s: string): boolean;
 }

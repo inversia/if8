@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@reach/slider": "^0.11.2",
+    "@rehooks/component-size": "^1.0.3",
     "@shwilliam/react-rubber-slider": "^0.1.4",
     "@types/classnames": "^2.2.10",
     "@types/lodash.debounce": "^4.0.6",
@@ -23,7 +24,7 @@
     "use-hooks": "^2.0.0-rc.5"
   },
   "devDependencies": {
-    "@types/hookrouter": "^2.2.1",
+    "@types/hookrouter": "^2.2.3",
     "@types/react": "^16.9.46",
     "@typescript-eslint/eslint-plugin": "^3.5.0",
     "@typescript-eslint/parser": "^3.5.0",

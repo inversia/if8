@@ -10,7 +10,6 @@ type CartContext = {
     removeFromCart(id: ProductId): void
     clearCart(): void
     totalItems: number
-    totalPrice: number
 }
 
 export const cartContext = createContext<CartContext> (null as CartContext)

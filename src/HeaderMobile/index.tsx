@@ -7,8 +7,8 @@ export function HeaderMobile () {
     return <div className='mobile-header-wrapper'>
         <div className='tagline-and-search'>
             <Search />
-            <A className='tagline' href='/'/>
+            <A className='mobile-tagline' href='/'/>
         </div>
-        <A className='logo' href='/'/>
+        <A className='mobile-logo' href='/'/>
     </div>
 }
