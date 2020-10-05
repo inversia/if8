@@ -31,7 +31,7 @@ export function CartContextProvider ({ children = null as React.ReactChild }) {
 
     function setCartItems (newItems: CartItems) {
         setItems (newItems)
-        localStorage.setItem ('cartItems', JSON.stringify (items))
+        localStorage.setItem ('cartItems', JSON.stringify (newItems))
     }
 
     // Увеличивает кол-во продукта в `items`
