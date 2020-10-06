@@ -1,44 +1,3 @@
-/* @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-
-  a,
-  area,
-  button,
-  input,
-  label,
-  select,
-  summary,
-  textarea,
-  [tabindex] {
-    touch-action: manipulation;
-  }
-
-  svg:not([fill]) {
-    fill: currentColor;
-  }
-  
-  .sr-only {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-  }
-  
-  .sr-only--focus:focus {
-    position: static;
-    width: auto;
-    height: auto;
-  } */
-
-
 .menu-container {
 	position: relative;
 	background-color: white;
@@ -54,6 +13,8 @@
     opacity: 0.66;
     font-family: 'Forward-extra';
     z-index: 21;
+    /* border: 1px solid salmon; */
+
 }
 
     .menu ul {
@@ -62,7 +23,7 @@
         justify-content: space-between;
         /* border: 1px solid salmon; */
         width: 100%;
-        padding-bottom: 1.5vw;
+        padding-bottom: 4.5vh;
     }
 
         .menu a, .menu ul > * {
@@ -83,14 +44,14 @@
     .dropdown-menu-container {
         width: 100%;
         height: 29.2vw;
-		position: absolute;
+		    position: absolute;
         background-image: url(~/icons/dropdownMenu.svg);
         background-size: cover;
         background-repeat: no-repeat;
         opacity: 0;
         padding: 2vw 23vw;
-		display: none;
-		top:-0.2vw;
+        display: none;
+		    top:-0.05vw;
     } 
 
     .dropdown-menu-container.visible {
@@ -141,75 +102,6 @@
     stroke:red;
 }
 
-
-
-/* svg:not([fill]) {
-    fill: currentColor;
-  }
-  
-  .sr-only {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-  }
-  
-  .sr-only--focus:focus {
-    position: static;
-    width: auto;
-    height: auto;
-  } */
-  
-  /* dispatched single taps w/o delay */
-  /* a,
-  area,
-  button,
-  input,
-  label,
-  select,
-  summary,
-  textarea,
-  [tabindex] {
-    touch-action: manipulation;
-  }
-   */
-  
-  /* html,
-  body,
-  #root {
-    font-family: sans-serif;
-    font-size: 14px;
-    background-color: var(--color__bg);
-    height: 100%;
-    overflow: hidden;
-  } */
-  
-  /* .app {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  } */
-  
-  /* .title {
-    text-align: center;
-    font-size: 1.75rem;
-    font-weight: 400;
-    color: #222;
-    padding: 20px 0;
-  } */
-  
-  /* .rating-value {
-    line-height: 1;
-    align-self: flex-end;
-    padding-right: 30px;
-    font-size: 15rem;
-    color: var(--rubber-slider-ui);
-    opacity: 0.5;
-  } */
   
 .rubber-slider-input {
     position: absolute;
@@ -252,6 +144,14 @@
 		
 		.price .rubber-slider-handle {
 			pointer-events: all;
-		}
+    }
+    
+
+@media all and (max-width: 900px) { 
+	
+	.menu a, .menu ul > * {
+		font-size:1.5vw;
+	}
+}
 
 
