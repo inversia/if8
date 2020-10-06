@@ -32,7 +32,7 @@ function makePage (Content: React.JSXElementConstructor<Record<string, unknown>>
 
         const { isMobile, priceValue } = useAppContext ()
 
-        props = {...props, priceValue}
+        props = { ...props, priceValue }
         
         return <>
             {isMobile ? <><HeaderMobile/><MenuMobile {...replaceAllWithUndefined (props)} /></> : <><Header/><Menu {...replaceAllWithUndefined (props)} /></>}

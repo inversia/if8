@@ -16,7 +16,7 @@ export function AppContextProvider ({ children = null as React.ReactChild }) {
     
     const windowSize = useWindowSize ()
     const isMobile = windowSize.width < 665
-    const [ priceValue, setPriceValue ] = useState (500)
+    const [ priceValue, setPriceValue ] = useState ()
 
     return (
         <appContext.Provider value={{ isMobile, windowWidth: windowSize.width, priceValue, setPriceValue }}>

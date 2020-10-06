@@ -1,3 +1,6 @@
+// import RubberSlider from '@shwilliam/react-rubber-slider'
+// import '@shwilliam/react-rubber-slider/dist/styles.css'
+
 import React, { createContext, useRef, useLayoutEffect, useState, useCallback, useContext } from 'react'
 import './index.css'
 import cls from 'classnames'
@@ -5,8 +8,6 @@ import { CartCounter } from '~/CartCounter'
 import { A, usePath } from 'hookrouter'
 import { Category, subcategories, materials, FilterProps } from '~/data'
 import { useOnClickOutside } from 'use-hooks'
-// import RubberSlider from '@shwilliam/react-rubber-slider'
-// import '@shwilliam/react-rubber-slider/dist/styles.css'
 import { useAppContext } from '~/App/Context'
 
 function smoothScrollTo (hash:string) {
@@ -116,8 +117,8 @@ export function Menu ({ category, subcategory, material }: FilterProps) {
                 </div>
                 <div className='price'>
                     <label>Цена</label>
-                    <input onChange={(e) => setPriceValue (Number (e.target.value))} type='range' min='300' max='1000' defaultValue='500' className='slider'></input>
-                    <p className='rating-value'>до { priceValue } рублей</p>
+                    <input onChange={(e) => setPriceValue (Number (e.target.value))} type='range' min='50' max='1000' defaultValue='500' className='slider'></input>
+                    { priceValue && <p className='rating-value'>до { priceValue } рублей</p>}
                 </div>
             </div>
         </div>
