@@ -40,7 +40,7 @@ function MMenuLink ({
 
 export function MenuMobile ({ category, subcategory, material }: FilterProps) {
 
-    const [value, setValue] = useState (0.5)
+    // const [value, setValue] = useState (0.5)
 
     const [mDropdownCategory, setMDropdownCategory] = useState<Category|null> ()
     

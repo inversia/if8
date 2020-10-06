@@ -20,28 +20,6 @@ function smoothScrollTo (hash:string) {
 
 const MenuContext = createContext ({ hideDropdown: () => {} })
 
-// function MenuLink1 ({
-//     path = '',
-//     children = null as React.ReactChild,
-//     customFunction = () => {}
-// }) {
-//     const currentPath = usePath ()
-//     const className = path.replace (/\//g, '_')
-//     const active = currentPath.startsWith (path)
-//     const { hideDropdown } = useContext (MenuContext)
-
-//     return (
-//         <A
-//             key={className}
-//             className={ cls ({ active, [('menu-item-' + className)]: 1 }) }
-//             href={ path }
-//             onClick={() => { hideDropdown (); customFunction ()} }
-//         >
-//             {children}
-//         </A>
-//     )
-// }
-
 function MenuLink ({
     path = '',
     component = A as (typeof A | string),
@@ -62,7 +40,7 @@ function MenuLink ({
 
 export function Menu ({ category, subcategory, material }: FilterProps) {
 
-    const [value, setValue] = useState (0.5)
+    const [priceValue, setPriceValue] = useState ('500')
 
     const [dropdownCategory, setDropdownCategory] = useState<Category|null> ()
     
@@ -133,8 +111,8 @@ export function Menu ({ category, subcategory, material }: FilterProps) {
                 </div>
                 <div className='price'>
                     <label>Цена</label>
-                    <RubberSlider width={200} height={100} value={value} onChange={setValue} min={1} max={130000}/>
-                    <p className='rating-value'>{value}</p>
+                    <input onChange={(e) => setPriceValue (e.target.value)} type='range' min='300' max='1000' defaultValue='500' className='slider'></input>
+                    <p className='rating-value'>до { priceValue } рублей</p>
                 </div>
             </div>
         </div>
