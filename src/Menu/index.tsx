@@ -5,8 +5,9 @@ import { CartCounter } from '~/CartCounter'
 import { A, usePath } from 'hookrouter'
 import { Category, subcategories, materials, FilterProps } from '~/data'
 import { useOnClickOutside } from 'use-hooks'
-import RubberSlider from '@shwilliam/react-rubber-slider'
-import '@shwilliam/react-rubber-slider/dist/styles.css'
+// import RubberSlider from '@shwilliam/react-rubber-slider'
+// import '@shwilliam/react-rubber-slider/dist/styles.css'
+import { useAppContext } from '~/App/Context'
 
 function smoothScrollTo (hash:string) {
 
@@ -40,8 +41,6 @@ function MenuLink ({
 
 export function Menu ({ category, subcategory, material }: FilterProps) {
 
-    const [priceValue, setPriceValue] = useState ('500')
-
     const [dropdownCategory, setDropdownCategory] = useState<Category|null> ()
     
     const hideDropdown = () => setDropdownCategory (null)
@@ -60,21 +59,27 @@ export function Menu ({ category, subcategory, material }: FilterProps) {
     }
 
     const menuContainerRef = useRef<HTMLDivElement> ()
+    
     useOnClickOutside (menuContainerRef, () => {
         hideDropdown ()
     })
 
     const hideIfClickedAtBottom = useCallback ((e: React.MouseEvent) => {
+        
         const distanceFromBottom = e.currentTarget.getBoundingClientRect ().bottom - e.clientY
         const distanceFromBottomRel = distanceFromBottom / e.currentTarget.clientHeight // relative to height (0...1)
+        
         if (distanceFromBottomRel < 0.24) {
             hideDropdown ()
         }
     }, [])
 
     useLayoutEffect (() => {
+        
         if (!category) hideDropdown ()
     }, [category])
+
+    const { priceValue, setPriceValue } = useAppContext ()
 
     return <MenuContext.Provider value={{ hideDropdown }}>
         <div ref={menuContainerRef} className='menu-container'>
@@ -111,7 +116,7 @@ export function Menu ({ category, subcategory, material }: FilterProps) {
                 </div>
                 <div className='price'>
                     <label>Цена</label>
-                    <input onChange={(e) => setPriceValue (e.target.value)} type='range' min='300' max='1000' defaultValue='500' className='slider'></input>
+                    <input onChange={(e) => setPriceValue (Number (e.target.value))} type='range' min='300' max='1000' defaultValue='500' className='slider'></input>
                     <p className='rating-value'>до { priceValue } рублей</p>
                 </div>
             </div>

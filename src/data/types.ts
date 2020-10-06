@@ -66,7 +66,8 @@ export type FilterProps = {
     category?: Category
     subcategory?: Subcategory
     material?: Material
-    id?: string
+    id?: string,
+    priceValue?:number
 }
 
 export type FilterProp = keyof FilterProps

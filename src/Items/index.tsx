@@ -6,6 +6,9 @@ import images from '~/images'
 import NavigationBar from '~/NavigationBar'
 
 function productMatches (item: Product, filterProps: FilterProps) {
+
+    if (item.price > filterProps.priceValue) return false
+
     for (const k of ['category', 'subcategory', 'material'] as FilterProp[]) {
         if (filterProps[k] && item[k] !== filterProps[k]) return false
     }

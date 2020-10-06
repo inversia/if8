@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { HeaderMobile } from '~/HeaderMobile'
 import { Header } from '~/Header'
 import { MenuMobile } from '~/MenuMobile'
@@ -9,7 +9,7 @@ import { Items } from '~/Items'
 import Contacts  from '~/Contacts'
 import Cart from '~/Cart'
 import About from '~/About'
-import { CartContextProvider, useCartContext } from '~/Cart/Context'
+import { CartContextProvider } from '~/Cart/Context'
 import { useRoutes } from 'hookrouter'
 import '@shwilliam/react-rubber-slider/dist/styles.css'
 import { AppContextProvider, useAppContext } from './Context'
@@ -30,13 +30,12 @@ function makePage (Content: React.JSXElementConstructor<Record<string, unknown>>
 
     function Page (props: Record<string, unknown>) {
 
-        const { isMobile, windowWidth } = useAppContext ()
+        const { isMobile, priceValue } = useAppContext ()
+
+        props = {...props, priceValue}
         
         return <>
-            {/* <h1>{JSON.stringify({ isMobile, windowWidth })}</h1> */}
-            
             {isMobile ? <><HeaderMobile/><MenuMobile {...replaceAllWithUndefined (props)} /></> : <><Header/><Menu {...replaceAllWithUndefined (props)} /></>}
-            {/* {isMobile ? <><HeaderMobile/><MenuMobile {...props} /></> : <><Header/><Menu {...props} /></>} */}
             <Content {...props} />
         </>
     }
