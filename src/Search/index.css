@@ -5,6 +5,7 @@
     align-items: center;
     justify-content:flex-end;
     --search-height: 1.46vw;
+    position: relative;
 }
 
 .search input {
@@ -29,6 +30,17 @@
     left: 0vw;
     
     /* border: 1px solid salmon; */
+}
+
+.search-list {
+    width:42%;
+    display: block;
+    border:rgb(255, 152, 126) solid 1px;
+    height: 7vw;
+    position: absolute;
+    top: 58%;
+    border-radius: 0vw 0vw 3vw 3vw;
+    background-color: rgb(255, 196, 189);
 }
 
 

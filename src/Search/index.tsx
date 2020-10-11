@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import cls from 'classnames'
 import debounce from 'lodash.debounce'
 import './index.css'
+import { products, Product, FilterProps, FilterProp } from '~/data'
 
 export default function Search ({
     
@@ -18,6 +19,14 @@ export default function Search ({
         onChange = debounce (onChange, 1000)
     }
 
+    function itemFilter (item:string) {
+
+        const string = input.toLowerCase ()
+        return !string || ( products.description.toLowerCase ().includes (string)) as string || ( products.title.toLowerCase ().includes (string)) as string
+    }
+
+    const filteredProducts = products.filter (itemFilter)
+
     return (
         <div className={ cls ('search', className, { 'error': error && input === value }) }>
             <input
@@ -30,6 +39,10 @@ export default function Search ({
                     if (!buttonText) { onChange (value) }
                 }}
             />
+            <ul className='search-list'>
+                <li>{input}</li>
+                {console.log (products)}
+            </ul>
             { error && input === value && <span className='search-error'>{ error }</span> }
         </div>
     )

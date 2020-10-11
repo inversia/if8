@@ -42,7 +42,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel index.html",
     "start": "rm -rf dist .cache && parcel src/index.html",
-    "build": "rm -rf dist .cache && parcel build --public-url ./ index.html"
+    "build": "rm -rf dist .cache && parcel build --public-url ./ index.html",
+    "publish": "npm run build && ./publish.sh"
   },
   "keywords": [],
   "author": "",

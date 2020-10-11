@@ -1,3 +1,6 @@
+// import RubberSlider from '@shwilliam/react-rubber-slider'
+// import '@shwilliam/react-rubber-slider/dist/styles.css'
+
 import React, { createContext, useRef, useLayoutEffect, useState, useCallback, useContext } from 'react'
 import './index.css'
 import cls from 'classnames'
@@ -5,8 +8,7 @@ import { A, usePath } from 'hookrouter'
 import { CartCounter } from '~/CartCounter'
 import { Category, subcategories, materials, FilterProps } from '~/data'
 import { useOnClickOutside } from 'use-hooks'
-// import RubberSlider from '@shwilliam/react-rubber-slider'
-import '@shwilliam/react-rubber-slider/dist/styles.css'
+import { useAppContext } from '~/App/Context'
 
 function smoothScrollTo (hash:string) {
 
@@ -40,8 +42,6 @@ function MMenuLink ({
 
 export function MenuMobile ({ category, subcategory, material }: FilterProps) {
 
-    // const [value, setValue] = useState (0.5)
-
     const [mDropdownCategory, setMDropdownCategory] = useState<Category|null> ()
     
     const hideMDropdown = () => setMDropdownCategory (null)
@@ -60,11 +60,13 @@ export function MenuMobile ({ category, subcategory, material }: FilterProps) {
     }
 
     const mMenuContainerRef = useRef<HTMLDivElement> ()
+    
     useOnClickOutside (mMenuContainerRef, () => {
         hideMDropdown ()
     })
 
     const hideIfClickedAtBottom = useCallback ((e: React.MouseEvent) => {
+        
         const distanceFromBottom = e.currentTarget.getBoundingClientRect ().bottom - e.clientY
         const distanceFromBottomRel = distanceFromBottom / e.currentTarget.clientHeight // relative to height (0...1)
         if (distanceFromBottomRel < 0.24) {
@@ -73,8 +75,11 @@ export function MenuMobile ({ category, subcategory, material }: FilterProps) {
     }, [])
 
     useLayoutEffect (() => {
+        
         if (!category) hideMDropdown ()
     }, [category])
+
+    const { priceValue, setPriceValue } = useAppContext ()
 
     return <MMenuContext.Provider value={{ hideMDropdown }}>
         <div ref={mMenuContainerRef} className='mob-menu-container'>
@@ -101,7 +106,14 @@ export function MenuMobile ({ category, subcategory, material }: FilterProps) {
                         }</div>
                     </ul>
                 </div>
-                <div className='materials'>
+
+                <div className='m-price'>
+                    <label>Цена</label>
+                    <input onChange={(e) => setPriceValue (Number (e.target.value))} type='range' min='50' max='1000' defaultValue='500' className='m-slider'></input>
+                    { priceValue && <p className='rating-value'>до { priceValue } рублей</p> }
+                </div>
+
+                <div className='m-materials'>
                     <label>Материал</label>
                     <ul>
                         <MMenuLink path={`/items/${mDropdownCategory}/${subcategory || 'all'}`} key={ material }>все</MMenuLink>
@@ -111,7 +123,8 @@ export function MenuMobile ({ category, subcategory, material }: FilterProps) {
                 </div>
                 {/* <div className='price'>
                     <label>Цена</label>
-                    <p className='rating-value'>{value}</p>
+                    <input onChange={(e) => setPriceValue (Number (e.target.value))} type='range' min='50' max='1000' defaultValue='500' className='slider'></input>
+                    { priceValue && <p className='rating-value'>до { priceValue } рублей</p>}
                 </div> */}
             </div>
         </div>

@@ -99,7 +99,6 @@
 				.price .slider {
 					-webkit-appearance: none;
 					outline: none;
-                    /* background: url(~/icons/diamond2.jpg); */
                     background: rgb(0, 0, 0);
                     /* width: 13vw; */
                     width: 15vw;
