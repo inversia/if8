@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "dependencies": {
     "@reach/slider": "^0.11.2",
     "@rehooks/component-size": "^1.0.3",
@@ -42,7 +43,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel index.html",
     "start": "rm -rf dist .cache && parcel src/index.html",
-    "build": "rm -rf dist .cache && parcel build --public-url ./ index.html",
+    "build": "rm -rf dist .cache && parcel build --public-url ./ src/index.html",
     "publish": "npm run build && ./publish.sh"
   },
   "keywords": [],
