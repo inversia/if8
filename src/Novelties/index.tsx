@@ -31,7 +31,7 @@ function Novelty (props: {text: string, image: string, id:string}) {
 	return (
 		<div className='novelty'>
 			<A  className='novelty-image'
-				style={{ backgroundImage: `url(${images[props.image]})` }}
+				style={{ backgroundImage: `url(/${images[props.image]})` }}
 				href={`/item/${props.id}`}/>
 		</div>
 	)

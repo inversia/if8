@@ -26,7 +26,7 @@ export function Items (filterProps: FilterProps) {
                     <A  className='product-item'
                         key={ x.partNumber }
                         href={`/item/${x.id}`}
-                        style={{ backgroundImage: `url(${images[x.img]})` }} />
+                        style={{ backgroundImage: `url(/${images[x.img]})` }} />
                 )
             }
         </div>
