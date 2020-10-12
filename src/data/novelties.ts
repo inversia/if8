@@ -30,10 +30,4 @@ export default [
         id:'ring3'
     },
 
-    {
-        text: 'Серьги "Красная клетка"',
-        image: 'earrings-red-cell-gold',
-        id:'earrings2'
-    },
-
 ]
