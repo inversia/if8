@@ -6,7 +6,7 @@ import { A } from 'hookrouter'
 export function Header () {
     return <div className='header-wrapper'>
         <A className='tagline' href='/'></A>
-        <Search />
+        {/* <Search /> */}
         <A className='logo' href='/'></A>
     </div>
 }

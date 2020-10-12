@@ -52,7 +52,7 @@ export type Product = {
     material: Material
     title: string
     description?: string
-    probe?: number
+    probe?: number[]
     partNumber: string
     weight?: number
     price:number
