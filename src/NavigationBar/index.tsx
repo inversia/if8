@@ -17,7 +17,7 @@ export default function NavigationBar () {
         earrings: 'серьги',
         neck: 'цепочки и подвески',
         brooches: 'броши',
-        corporate: 'корпоративные',
+        corporate: 'корпоратив',
         exclusive: 'эксклюзив',
         vases: 'вазы',
         tables:'столы',

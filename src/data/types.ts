@@ -4,7 +4,7 @@ export const jewelleryTypes = {
     earrings: 'серьги',
     neck: 'цепочки и подвески',
     // brooches: 'броши',
-    corporate: 'корпоративные',
+    corporate: 'корпоратив',
     exclusive: 'эксклюзив'
 } as const
 

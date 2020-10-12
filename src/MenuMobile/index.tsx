@@ -109,8 +109,8 @@ export function MenuMobile ({ category, subcategory, material }: FilterProps) {
 
                 <div className='m-price'>
                     <label>Цена</label>
-                    <input onChange={(e) => setPriceValue (Number (e.target.value))} type='range' min='50' max='1000' defaultValue='500' className='m-slider'></input>
-                    { priceValue && <p className='rating-value'>до { priceValue } рублей</p> }
+                    <p className='rating-value'> { priceValue ? `до ${ priceValue } рублей` : 'в рублях' }</p>
+                    <input onChange={(e) => setPriceValue (Number (e.target.value))} type='range' min='16800' max='244060' defaultValue='210500' className='m-slider'></input>
                 </div>
 
                 <div className='m-materials'>
