@@ -19,7 +19,7 @@ export function Footer () {
 					<span className='company-info'>OOO thebestcompany 4537896739223</span>
 				</div>
 				<div className='social'>
-					<div className='telegram' onClick={ () => alert ('Скоро у нас появится телеграм!')}/>
+					<div className='telegram'><a href="mailto:tatiana@if8.ru" /></div>
 					<div className='facebook' onClick={ () => alert ('Совсем скоро у нас появится страничка в Facebook!')}/>
 					<a href='https://www.instagram.com/art_if8/'><div className='instagram'></div></a>
 				</div>

@@ -89,13 +89,20 @@
 	
 	.telegram {
 
-		mask-image: url(~/icons/telegram.svg);
-		/* mask-image: url(~/icons/mail1.svg); */
+		/* mask-image: url(~/icons/telegram.svg); */
+		mask-image: url(~/icons/mail1.svg);
 		mask-mode: alpha;
 		mask-repeat: no-repeat;
 		mask-size: contain;
 		mask-position: center;
 		background-color: rgb(255, 255, 255);
+	}
+
+	.telegram a {
+		position: absolute;
+		height: 100%;
+		width:100%;
+		background-color: rgba(255, 255, 255, 0);
 	}
 	
 	.facebook {
