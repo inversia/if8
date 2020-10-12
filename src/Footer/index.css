@@ -90,6 +90,7 @@
 	.telegram {
 
 		mask-image: url(~/icons/telegram.svg);
+		/* mask-image: url(~/icons/mail1.svg); */
 		mask-mode: alpha;
 		mask-repeat: no-repeat;
 		mask-size: contain;
