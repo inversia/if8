@@ -4,7 +4,7 @@
 import React, { createContext, useRef, useLayoutEffect, useState, useCallback, useContext } from 'react'
 import './index.css'
 import cls from 'classnames'
-import { A, usePath } from 'hookrouter'
+import { Link, useLocation } from 'react-router-dom'
 import { CartCounter } from '~/CartCounter'
 import { Category, subcategories, materials, FilterProps } from '~/data'
 import { useOnClickOutside } from 'use-hooks'
@@ -24,18 +24,18 @@ const MMenuContext = createContext ({ hideMDropdown: () => {} })
 
 function MMenuLink ({
     path = '',
-    component = A as (typeof A | string),
+    component = Link as (typeof Link | string),
     children = null as React.ReactChild,
     onClick = (_e: React.MouseEvent) => {}
 }) {
-    const currentPath = usePath ()
+    const currentPath = useLocation ().pathname
     const className = path.replace (/\//g, '_')
     const active = currentPath.startsWith (path)
     const { hideMDropdown } = useContext (MMenuContext)
 
     return React.createElement (component, {
         className: cls ({ active, [('m-menu-item-' + className)]: 1 }),
-        href: path,
+        to: path,
         onClick: (e) => { hideMDropdown (); onClick (e) }
     }, children)
 }

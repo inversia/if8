@@ -1,14 +1,14 @@
 import React from 'react'
 import './index.css'
 import Search from '~/Search'
-import { A } from 'hookrouter'
+import { Link } from 'react-router-dom'
 
 export function HeaderMobile () {
     return <div className='mobile-header-wrapper'>
         <div className='tagline-and-search'>
             <Search />
-            <A className='mobile-tagline' href='/'/>
+            <Link className='mobile-tagline' to='/'/>
         </div>
-        <A className='mobile-logo' href='/'/>
+        <Link className='mobile-logo' to='/'/>
     </div>
 }

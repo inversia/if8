@@ -3,7 +3,7 @@ import './index.css'
 import Carousel from '~/Carousel'
 import novelties from '~/data/novelties'
 import images from '~/images'
-import { A } from 'hookrouter'
+import { Link } from 'react-router-dom'
 
 type NoveltiesProps = {
 
@@ -30,9 +30,9 @@ export default function Novelties () {
 function Novelty (props: {text: string, image: string, id:string}) {
 	return (
 		<div className='novelty'>
-			<A  className='novelty-image'
-				style={{ backgroundImage: `url(/${images[props.image]})` }}
-				href={`/item/${props.id}`}/>
+			<Link className='novelty-image'
+				style={{ backgroundImage: `url(${images[props.image]})` }}
+				to={`/item/${props.id}`}/>
 		</div>
 	)
 }

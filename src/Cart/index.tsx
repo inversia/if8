@@ -50,7 +50,7 @@ export default function Cart () {
             <p className='exclusive-order'>мы можем изготовить украшение / предмет интерьера с учётом ваших пожеланий и с индивидуальным дизайном</p>
             <div className='chosen-products'>
                 {products.map (prdct => <div className='chosen-item' key={prdct.id}>
-                                            <div style={{ backgroundImage: `url(/${images[prdct.img]})`}}
+                                            <div style={{ backgroundImage: `url(${images[prdct.img]})`}}
                                                     className='item-background'/>
                                             <div className='item-info-wrapper'>
                                                 <div className='description'><p>

@@ -1,12 +1,12 @@
 import React  from 'react'
 import './index.css'
 // import cls from 'classnames'
-import { usePath } from 'hookrouter'
+import { useLocation } from 'react-router-dom'
 
 
 export default function NavigationBar () {
 
-    const [,, category, subcategory, material ] = usePath ().split ('/')
+    const [,, category, subcategory, material ] = useLocation ().pathname.split ('/')
 
     const navigationDict: Record<string, string> = {
 

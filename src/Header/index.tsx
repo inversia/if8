@@ -1,12 +1,12 @@
 import React from 'react'
 import './index.css'
 import Search from '~/Search'
-import { A } from 'hookrouter'
+import { Link } from 'react-router-dom'
 
 export function Header () {
     return <div className='header-wrapper'>
-        <A className='tagline' href='/'></A>
+        <Link className='tagline' to='/' />
         {/* <Search /> */}
-        <A className='logo' href='/'></A>
+        <Link className='logo' to='/' />
     </div>
 }

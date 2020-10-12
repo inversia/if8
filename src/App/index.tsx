@@ -10,37 +10,25 @@ import Contacts  from '~/Contacts'
 import Cart from '~/Cart'
 import About from '~/About'
 import { CartContextProvider } from '~/Cart/Context'
-import { useRoutes } from 'hookrouter'
 import '@shwilliam/react-rubber-slider/dist/styles.css'
 import { AppContextProvider, useAppContext } from './Context'
-
-
-export const routes = {
-    '/':            makePage (Main),
-    '/about':       makePage (About),
-    '/contacts':    makePage (Contacts),
-    '/cart':        makePage (Cart),
-    '/items/:category': makePage (Items),
-    '/items/:category/:subcategory': makePage (Items),
-    '/items/:category/:subcategory/:material': makePage (Items),
-    '/item/:id': makePage (ItemInfo),
-}
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
 function makePage (Content: React.JSXElementConstructor<Record<string, unknown>> ) {
 
     function Page (props: Record<string, unknown>) {
-
         const { isMobile, priceValue } = useAppContext ()
 
         props = { ...props, priceValue }
         
         return <>
-            {isMobile ? <><HeaderMobile/><MenuMobile {...replaceAllWithUndefined (props)} /></> : <><Header/><Menu {...replaceAllWithUndefined (props)} /></>}
+            {isMobile ? <><HeaderMobile/><MenuMobile {...props} /></> : <><Header/><Menu {...props} /></>}
             <Content {...props} />
         </>
     }
 
-    return (props: Record<string, unknown>) => <Page {...replaceAllWithUndefined (props)} />
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    return (props: any) => <Page {...replaceAllWithUndefined (props.match.params)} />
 }
 
 function replaceAllWithUndefined (props: Record<string, unknown>) {
@@ -52,12 +40,21 @@ function replaceAllWithUndefined (props: Record<string, unknown>) {
 }
 
 export default function App () {
-    const content = useRoutes (routes) as React.ReactNode
-
     return (
         <AppContextProvider>
             <CartContextProvider>
-                <div>{ content || 'не найдено :(' }</div>
+                <Router>
+                    <Switch>
+                        <Route exact path="/" component={makePage (Main)} />
+                        <Route exact path="/about" component={makePage (About)} />
+                        <Route exact path="/contacts" component={makePage (Contacts)} />
+                        <Route exact path="/cart" component={makePage (Cart)} />
+                        <Route exact path="/items/:category" component={makePage (Items)} />
+                        <Route exact path="/items/:category/:subcategory" component={makePage (Items)} />
+                        <Route exact path="/items/:category/:subcategory/:material" component={makePage (Items)} />
+                        <Route exact path="/item/:id" component={makePage (ItemInfo)} />
+                    </Switch>
+                </Router>
             </CartContextProvider>
         </AppContextProvider>
     )

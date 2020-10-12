@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.css'
-import { A } from 'hookrouter'
+import { Link } from 'react-router-dom'
 import { products, Product, FilterProps, FilterProp } from '~/data'
 import images from '~/images'
 import NavigationBar from '~/NavigationBar'
@@ -23,10 +23,10 @@ export function Items (filterProps: FilterProps) {
             {products
                 .filter (x => productMatches (x, filterProps))
                 .map ((x) =>
-                    <A  className='product-item'
+                    <Link className='product-item'
                         key={ x.partNumber }
-                        href={`/item/${x.id}`}
-                        style={{ backgroundImage: `url(/${images[x.img]})` }} />
+                        to={`/item/${x.id}`}
+                        style={{ backgroundImage: `url(${images[x.img]})` }} />
                 )
             }
         </div>

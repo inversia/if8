@@ -5,7 +5,7 @@ import React, { createContext, useRef, useLayoutEffect, useState, useCallback, u
 import './index.css'
 import cls from 'classnames'
 import { CartCounter } from '~/CartCounter'
-import { A, usePath } from 'hookrouter'
+import { Link, useLocation } from 'react-router-dom'
 import { Category, subcategories, materials, FilterProps } from '~/data'
 import { useOnClickOutside } from 'use-hooks'
 import { useAppContext } from '~/App/Context'
@@ -24,18 +24,18 @@ const MenuContext = createContext ({ hideDropdown: () => {} })
 
 function MenuLink ({
     path = '',
-    component = A as (typeof A | string),
+    component = Link as (typeof Link | string),
     children = null as React.ReactChild,
     onClick = (_e: React.MouseEvent) => {}
 }) {
-    const currentPath = usePath ()
+    const currentPath = useLocation ().pathname
     const className = path.replace (/\//g, '_')
     const active = currentPath.startsWith (path)
     const { hideDropdown } = useContext (MenuContext)
 
     return React.createElement (component, {
         className: cls ({ active, [('menu-item-' + className)]: 1 }),
-        href: path,
+        to: path,
         onClick: (e) => { hideDropdown (); onClick (e) }
     }, children)
 }
