@@ -18,12 +18,9 @@
 			}
 
 				.novelty-wrapper .carousel-item > * { 
-					/* margin:3vw; */
-					margin:2vw;
-					/* width:22.6vw; */
-					width:24.5vw;
+					margin:4vw;
+					width:20.5vw;
 					display: flex;
-					/* flex:0.9; */
 				}
 
 					.novelty {
@@ -39,7 +36,7 @@
 						.novelty-image {
 							/* box-shadow: var(--global-shadow); */
 							width: 100%;
-							background-size: cover;
+							background-size: 80% 70%;
 							background-repeat: no-repeat;
 							background-position: center center;
 						}

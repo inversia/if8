@@ -45,11 +45,18 @@
 
     .search-list .filtered-item {
         background-color: rgb(255, 255, 255);
-        border-bottom: 1px solid rgba(128, 128, 128, 0.233);
         padding: 1vw 2vw;
         position: relative;
         z-index: 40!important;
         cursor: pointer;
+        display: block;
+        color:black;
+    }
+
+    
+
+    .search-list .filtered-item:not(:last-child) {
+        border-bottom: 1px solid rgba(128, 128, 128, 0.233);
     }
 
 
