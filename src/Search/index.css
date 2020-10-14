@@ -35,13 +35,22 @@
 .search-list {
     width:42%;
     display: block;
-    border:rgb(255, 152, 126) solid 1px;
-    height: 7vw;
     position: absolute;
-    top: 58%;
-    border-radius: 0vw 0vw 3vw 3vw;
-    background-color: rgb(255, 196, 189);
+    top: 65%;
+    transform: scale(1);
+    z-index: 40;
+    /* border-radius: 0vw 0vw 3vw 3vw; */
+    box-shadow: 0vw 0.1vw 0.5vw 0.5vw rgba(128, 128, 128, 0.11);
 }
+
+    .search-list .filtered-item {
+        background-color: rgb(255, 255, 255);
+        border-bottom: 1px solid rgba(128, 128, 128, 0.233);
+        padding: 1vw 2vw;
+        position: relative;
+        z-index: 40!important;
+        cursor: pointer;
+    }
 
 
 

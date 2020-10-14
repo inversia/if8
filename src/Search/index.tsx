@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-// import { Button } from 'Common'
 import cls from 'classnames'
 import debounce from 'lodash.debounce'
 import './index.css'
-import { products, Product, FilterProps, FilterProp } from '~/data'
+import { products, Product } from '~/data'
+import images from '~/images'
 
 export default function Search ({
     
@@ -19,15 +19,16 @@ export default function Search ({
         onChange = debounce (onChange, 1000)
     }
 
-    function itemFilter (item:string) {
-
+    function itemFilter (item: Product) {
+        
         const string = input.toLowerCase ()
-        return !string || ( products.description.toLowerCase ().includes (string)) as string || ( products.title.toLowerCase ().includes (string)) as string
+        return item.title.toLowerCase ().includes (string) || (item.description && item.description.toLowerCase ().includes (string))
     }
 
-    const filteredProducts = products.filter (itemFilter)
+    const filteredProducts = products.filter (x => itemFilter (x))
 
     return (
+
         <div className={ cls ('search', className, { 'error': error && input === value }) }>
             <input
                 type='text'
@@ -39,10 +40,21 @@ export default function Search ({
                     if (!buttonText) { onChange (value) }
                 }}
             />
-            <ul className='search-list'>
-                <li>{input}</li>
-                {console.log (products)}
-            </ul>
+
+                {console.log (filteredProducts)}
+                {input && <ul className='search-list'>
+                    {filteredProducts.map (prdct => <li className='filtered-item' key={prdct.id}>
+                                                        <div style={{ backgroundImage: `url(${images[prdct.img]})`}}
+                                                             className='filtered-item-background'/>
+                                                        <div className='filtered-item-info-wrapper'>
+                                                            <div className='filtered-item-description'><p>
+                                                                <strong>{prdct.title}</strong>{prdct.description && (', ' + prdct.description)}</p>
+                                                            </div>
+                                                            <div className='filtered-item-price'>{prdct.price}</div>
+                                                        </div>
+                                                    </li>
+                    )}
+                </ul>}
             { error && input === value && <span className='search-error'>{ error }</span> }
         </div>
     )

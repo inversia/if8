@@ -24,6 +24,7 @@
 			display: flex;
 			scroll-snap-align: start;
 			/* flex:0 0 30.6vw; */
+			position: relative;
 		}
 
 			.carousel-item > * {

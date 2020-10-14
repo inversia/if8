@@ -1,6 +1,7 @@
 .menu-container {
 	position: relative;
-	background-color: white;
+    background-color: rgba(255, 255, 255, 0);
+    /* border:1px solid grey; */
 }
 
 .menu {
@@ -44,14 +45,14 @@
     .dropdown-menu-container {
         width: 100%;
         height: 29.2vw;
-		    position: absolute;
+        position: absolute;
         background-image: url(~/icons/dropdownMenu.svg);
         background-size: cover;
         background-repeat: no-repeat;
         opacity: 0;
         padding: 2vw 23vw;
         display: none;
-		    top:-0.05vw;
+        top:-0.05vw;
     } 
 
     .dropdown-menu-container.visible {
