@@ -3,9 +3,11 @@
     display: flex;
     align-items: center;
     justify-content:flex-end;
+    align-content: center;
     /* --search-height: 1.46vw; */
-    --search-height: 2.3vh;
+    --search-height: 2.5vh;
     position: relative;
+    bottom:0.25vw;
 }
 
 .search input {
@@ -41,7 +43,7 @@
     top: 65%;
     transform: scale(1);
     z-index: 40;
-    /* border-radius: 0vw 0vw 3vw 3vw; */
+    border-radius: 1.7vw;
     box-shadow: 0vw 0.1vw 0.5vw 0.5vw rgba(128, 128, 128, 0.11);
 }
 
@@ -61,11 +63,21 @@
         border-bottom: 1px solid rgba(128, 128, 128, 0.233);
     }
 
+    .search-list .filtered-item:last-child {
+        border-radius: 0vw 0vw 1.7vw 1.7vw;
+        border-top:red !important;
+    }
+
+    .search-list .filtered-item:first-child {
+        border-radius: 1.7vw 1.7vw 0vw 0vw;
+        border-top:rgb(0, 255, 106) !important;
+    }
+
     .search-list .filtered-item:hover {
         transform: scale(1.15);
         transition: all 0.25s ease-in-out;
         box-shadow: 0vw 0vw 0.5vw 0.5vw rgba(128, 128, 128, 0.11);
-        /* border-radius: 2vw; */
+        border-radius: 2vw;
         z-index: 41!important;
         border-bottom: 1px solid rgba(255, 255, 255, 0);
     }
@@ -98,7 +110,13 @@
                 .filtered-item-title {
                     word-wrap: break-word;
                     overflow-wrap: break-word;
+                    padding-bottom: 0.5em;
                 }
+
+            .filtered-item-price {
+                font-family: 'Forward';
+                padding-top: 0.5em;
+            }
 
 
 

@@ -159,7 +159,7 @@
 @media all and (max-width: 850px) { 
 	
 	.menu a, .menu ul > * {
-		font-size:1.5vw;
+		font-size:1.34vw;
     }
     
     .price .slider::after,
