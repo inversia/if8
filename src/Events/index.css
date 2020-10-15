@@ -63,15 +63,15 @@
 						}
 
 							.event-description p {
-								font-size: 1vw;
+								font-size: 0.94vw;
 								display: flex;
 								width: 40%;
 								position: absolute;
-								top:25%;
 								left:25%;
 								z-index: 2;
 								transform: rotate(10deg) scale(1);
 								line-height: 1.3em;
+								align-self: center;
 							}
 
 
@@ -102,7 +102,7 @@
 			}
 
 				.event-description {
-					flex:0.7;
+					flex:0.72;
 					background-color: #ffffff;
 					height: 100%;
 					transform: rotate(-7deg) scale(1.55);
@@ -113,8 +113,8 @@
 						display: flex;
 						width: 55%;
 						position: absolute;
-						top:20%;
-						left:21.85vw;
+						top:17%;
+						left:19.85vw;
 						z-index: 2;
 						transform: rotate(7deg) scale(1);
 						/* border:solid salmon 1px; */
