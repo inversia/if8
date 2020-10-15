@@ -1,7 +1,6 @@
 .carousel-wrapper-novelties {
     width: 85.5%;
     margin-bottom: 10vw;
-    /* border: 1px solid salmon; */
 }
 
 	.novelty-wrapper {
@@ -14,7 +13,7 @@
 		}
 
 			.novelty-wrapper .carousel-item {
-				/* margin: 3vw; */
+
 			}
 
 				.novelty-wrapper .carousel-item > * { 
@@ -29,14 +28,12 @@
 						white-space: normal;
 						position: relative;
 						overflow-y: hidden;
-						/* background-color: #ffacc7; */
 						box-shadow: 0vw 0vw 1.9vw rgba(0, 0, 0, 0.205);
 					}
 
 						.novelty-image {
-							/* box-shadow: var(--global-shadow); */
 							width: 100%;
-							background-size: 80% 70%;
+							background-size: contain;
 							background-repeat: no-repeat;
 							background-position: center center;
 						}
@@ -46,18 +43,15 @@
 	
 	.carousel-wrapper-novelties {
 		width: 91.4%;
-		/* border: 1px solid salmon; */
 	}
 
 		.novelty-wrapper .carousel {
 			height: 77vw;
-			/* border: 1px solid salmon; */
 		}
 
 				.novelty-wrapper .carousel-item > * { 
 					margin:2vw;
 					width:85vw;
-					/* border: 1px solid salmon; */
 				}
 
 }
@@ -67,18 +61,15 @@
 	
 	.carousel-wrapper-novelties {
 		width: 92.4%;
-		/* border: 1px solid salmon; */
 	}
 
 		.novelty-wrapper .carousel {
 			height: 77vw;
-			/* border: 1px solid salmon; */
 		}
 
 				.novelty-wrapper .carousel-item > * { 
 					margin:2vw;
 					width:88.5vw;
-					/* border: 1px solid salmon; */
 				}
 
 }

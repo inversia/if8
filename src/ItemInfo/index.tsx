@@ -23,10 +23,10 @@ export function ItemInfo ({ id }: FilterProps) {
 								<label>Артикул</label>
 								<span>{chosenProduct.partNumber}</span>
 							</li>
-							<li>
+							{chosenProduct.probe && <li>
 								<label>Проба</label>
 								<span>{chosenProduct.probe}</span>
-							</li>
+							</li>}
 							<li>
 								<label>Наличие</label>
 								<span>{chosenProduct.availability}</span>
