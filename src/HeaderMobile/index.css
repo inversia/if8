@@ -20,8 +20,8 @@
         .mobile-header-wrapper .mobile-tagline {
             background-image: url(~/icons/tagline.svg);
             background-repeat: no-repeat;
-            background-size: 99.9% 99.9%;
-            /* border: 1px solid salmon; */
+            /* background-size: 99.9% 99.9%; */
+            background-size: contain;
             display: flex;
             flex:2.0;
             position: relative;

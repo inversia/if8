@@ -113,11 +113,12 @@
 						display: flex;
 						width: 55%;
 						position: absolute;
-						top:17%;
-						left:19.85vw;
+						top:16%;
+						left:20.2vw;
+						align-self: center;
 						z-index: 2;
 						transform: rotate(7deg) scale(1);
-						/* border:solid salmon 1px; */
+						transform-origin: top left;
 						line-height: 1.3em;
 					}
 }  
