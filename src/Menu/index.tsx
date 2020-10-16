@@ -117,8 +117,8 @@ export function Menu ({ category, subcategory, material }: FilterProps) {
                 </div>
                 <div className='price'>
                     <label>Цена</label>
-                    <input onChange={(e) => setPriceValue (Number (e.target.value))} type='range' min='16800' max='244060' defaultValue='210500' className='slider'></input>
-                    { priceValue && <p className='rating-value'>до { priceValue } рублей</p>}
+                    <input onChange={(e) => setPriceValue (Number (e.target.value))} type='range' min='16800' max='427020' defaultValue='210500' className='slider'></input>
+                    <p className='rating-value'> { priceValue ? `до ${ priceValue } рублей` : 'в рублях'}</p>
                 </div>
             </div>
         </div>
