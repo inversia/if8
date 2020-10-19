@@ -4,8 +4,12 @@ import { productsById, FilterProps } from '~/data'
 import images from '~/images'
 import { useCartContext } from '~/Cart/Context'
 import Carousel from '~/Carousel'
+import Events from '~/Events'
+
+
 
 export function ItemInfo ({ id }: FilterProps) {
+
 
 	const chosenProduct = productsById[id]
 	const { cartItems, addToCart } = useCartContext ()
@@ -13,11 +17,9 @@ export function ItemInfo ({ id }: FilterProps) {
 
 	return <div className='item-wrapper'>
 				<div className='item-container'>
-					<div className='illustrations'>
 						<Carousel>
-							{ (chosenProduct.img).map (x => <div className='illustration' key={ chosenProduct.id } style={{ backgroundImage: `url(${images[x]})` }}></div>)}
+							{ (chosenProduct.img).map (x => <div className='illustrations' key={ chosenProduct.id }><div className='illustration' style={{ backgroundImage: `url(${images[x]})` }}/></div>)}
 						</Carousel>
-					</div>
 					<div className='item-info'>
 						<ul>
 							<li>
