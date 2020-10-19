@@ -44,6 +44,10 @@ export default function Carousel ({ children = [] as React.ReactNode[] }) {
 					</div>
 				))}
 			</div>
+			<div className="carousel-buttons">
+				<button className="back"    onClick={() => dotClicked (currentItem - 1)}>back</button>
+				<button className="forward" onClick={() => dotClicked (currentItem + 1)}>forward</button>
+			</div>
 			<div className="carousel-pagination">
 				{children.map ((_, i) => (
 					<div
@@ -54,6 +58,11 @@ export default function Carousel ({ children = [] as React.ReactNode[] }) {
 					onClick={() => dotClicked (i)}
 					/>
 				))}
+
+				{/* <div className="carousel-buttons">
+					<button className="back"    onClick={() => dotClicked (currentItem - 1)}>back</button>
+					<button className="forward" onClick={() => dotClicked (currentItem + 1)}>forward</button>
+				</div> */}
 			</div>
 		</div>
 	)

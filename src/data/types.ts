@@ -58,7 +58,7 @@ export type Product = {
     price:number
     availability?: number
     colors?:[string, string][]
-    img:string
+    img:string[]
     id:ProductId
 }
 

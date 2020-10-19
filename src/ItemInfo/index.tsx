@@ -3,6 +3,7 @@ import './index.css'
 import { productsById, FilterProps } from '~/data'
 import images from '~/images'
 import { useCartContext } from '~/Cart/Context'
+import Carousel from '~/Carousel'
 
 export function ItemInfo ({ id }: FilterProps) {
 
@@ -12,7 +13,11 @@ export function ItemInfo ({ id }: FilterProps) {
 
 	return <div className='item-wrapper'>
 				<div className='item-container'>
-					<div className='illustration' style={{ backgroundImage: `url(${images[chosenProduct.img]})` }}></div>
+					<div className='illustrations'>
+						<Carousel>
+							{ (chosenProduct.img).map (x => <div className='illustration' key={ chosenProduct.id } style={{ backgroundImage: `url(${images[x]})` }}></div>)}
+						</Carousel>
+					</div>
 					<div className='item-info'>
 						<ul>
 							<li>

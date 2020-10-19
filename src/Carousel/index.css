@@ -67,6 +67,21 @@
 			opacity: 1;
 		}
 
+	.carousel-buttons {
+		position: absolute;
+		font-size: 4vw;
+	}
+		.carousel-buttons .forward {
+			background-color: salmon;
+			position: relative;
+		}
+
+		.carousel-buttons .back {
+			background-color: pink;
+			position: relative;
+		}
+
+
 @media all and (max-width: 665px) { 
 
 	.carousel-pagination {

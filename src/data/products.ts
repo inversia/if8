@@ -17,7 +17,7 @@ export const products: Product[] = [
         price: 16800,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', 'E50101'], ['url(~/images/red.jpg)', '1C0CD1'], ['url(~/images/blue.jpg)', '00856D'], ['url(~/images/blue.jpg)', '3DD39D']],
-        img: 'ring-sun-grey',
+        img: ['ring-sun-grey'],
         id:'ring1'
     },
 
@@ -33,7 +33,7 @@ export const products: Product[] = [
         price: 244060,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', '6B8D89'], ['url(~/images/red.jpg)', '4AD6DF']],
-        img: 'ring-sphere-gold-grey',
+        img: ['ring-sphere-gold-grey', 'ring-sphere-gold-grey2'],
         id:'ring2'
     },
 
@@ -49,7 +49,7 @@ export const products: Product[] = [
         price: 176860,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', '6B8D89'], ['url(~/images/red.jpg)', '4AD6DF']],
-        img: 'ring-butterfly-gold',
+        img: ['ring-butterfly-gold'],
         id:'ring3'
     },
 
@@ -65,7 +65,7 @@ export const products: Product[] = [
         price: 122500,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', '769C9E'], ['url(~/images/red.jpg)', '1ED2DD'], ['url(~/images/red.jpg)', 'C9E4ED'], ['url(~/images/red.jpg)', '10976E'], ['url(~/images/red.jpg)', '850020'], ['url(~/images/red.jpg)', '0A0264']],
-        img: 'ring-if8-gold',
+        img: ['ring-if8-gold', 'ring-if8-gold2'],
         id:'ring4'
     },
 
@@ -81,7 +81,7 @@ export const products: Product[] = [
         price: 80900,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', '3FDCD3'], ['url(~/images/red.jpg)', '000000']],
-        img: 'pusetas-pillow-if8-gold',
+        img: ['pusetas-pillow-if8-gold', 'pusetas-pillow-if8-gold2'],
         id:'pusetas1'
     },
 
@@ -97,7 +97,7 @@ export const products: Product[] = [
         price: 145090,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', '103CD9'], ['url(~/images/red.jpg)', '119676'], ['url(~/images/red.jpg)', 'C6651E']],
-        img: 'pusetas-blue-sapfirin-gold',
+        img: ['pusetas-blue-sapfirin-gold', 'pusetas-blue-sapfirin-gold2'],
         id:'pusetas2'
     },
 
@@ -113,7 +113,7 @@ export const products: Product[] = [
         price: 36400,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', 'BDD7FF'], ['url(~/images/red.jpg)', 'EAC5E6'], ['url(~/images/red.jpg)', 'CAE3E2']],
-        img: 'earrings-peru-gold-moon',
+        img: ['earrings-peru-gold-moon', 'earrings-peru-gold-moon2'],
         id:'earrings1'
     },
 
@@ -145,7 +145,7 @@ export const products: Product[] = [
         price: 427020,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', 'BDD7FF'], ['url(~/images/red.jpg)', 'EAC5E6'], ['url(~/images/red.jpg)', 'CAE3E2']],
-        img: 'earrings-sphere-gold-green2',
+        img: ['earrings-sphere-gold-green','earrings-sphere-gold-green2'],
         id:'earrings3'
     },
 
@@ -177,7 +177,7 @@ export const products: Product[] = [
         price: 193970,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', '34E4E4'], ['url(~/images/red.jpg)', '00854D'], ['url(~/images/red.jpg)', '8F0808'], ['url(~/images/red.jpg)', '000000']],
-        img: 'earrings-kipu-turquoise-gold',
+        img: ['earrings-kipu-turquoise-gold', 'earrings-kipu-turquoise-gold2'],
         id:'earrings5'
     },
 
@@ -209,7 +209,7 @@ export const products: Product[] = [
         price: 76660,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', '34E4E4'], ['url(~/images/red.jpg)', '00854D'], ['url(~/images/red.jpg)', '8F0808'], ['url(~/images/red.jpg)', '000000']],
-        img: 'pendant-pillow-gold-red',
+        img: ['pendant-pillow-gold-red'],
         id:'neck1'
     },
 
@@ -223,7 +223,7 @@ export const products: Product[] = [
         price: 23200,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', '127149']],
-        img: 'cufflinks-green-silver',
+        img: ['cufflinks-green-silver', 'cufflinks-green-silver2'],
         id:'corporate1'
     },
 
@@ -238,7 +238,7 @@ export const products: Product[] = [
         price: 91860,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', '00F0FF']],
-        img: 'bracelet-gold-skyblue',
+        img: ['bracelet-gold-skyblue'],
         id:'bracelets1'
     },
 
@@ -254,7 +254,7 @@ export const products: Product[] = [
         price: 244060,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', '7D73F3'], ['url(~/images/yellow.jpg)', 'BBBBBB'], ['url(~/images/yellow.jpg)', '197850'], ['url(~/images/yellow.jpg)', '886945']],
-        img: 'bracelet-sphere-gold-blue',
+        img: ['bracelet-sphere-gold-blue', 'bracelet-sphere-gold-blue2'],
         id:'bracelets2'
     },
 
@@ -268,7 +268,7 @@ export const products: Product[] = [
         price: 20800,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', '1F23D2'], ['url(~/images/yellow.jpg)', '0A7454']],
-        img: 'ring-inti-silver-blue',
+        img: ['ring-inti-silver-blue'],
         id:'ring5'
     },
 
@@ -283,7 +283,7 @@ export const products: Product[] = [
         price: 36400,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', 'E182EA'], ['url(~/images/yellow.jpg)', 'D0D4FD'], ['url(~/images/yellow.jpg)', '7B9BD8'], ['url(~/images/yellow.jpg)', '42BDF1']],
-        img: 'earrings-if8-silver-rose',
+        img: ['earrings-if8-silver-rose','earrings-if8-silver-rose2'],
         id:'earrings7'
     },
 
@@ -298,7 +298,7 @@ export const products: Product[] = [
         price: 17400,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', '1122B9']],
-        img: 'earrings-vasilki-silver',
+        img: ['earrings-vasilki-silver', 'earrings-vasilki-silver2'],
         id:'earrings8'
     },
     
