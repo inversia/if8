@@ -69,16 +69,32 @@
 
 	.carousel-buttons {
 		position: absolute;
-		font-size: 4vw;
+		top:40%;
 	}
-		.carousel-buttons .forward {
-			background-color: salmon;
-			position: relative;
+
+		.carousel .back,
+		.carousel .forward {
+			background-image: url(~/icons/hand.svg);
+			background-repeat: no-repeat;
+			background-size: contain;
+			border:none;
+			outline: none;
+			cursor: pointer;
+			height: 3vw;
+			width:3vw;
+			background-color: rgba(255, 255, 255, 0);
+			position: absolute;
+			top:48%;
+			opacity: 1;
 		}
 
-		.carousel-buttons .back {
-			background-color: pink;
-			position: relative;
+		.carousel .back {
+			left:-9vh;
+			transform: scaleX(-1);
+		}
+
+		.carousel .forward {
+			right:-9vh;
 		}
 
 
