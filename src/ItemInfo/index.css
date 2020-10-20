@@ -119,9 +119,19 @@
 		grid-template-columns: 100%;
 	}
 
-	.illustration {
-		height: 70vw;
+	.illustrations {
+		position: relative;
+		width: 86vw;
+		height: 70vw;	
+
 	}
+
+		.illustration {
+			height: 100%;
+			width: 100%;
+			background-image: contain;
+			margin: 0;
+		}
 
 		.item-info ul {
 			font-size: 3.3vh;

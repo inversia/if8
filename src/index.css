@@ -29,6 +29,7 @@ body {
     --global-shadow: 0vw 0vw 3.906vw rgba(0, 0, 0, 0.219);
     position: relative;
     letter-spacing: 0.04em;
+    overflow-x: hidden;
 }
 
 h1 {

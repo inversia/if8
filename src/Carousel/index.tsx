@@ -2,7 +2,7 @@ import React, { useRef, useState, useCallback } from 'react'
 import './index.css'
 import classname from 'classnames'
 
-export default function Carousel ({ children = [] as React.ReactNode[] }) {
+export default function Carousel ({ children = [] as React.ReactNode[], pagination = true }) {
 
 	const [currentItem, setCurrentItem] = useState (0)
 	const scrollerContainer = useRef<HTMLDivElement> ()
@@ -45,11 +45,8 @@ export default function Carousel ({ children = [] as React.ReactNode[] }) {
 					</div>
 				))}
 			</div>
-			{/* <div className="carousel-buttons">
-				<button className="back"    onClick={() => dotClicked (currentItem - 1)}></button>
-			</div> */}
 			<button className="forward" onClick={() => dotClicked (currentItem + 1)}></button>
-			<div className="carousel-pagination">
+			{ pagination && <div className="carousel-pagination">
 				{children.map ((_, i) => (
 					<div
 						className={classname ('carousel-page-btn', {
@@ -59,12 +56,7 @@ export default function Carousel ({ children = [] as React.ReactNode[] }) {
 					onClick={() => dotClicked (i)}
 					/>
 				))}
-
-				{/* <div className="carousel-buttons">
-					<button className="back"    onClick={() => dotClicked (currentItem - 1)}>back</button>
-					<button className="forward" onClick={() => dotClicked (currentItem + 1)}>forward</button>
-				</div> */}
-			</div>
+			</div>}
 		</div>
 	)
 }

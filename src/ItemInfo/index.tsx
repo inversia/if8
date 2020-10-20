@@ -17,7 +17,7 @@ export function ItemInfo ({ id }: FilterProps) {
 
 	return <div className='item-wrapper'>
 				<div className='item-container'>
-						<Carousel>
+						<Carousel pagination={false}>
 							{ (chosenProduct.img).map (x => <div className='illustrations' key={ chosenProduct.id }><div className='illustration' style={{ backgroundImage: `url(${images[x]})` }}/></div>)}
 						</Carousel>
 					<div className='item-info'>

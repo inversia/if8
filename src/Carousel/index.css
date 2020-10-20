@@ -70,31 +70,35 @@
 	.carousel-buttons {
 		position: absolute;
 		top:40%;
+		background: none;
 	}
 
 		.carousel .back,
 		.carousel .forward {
-			background-image: url(~/icons/hand.svg);
+			background-image: url(~/icons/arrow.svg);
 			background-repeat: no-repeat;
 			background-size: contain;
 			border:none;
 			outline: none;
 			cursor: pointer;
-			height: 3vw;
-			width:3vw;
-			background-color: rgba(255, 255, 255, 0);
+			height: 4vh;
+			width:4vh;
 			position: absolute;
-			top:48%;
-			opacity: 1;
+			top:45%;
+			opacity: 0.3;
+			
 		}
 
 		.carousel .back {
-			left:-9vh;
+			left:-5vw;
 			transform: scaleX(-1);
+			background-color: rgba(255, 0, 0, 0) !important;
 		}
 
 		.carousel .forward {
-			right:-9vh;
+			/* right:-9vh; */
+			right:-5vw;
+			background-color: rgba(255, 0, 0, 0) !important;
 		}
 
 

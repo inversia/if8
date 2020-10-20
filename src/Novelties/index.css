@@ -28,7 +28,7 @@
 						white-space: normal;
 						position: relative;
 						overflow-y: hidden;
-						box-shadow: 0vw 0vw 1.9vw rgba(0, 0, 0, 0.205);
+						box-shadow:  0vw 0vw 4vw rgba(0, 0, 0, 0.08), 0vw 0vw 1vw rgba(0, 0, 0, 0.1);
 					}
 
 						.novelty-image {
@@ -52,6 +52,10 @@
 				.novelty-wrapper .carousel-item > * { 
 					margin:2vw;
 					width:85vw;
+				}
+
+				.novelty {
+					box-shadow:  0vw 0vw 2.5vw rgba(0, 0, 0, 0.08), 0vw 0vw 1vw rgba(0, 0, 0, 0.1);
 				}
 
 }
