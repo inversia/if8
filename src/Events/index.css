@@ -150,7 +150,11 @@
 	}
 
 	.event-wrapper .carousel .back {
-		/* transform: scaleX(-1); */
+		left:-1.5vw !important;
+	}
+
+	.event-wrapper .carousel .forward {
+		right:-1.5vw !important;
 	}
 	
 	.event {

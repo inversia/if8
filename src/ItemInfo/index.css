@@ -153,4 +153,20 @@
 		}
 }
 
+@media all and (max-width: 455px) { 
+
+	/* .item-wrapper .carousel-item > * { 
+		margin:2vw;
+		width:88.5vw;
+	} */
+
+	.item-wrapper .back {
+		left:-3.5vw !important;
+	}
+
+	.item-wrapper .forward {
+		right:-3.5vw !important;
+	}
+
+}
   
