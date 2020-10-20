@@ -4,9 +4,6 @@ import { productsById, FilterProps } from '~/data'
 import images from '~/images'
 import { useCartContext } from '~/Cart/Context'
 import Carousel from '~/Carousel'
-import Events from '~/Events'
-
-
 
 export function ItemInfo ({ id }: FilterProps) {
 
@@ -14,10 +11,11 @@ export function ItemInfo ({ id }: FilterProps) {
 	const chosenProduct = productsById[id]
 	const { cartItems, addToCart } = useCartContext ()
 	const count = cartItems[id] || 0
+	const notOnlyItem = chosenProduct.img.length > 1
 
 	return <div className='item-wrapper'>
 				<div className='item-container'>
-						<Carousel pagination={false}>
+						<Carousel pagination={false} itemAmount={notOnlyItem}>
 							{ (chosenProduct.img).map (x => <div className='illustrations' key={ chosenProduct.id }><div className='illustration' style={{ backgroundImage: `url(${images[x]})` }}/></div>)}
 						</Carousel>
 					<div className='item-info'>
@@ -46,7 +44,7 @@ export function ItemInfo ({ id }: FilterProps) {
 								<label>Цвета</label>
 								<div className='products-colors'>
 									{ chosenProduct.colors.map ((x, i) => <div key={i}
-																				style={{backgroundColor:`#${x[1]}`}}/>) }
+																			   style={{backgroundColor:`#${x[1]}`}}/>) }
 								</div>
 							</li>
 						</ul>

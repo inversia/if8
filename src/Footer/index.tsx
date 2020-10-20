@@ -16,7 +16,7 @@ export function Footer () {
 						Ленинградский проспект 10-12
 						</a>
 					</div>
-					<span className='company-info'>OOO thebestcompany 4537896739223</span>
+					<span className='company-info'>ИНН 164800399262</span>
 				</div>
 				<div className='social'>
 					<div className='telegram'><a href="mailto:tatiana@if8.ru" /></div>
