@@ -4,6 +4,7 @@ import { productsById, FilterProps } from '~/data'
 import images from '~/images'
 import { useCartContext } from '~/Cart/Context'
 import Carousel from '~/Carousel'
+import { numberWithSpaces } from '~App/Context'
 
 export function ItemInfo ({ id }: FilterProps) {
 
@@ -38,7 +39,7 @@ export function ItemInfo ({ id }: FilterProps) {
 							</li>
 							<li>
 								<label>Цена</label>
-								<span>{chosenProduct.price}</span>
+								<span>{numberWithSpaces (chosenProduct.price)}</span>
 							</li>
 							<li>
 								<label>Цвета</label>
