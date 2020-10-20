@@ -96,15 +96,20 @@
 			height: 120vw;
 		}
 
+			.event-wrapper .carousel .back,
+			.event-wrapper .carousel .forward {
+				height: 9vw;
+				filter: invert(100%);
+				opacity: 0.7;
+			}
+
 			.event-wrapper .carousel .back {
 				left:3vw !important;
-				opacity: 1;
-				transform: scale(2);
+				transform: translateX(-1);
 			}
 
 			.event-wrapper .carousel .forward {
 				right:3vw !important;
-				opacity: 1;
 			}
 
 			.event {
@@ -145,7 +150,7 @@
 	}
 
 	.event-wrapper .carousel .back {
-		transform: scaleX(-1);
+		/* transform: scaleX(-1); */
 	}
 	
 	.event {

@@ -53,14 +53,19 @@
 			height: 77vw;
 		}
 
+			.carousel-wrapper-novelties .back,
+			.carousel-wrapper-novelties .forward {
+				height: 9vw !important;
+			}
+
 			.carousel-wrapper-novelties .back {
-				left:0 !important;
-				width: 1vw !important;
+				left:-2vw !important;
+				/* width: 1vw !important; */
 			}
 
 			.carousel-wrapper-novelties .forward {
-				right:0 !important;
-				width: 1vw !important;
+				right:-2vw !important;
+				/* width: 1vw !important; */
 			}
 
 				.novelty-wrapper .carousel-item > * { 
@@ -89,6 +94,16 @@
 				.novelty-wrapper .carousel-item > * { 
 					margin:2vw;
 					width:88.5vw;
+				}
+
+				.carousel-wrapper-novelties .back {
+					left:-3.5vw !important;
+					/* width: 1vw !important; */
+				}
+	
+				.carousel-wrapper-novelties .forward {
+					right:-3.5vw !important;
+					/* width: 1vw !important; */
 				}
 
 }
