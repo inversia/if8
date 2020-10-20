@@ -81,23 +81,23 @@
 			border:none;
 			outline: none;
 			cursor: pointer;
-			height: 4vh;
-			width:4vh;
+			height: 5vw;
+			width:0.1vw !important;
 			position: absolute;
 			top:45%;
 			opacity: 0.3;
-			
+			z-index: 3;
 		}
 
 		.carousel .back {
-			left:-5vw;
+			left:1vw;
 			transform: scaleX(-1);
 			background-color: rgba(255, 0, 0, 0) !important;
 		}
 
 		.carousel .forward {
 			/* right:-9vh; */
-			right:-5vw;
+			right:1vw;
 			background-color: rgba(255, 0, 0, 0) !important;
 		}
 
@@ -123,5 +123,8 @@
 }
 
 @media all and (max-width: 455px) { 
-
+	.carousel .back,
+	.carousel .forward {
+		height: 8vw;
+	}
 }

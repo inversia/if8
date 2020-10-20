@@ -3,7 +3,7 @@
     margin-bottom: 8vw;
     margin-top: 2vw;
 	box-shadow: var(--global-shadow);
-	/* border:1px solid salmon; */
+	/* overflow-x: hidden; */
 }
 
 	.carousel-wrapper-events h1 {
@@ -97,11 +97,14 @@
 		}
 
 			.event-wrapper .carousel .back {
-				left:-8vw;
+				left:3vw !important;
+				opacity: 1;
+				transform: scale(2);
 			}
 
 			.event-wrapper .carousel .forward {
-				right:-8vw !important;
+				right:3vw !important;
+				opacity: 1;
 			}
 
 			.event {
@@ -134,13 +137,15 @@
 
 @media all and (max-width: 455px) { 
 	
-	.event-wrapper .carousel .back {
-		left:-9vw !important;
-		background-color: red;
+	.event-wrapper .carousel .back,
+	.event-wrapper .carousel .forward {
+		height: 10vw;
+		opacity: 1;
+		filter: invert(100%);
 	}
 
-	.event-wrapper .carousel .forward {
-		right:-9vw !important;
+	.event-wrapper .carousel .back {
+		transform: scaleX(-1);
 	}
 	
 	.event {
