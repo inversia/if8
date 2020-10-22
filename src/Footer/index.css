@@ -6,7 +6,7 @@
     position: relative;
     bottom: 0;
     display: flex;
-	padding: 0vw var(--mega-padding);
+	padding: 0.8vw var(--mega-padding);
 	letter-spacing: 0.09em;
 }
   
@@ -20,7 +20,7 @@
     font-weight: 100;
 	font-size: 2vw;
     padding-top: 5vw;
-    font-family: 'Forward-extra';
+	font-family: 'Forward-extra';
 }
   
 	.contacts * {
@@ -39,6 +39,7 @@
 
 	.self-delivery {
 		font-size: 1.3vw;
+		padding-bottom: 1em;
 	}
 	
 	.contacts .address {
@@ -47,7 +48,7 @@
 
 		.contacts .address a {
 			cursor: pointer;
-			font-size: 3vw;
+			font-size: 2.7vw;
 		}
 	
 	.contacts a {
@@ -174,7 +175,6 @@
 		.social * {
 			display: flex;
 			flex:1;
-			/* border:1px solid salmon; */
 			margin: 0.1vw;
 		}
 
