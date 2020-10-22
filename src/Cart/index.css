@@ -484,6 +484,11 @@ body .cart-content {
                     margin-left: 0.3em;
                 }
 
+                    .price .currency:after {
+                        left:-0.02em;
+                        top:.6em;
+                    }
+
                 .item-info-wrapper .delete {
                     /* flex: 0.011; */
                     /* flex: 0.1; */
@@ -512,7 +517,7 @@ body .cart-content {
     }
 
         .total-price span {
-            margin-right: 0.5em;
+            /* margin-right: 0.5em; */
         }
 
 }
