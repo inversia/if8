@@ -4,7 +4,6 @@ import { productsById, FilterProps } from '~/data'
 import images from '~/images'
 import { useCartContext } from '~/Cart/Context'
 import Carousel from '~/Carousel'
-import { numberWithSpaces } from '~App/Context'
 import PriceInRub from '~/PriceInRub'
 
 export function ItemInfo ({ id }: FilterProps) {
@@ -18,7 +17,7 @@ export function ItemInfo ({ id }: FilterProps) {
 	return <div className='item-wrapper'>
 				<div className='item-container'>
 						<Carousel pagination={false} itemAmount={ notOnlyItem }>
-							{ (chosenProduct.img).map (x => <div className='illustrations' key={ chosenProduct.id }><div className='illustration' style={{ backgroundImage: `url(${images[x]})` }}/></div>)}
+							{ (chosenProduct.img).map (x => <div className='illustrations' key={ chosenProduct.id }><div className='illustration' style={{ backgroundImage: `url(${ images[x] })` }}/></div>)}
 						</Carousel>
 					<div className='item-info'>
 						<ul>
@@ -50,7 +49,7 @@ export function ItemInfo ({ id }: FilterProps) {
 								</div>
 							</li>
 						</ul>
-						<button onClick={() => addToCart (id)}>КУПИТЬ{ count ? ` (${count})` : '' }</button>
+						<button onClick={() => addToCart (id)}>КУПИТЬ{ count ? ` (${ count })` : '' }</button>
 					</div>
 				</div>
 	</div>

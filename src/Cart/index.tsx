@@ -65,7 +65,7 @@ export default function Cart () {
                                         </div>
                 ) }
             </div>
-            { totalPrice > 0 && <div className='total-price'><span>ИТОГО:</span><PriceInRub price={ totalPrice }/></div> }
+            { totalPrice > 0 && <div className='total-price'><span className='in-total'>ИТОГО:</span><PriceInRub price={ totalPrice }/></div> }
             <h1>ФОРМА</h1>
             <div className='form-wrapper'>
                 <form ref={ form } className='fields'>

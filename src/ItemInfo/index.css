@@ -100,6 +100,14 @@
 					flex: 2.0;
 				}
 
+				.item-info .currency::after {
+					width: 0.3em;
+					height: 0.22vh;
+					left:-0.02em;
+					top:.7em;
+
+				}
+
 				.item-info li .products-colors {
 					display: flex;
 					flex-direction: row;
