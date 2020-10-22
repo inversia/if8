@@ -99,7 +99,7 @@ body .cart-content {
 
                 .item-info-wrapper .price {
                     display: flex;
-                    flex:0.25;
+                    flex:0.26;
                     color:rgb(0, 0, 0);
                     font-family: 'Forward';
                     align-items: center;
@@ -144,7 +144,6 @@ body .cart-content {
 
         .total-price span {
             font-family: 'Fractal';
-            margin-right: 0.5em;
         }
 
 .cart-content h1 {
@@ -296,9 +295,10 @@ body .cart-content {
                     display: flex;
                     /* flex:0.05;
                     font-size: 5vw; */
-                    flex:0.38;
+                    /* flex:0.38; */
+                    flex:0.45;
                     font-size: 4vw;
-                    margin: 0em 0.4em;
+                    margin: 0em 0em 0em 0.4em;
                 }
 
                 .item-info-wrapper .delete {

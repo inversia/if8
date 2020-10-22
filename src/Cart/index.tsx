@@ -5,6 +5,7 @@ import { numberWithSpaces } from '~App/Context'
 import { productsById } from '~/data'
 import images from '~/images'
 import cls from 'classnames'
+import PriceInRub from '~/PriceInRub'
 
 export default function Cart () {
 
@@ -50,31 +51,30 @@ export default function Cart () {
         <div className={cls ('cart-content', { 'form-loading': isLoading, 'done': isDone }) }>
             <p className='exclusive-order'>мы можем изготовить украшение / предмет интерьера с учётом ваших пожеланий и с индивидуальным дизайном</p>
             <div className='chosen-products'>
-                {products.map (prdct => <div className='chosen-item' key={prdct.id}>
-                                            <div style={{ backgroundImage: `url(${images[prdct.img[0]]})`}}
+                { products.map (prdct => <div className='chosen-item' key={ prdct.id }>
+                                            <div style={{ backgroundImage: `url(${ images[prdct.img[0]]})` }}
                                                     className='item-background'/>
                                             <div className='item-info-wrapper'>
                                                 <div className='description'>
-                                                    <p><strong>{prdct.title}</strong>{prdct.description && (', ' + prdct.description)}</p>
+                                                    <p><strong>{ prdct.title }</strong>{ prdct.description && (', ' + prdct.description) }</p>
                                                 </div>
-                                                <div className='price'>{numberWithSpaces (prdct.price)}</div>
+                                                <div className='price'><PriceInRub price={ prdct.price }/></div>
                                                 <button className='delete' onClick={() => removeFromCart (prdct.id)}></button>
                                             </div>
-                                            <div className='num-item'>{cartItems[prdct.id]}</div>
+                                            <div className='num-item'>{ cartItems[prdct.id] }</div>
                                         </div>
-                )}
+                ) }
             </div>
-            {totalPrice > 0 && <div className='total-price'><span>ИТОГО:</span>{ numberWithSpaces (totalPrice) }</div>}
-            {console.log ( numberWithSpaces (133060))}
+            { totalPrice > 0 && <div className='total-price'><span>ИТОГО:</span><PriceInRub price={ totalPrice }/></div> }
             <h1>ФОРМА</h1>
             <div className='form-wrapper'>
-                <form ref={form} className='fields'>
-                    <Input         disabled={isLoading} type='text' name='name'    placeholder='Как к Вам обращаться?'/>
-                    <RequiredInput disabled={isLoading} type='tel'  name='phone'   placeholder='Контактный номер'/>
-                    <Input         disabled={isLoading} type='text' name='email'   placeholder='E-mail'/>
-                    <Input         disabled={isLoading} type='text' name='notes'   placeholder='Уточнения по заказу'/>
+                <form ref={ form } className='fields'>
+                    <Input         disabled={ isLoading } type='text' name='name'    placeholder='Как к Вам обращаться?'/>
+                    <RequiredInput disabled={ isLoading } type='tel'  name='phone'   placeholder='Контактный номер'/>
+                    <Input         disabled={ isLoading } type='text' name='email'   placeholder='E-mail'/>
+                    <Input         disabled={ isLoading } type='text' name='notes'   placeholder='Уточнения по заказу'/>
                 </form>
-                <button className='submit' onClick={onSubmit} />
+                <button className='submit' onClick={ onSubmit } />
             </div>
         </div>
     </>

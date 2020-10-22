@@ -14,7 +14,7 @@ const appContext = createContext<AppContext> (null as AppContext)
 export const useAppContext = () => useContext (appContext)
 
 export function numberWithSpaces (x:number) {
-    return x.toString ().replace (/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽'
+    return x.toString ().replace (/\B(?=(\d{3})+(?!\d))/g, ' ') + ' P'
 }
 
 export function AppContextProvider ({ children = null as React.ReactChild }) {
