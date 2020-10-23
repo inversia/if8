@@ -1,7 +1,6 @@
 import React, { ChangeEvent, FormEvent, useRef, useState} from 'react'
 import './index.css'
 import { useCartContext } from '~/Cart/Context'
-import { numberWithSpaces } from '~App/Context'
 import { productsById } from '~/data'
 import images from '~/images'
 import cls from 'classnames'
