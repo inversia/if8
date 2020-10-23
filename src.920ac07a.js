@@ -554,4 +554,4 @@ var t=arguments[3];Object.defineProperty(exports,"__esModule",{value:!0}),export
 },{"react":"n8MK","~/HeaderMobile":"smll","~/Header":"Rf8P","~/MenuMobile":"dLvM","~/Menu":"aNWN","~/Main":"E7LK","~/ItemInfo":"zIRt","~/Items":"KMbV","~/Contacts":"P3Jl","~/Cart":"p3cu","~/About":"BQXJ","~/Cart/Context":"dxG9","@shwilliam/react-rubber-slider/dist/styles.css":"AQoi","./Context":"VRe7","react-router-dom":"uc19"}],"zo2T":[function(require,module,exports) {
 "use strict";var e=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var r=e(require("react")),t=e(require("react-dom")),u=e(require("panic-overlay"));u.default.configure({projectRoot:"/Users/new/if8"}),require("./reset.css"),require("./index.css");var i=e(require("./App"));t.default.render(r.default.createElement(i.default,null),document.getElementById("root"));
 },{"react":"n8MK","react-dom":"NKHc","panic-overlay":"m2Zi","./reset.css":"AQoi","./index.css":"vKFU","./App":"gNvR"}]},{},["zo2T"], null)
-//# sourceMappingURL=/src.7bcb50de.js.map
+//# sourceMappingURL=/src.920ac07a.js.map
