@@ -102,9 +102,14 @@
             align-items: flex-end!important;
         }
 
-        .m-dropdown-menu .m-materials ul > * {
-            margin-left:-2em;
-        }
+            .m-dropdown-menu .m-materials ul {
+                position: relative;
+                left:-6.15vw;
+            }
+
+            .m-dropdown-menu .m-materials ul > * {
+                /* margin-left:-2em; */
+            }
 
         .m-dropdown-menu .m-price {
             /* border:1px solid red; */

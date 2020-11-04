@@ -5,6 +5,7 @@ import { productsById } from '~/data'
 import images from '~/images'
 import cls from 'classnames'
 import PriceInRub from '~/PriceInRub'
+import { useAppContext } from '~/App/Context'
 
 export default function Cart () {
 
@@ -15,6 +16,8 @@ export default function Cart () {
 
     const [isLoading, setIsLoading] = useState (false)
     const [isDone, setIsDone] = useState (false)
+
+    const { currentLanguage } = useAppContext ()
     
     async function onSubmit (event: FormEvent) {
 
@@ -48,14 +51,17 @@ export default function Cart () {
 
     return <>
         <div className={cls ('cart-content', { 'form-loading': isLoading, 'done': isDone }) }>
-            <p className='exclusive-order'>мы можем изготовить украшение / предмет интерьера с учётом ваших пожеланий и с индивидуальным дизайном</p>
+            <p className='exclusive-order'>
+                { currentLanguage ? 'WE CAN MAKE JEWELLERY / AN INTERIOR ITEM WITH YOUR WISHES AND INDIVIDUAL DESIGN' : 'мы можем изготовить украшение / предмет интерьера с учётом ваших пожеланий и с индивидуальным дизайном' }
+            
+            </p>
             <div className='chosen-products'>
                 { products.map (prdct => <div className='chosen-item' key={ prdct.id }>
                                             <div style={{ backgroundImage: `url(${ images[prdct.img[0]]})` }}
                                                     className='item-background'/>
                                             <div className='item-info-wrapper'>
                                                 <div className='description'>
-                                                    <p><strong>{ prdct.title }</strong>{ prdct.description && (', ' + prdct.description) }</p>
+                                                    <p><strong>{ prdct.title[+currentLanguage] }</strong>{ prdct.description && (', ' + prdct.description) }</p>
                                                 </div>
                                                 <div className='price'><PriceInRub price={ prdct.price }/></div>
                                                 <button className='delete' onClick={() => removeFromCart (prdct.id)}></button>
@@ -64,16 +70,16 @@ export default function Cart () {
                                         </div>
                 ) }
             </div>
-            { totalPrice > 0 && <div className='total-price'><span className='in-total'>ИТОГО:</span><PriceInRub price={ totalPrice }/></div> }
-            <h1>ФОРМА</h1>
+            { totalPrice > 0 && <div className='total-price'><span className='in-total'>{ currentLanguage ? 'TOTAL:' : 'ИТОГО:' }</span><PriceInRub price={ totalPrice }/></div> }
+            <h1>{ currentLanguage ? 'ORDER' : 'ФОРМА' }</h1>
             <div className='form-wrapper'>
                 <form ref={ form } className='fields'>
-                    <Input         disabled={ isLoading } type='text' name='name'    placeholder='Как к Вам обращаться?'/>
-                    <RequiredInput disabled={ isLoading } type='tel'  name='phone'   placeholder='Контактный номер'/>
+                    <Input         disabled={ isLoading } type='text' name='name'    placeholder={ currentLanguage ? 'What\'s your name?' : 'Как к Вам обращаться?'}/>
+                    <RequiredInput disabled={ isLoading } type='tel'  name='phone'   placeholder={ currentLanguage ? 'Contact phone number' : 'Контактный номер'}/>
                     <Input         disabled={ isLoading } type='text' name='email'   placeholder='E-mail'/>
-                    <Input         disabled={ isLoading } type='text' name='notes'   placeholder='Уточнения по заказу'/>
+                    <Input         disabled={ isLoading } type='text' name='notes'   placeholder={ currentLanguage ? 'More details, clarifications' : 'Уточнения по заказу'}/>
                 </form>
-                <button className='submit' onClick={ onSubmit } />
+                <button className={ cls ('submit', {'en': currentLanguage})} onClick={ onSubmit } />
             </div>
         </div>
     </>

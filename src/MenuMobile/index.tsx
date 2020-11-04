@@ -9,6 +9,7 @@ import { CartCounter } from '~/CartCounter'
 import { Category, subcategories, materials, FilterProps } from '~/data'
 import { useOnClickOutside } from 'use-hooks'
 import { useAppContext } from '~/App/Context'
+import PriceInRub from '~/PriceInRub'
 
 function smoothScrollTo (hash:string) {
 
@@ -99,10 +100,10 @@ export function MenuMobile ({ category, subcategory, material }: FilterProps) {
                 <div className='categories'>
                     <label>{ currentLanguage ? 'Categories' : 'Категории'}</label>
                     <ul>
-                        <MMenuLink path={`/items/${mDropdownCategory}/all`}>все</MMenuLink>
+                        <MMenuLink path={`/items/${mDropdownCategory}/all`}>{ currentLanguage ? 'all': 'все' }</MMenuLink>
                         <div className='subcategories'>{
-                            mDropdownCategory && Object.entries (subcategories[mDropdownCategory]).map (([subcategory, label]: [string, string]) =>
-                                <MMenuLink path={`/items/${mDropdownCategory}/${subcategory}`} key={ subcategory }>{ label }</MMenuLink>
+                            mDropdownCategory && Object.entries (subcategories[mDropdownCategory]).map (([subcategory, label]: [string, string[]]) =>
+                                <MMenuLink path={`/items/${mDropdownCategory}/${subcategory}`} key={ subcategory }>{ label[+currentLanguage] }</MMenuLink>
                             )
                         }</div>
                     </ul>
@@ -110,16 +111,16 @@ export function MenuMobile ({ category, subcategory, material }: FilterProps) {
 
                 <div className='m-price'>
                     <label>{ currentLanguage ? 'Price' : 'Цена'}</label>
-                    <p className='rating-value'> { priceValue ? `до ${ priceValue } рублей` : 'в рублях' }</p>
+                    <p className='rating-value'> { priceValue ? ( currentLanguage ? `up to ${ priceValue } rubles` : `до ${ priceValue } рублей`) : (currentLanguage ? 'in rubles' : 'в рублях')}</p>
                     <input onChange={(e) => setPriceValue (Number (e.target.value))} type='range' min='16800' max='427020' defaultValue='210500' className='m-slider'></input>
                 </div>
 
                 <div className='m-materials'>
                     <label>{ currentLanguage ? 'Material' : 'Материал'}</label>
                     <ul>
-                        <MMenuLink path={`/items/${mDropdownCategory}/${subcategory || 'all'}`} key={ material }>все</MMenuLink>
-                        {mDropdownCategory && Object.entries (materials[mDropdownCategory]).map (([material, label]: [string, string]) =>
-                            <MMenuLink path={`/items/${mDropdownCategory}/${subcategory || 'all'}/${material}`} key={ material }>{ label }</MMenuLink>)}
+                        <MMenuLink path={`/items/${mDropdownCategory}/${subcategory || 'all'}`} key={ material }>{ currentLanguage ? 'all': 'все' }</MMenuLink>
+                        {mDropdownCategory && Object.entries (materials[mDropdownCategory]).map (([material, label]: [string, string[]]) =>
+                            <MMenuLink path={`/items/${mDropdownCategory}/${subcategory || 'all'}/${ material }`} key={ material }>{ label[+currentLanguage] }</MMenuLink>)}
                     </ul>
                 </div>
                 {/* <div className='price'>

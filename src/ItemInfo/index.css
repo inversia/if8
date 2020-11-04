@@ -91,13 +91,13 @@
 
 				.item-info li label {
 					font-family: 'Forward' ,sans-serif;
-					padding-right: 1.2em;
-					flex: 1;
+					width:33vh !important;
+					padding-right: 2vw;
 				}
 
 				.item-info li span,
 				.item-info li .products-colors { 
-					flex: 2.0;
+					width: 30vh;
 				}
 
 				.item-info .currency::after {
@@ -143,6 +143,11 @@
 		.item-info ul {
 			font-size: 3.3vh;
 		}
+
+				.item-info li label {
+					/* padding-right: 2.2em;
+					width:10vh !important; */
+				}
 
 				.item-info li .products-colors > *{
 					width: 2.4vh;

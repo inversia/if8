@@ -3,6 +3,7 @@ import './index.css'
 import Carousel from '~/Carousel'
 import events from '~/data/events'
 import images from '~/images'
+import { useAppContext } from '~/App/Context'
 
 export default function Events () {
 	return (
@@ -18,13 +19,15 @@ export default function Events () {
 	)
 }
 
-function Event (props: {text: string, image: string}) {
+function Event (props: { text: string[], image: string }) {
+
+	const { currentLanguage } = useAppContext ()
 
 	return (
 		<div className='event'>
 			<div className='event-image' style={{ backgroundImage: `url(${images[props.image]})` }}></div>
 			<div className='event-description'>
-				<p>{ props.text }</p>
+				<p>{ props.text[+currentLanguage] }</p>
 			</div>
 		</div>
 	)

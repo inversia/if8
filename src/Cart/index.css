@@ -236,12 +236,24 @@ body .cart-content {
         content: 'ОТПРАВИТЬ';
     }
 
+    .form-wrapper .submit.en::before {
+        content: 'SEND';
+    }
+
         .form-loading .form-wrapper button.submit::before {
             content: 'Отправляется...';
         }
 
+        .form-loading .form-wrapper button.submit.en::before {
+            content: 'Is sending...';
+        }
+
         .cart-content.done .form-wrapper button.submit::before {
             content: 'Заказ отправлен!';
+        }
+
+        .cart-content.done .form-wrapper button.submit.en::before {
+            content: 'Order has been sent!';
         }
 
 .form-loading {
@@ -268,6 +280,10 @@ body .cart-content {
 
 .cart-content form:not(:valid) ~ button:before {
     content: 'Заполните поля';
+}
+
+.cart-content form:not(:valid) ~ button.en:before {
+    content: 'Fill in the fields';
 }
 
 
