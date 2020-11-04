@@ -33,6 +33,27 @@
     left: -0.2vw;   
 }
 
+.language-change {
+    background-image: url(~/icons/language.svg);
+    background-size: 99% 99%;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 1.8vw;
+    width: 1.8vw;
+    padding-left: 2.2vw;
+    cursor: pointer;
+}
+
+    .search span {
+        position: relative;
+        opacity: 0.4;
+        right:0.068em;
+        /* font-size: 1.5vw; */
+        font-size: 1.58vw;
+        cursor: pointer;
+    }
+
+
 .search-list {
     width:33.6vh;
     width:36.5vh;

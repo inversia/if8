@@ -13,7 +13,7 @@
     background-image: url(~/icons/tagline.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    /* border: 1px solid salmon; */
+    outline: none;
     display: flex;
     flex:0.85;
     align-self: center;

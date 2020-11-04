@@ -93,6 +93,7 @@ export function Menu ({ category, subcategory, material }: FilterProps) {
                     <MenuLink path='/contacts'>контакты</MenuLink>
                     <MenuLink path='/cart'>сделать заказ</MenuLink><CartCounter/>
                 </ul>
+                {/* <div className='language-change'></div> */}
             </div>
         <div className={ cls ('dropdown-menu-container', { visible: !!dropdownCategory })} onClick={hideIfClickedAtBottom}>
             <div className='dropdown-menu'>

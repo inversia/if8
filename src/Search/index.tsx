@@ -5,6 +5,7 @@ import './index.css'
 import { products, Product } from '~/data'
 import images from '~/images'
 import { Link } from 'react-router-dom'
+import { useAppContext } from '~/App/Context'
 
 export default function Search ({
     
@@ -14,8 +15,9 @@ export default function Search ({
     buttonText = undefined as string,
     error = ''}) {
 
-    const [input, setInput] = useState<string> (value)
-    const [hideSearchItems, setHidesearchItems] = useState<boolean|undefined> ()
+    const [ input, setInput ] = useState<string> (value)
+    const [ hideSearchItems, setHidesearchItems ] = useState<boolean|undefined> ()
+    const { language, currentLanguage, setCurrentLanguage } = useAppContext ()
 
     if (!buttonText) {
         onChange = debounce (onChange, 1000)
@@ -34,6 +36,7 @@ export default function Search ({
     return (
 
         <div className={ cls ('search', className, { 'error': error && input === value }) }>
+            
             <input
                 type='text'
                 autoComplete='off'
@@ -50,22 +53,23 @@ export default function Search ({
 
                 {hideSearchItems !== false && (input && (filteredProducts.length > 0)) && <ul className='search-list'>
                     {filteredProducts.map (prdct => <Link   className='filtered-item'
-                                                            key={prdct.id} to={`/item/${prdct.id}`}
+                                                            key={ prdct.id } to={`/item/${ prdct.id  }`}
                                                             onClick={() => { setHidesearchItems (false); setInput ('')}}>
-                                                        <div style={{ backgroundImage: `url(${images[prdct.img]})`}}
+                                                        <div style={{ backgroundImage: `url(${ images[prdct.img] })`}}
                                                              className='filtered-item-background'/>
                                                         <div className='filtered-item-info-wrapper'>
                                                             <div className='filtered-item-description'>
-                                                                <p className='filtered-item-title'><strong>{prdct.title}</strong></p>
-                                                                <p>{prdct.description && prdct.description}</p>
+                                                                <p className='filtered-item-title'><strong>{ prdct.title }</strong></p>
+                                                                <p>{ prdct.description && prdct.description }</p>
                                                             </div>
-                                                            <div className='filtered-item-price'>{prdct.price}</div>
+                                                            <div className='filtered-item-price'>{ prdct.price }</div>
                                                         </div>
                                                         {/* <div style={{ backgroundImage: `url(${images[prdct.img]})`}}
                                                              className='filtered-item-background'/> */}
                                                     </Link>
                     )}
                 </ul>}
+            <div className='language-change'></div><span>{ language }</span>
             { error && input === value && <span className='search-error'>{ error }</span> }
         </div>
     )
