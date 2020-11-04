@@ -80,23 +80,24 @@ export function MenuMobile ({ category, subcategory, material }: FilterProps) {
     }, [category])
 
     const { priceValue, setPriceValue } = useAppContext ()
+    const { currentLanguage } = useAppContext ()
 
     return <MMenuContext.Provider value={{ hideMDropdown }}>
         <div ref={mMenuContainerRef} className='mob-menu-container'>
             <div className='m-menu'>
                 <ul>
                     <MMenuLink path='/contacts'/>
-                    <MMenuLink path='/about'>о нас</MMenuLink>
-                    <MMenuLink component='a' path={`/items/jewellery/${subcategory}`} onClick={ toggleMDropdown ('jewellery')}>украшения</MMenuLink>
+                    <MMenuLink path='/about'>{ currentLanguage ? 'about' : 'о нас' }</MMenuLink>
+                    <MMenuLink component='a' path={`/items/jewellery/${subcategory}`} onClick={ toggleMDropdown ('jewellery')}>{ currentLanguage ? 'jewellery' : 'украшения' }</MMenuLink>
                     {/* <MMenuLink component='a' path={`/items/interior/${subcategory}`}  onClick={ toggleMDropdown ('interior')} >интерьер</MMenuLink> */}
-                    <MMenuLink path='/#events'         onClick={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</MMenuLink>
+                    <MMenuLink path='/#events'         onClick={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>{ currentLanguage ? 'events' : 'события' }</MMenuLink>
                     <MMenuLink path='/cart'><CartCounter/></MMenuLink>
                 </ul>
             </div>
         <div className={ cls ('m-dropdown-menu-container', { visible: !!mDropdownCategory })} onClick={hideIfClickedAtBottom}>
             <div className='m-dropdown-menu'>
                 <div className='categories'>
-                    <label>Категории</label>
+                    <label>{ currentLanguage ? 'Categories' : 'Категории'}</label>
                     <ul>
                         <MMenuLink path={`/items/${mDropdownCategory}/all`}>все</MMenuLink>
                         <div className='subcategories'>{
@@ -108,13 +109,13 @@ export function MenuMobile ({ category, subcategory, material }: FilterProps) {
                 </div>
 
                 <div className='m-price'>
-                    <label>Цена</label>
+                    <label>{ currentLanguage ? 'Price' : 'Цена'}</label>
                     <p className='rating-value'> { priceValue ? `до ${ priceValue } рублей` : 'в рублях' }</p>
                     <input onChange={(e) => setPriceValue (Number (e.target.value))} type='range' min='16800' max='427020' defaultValue='210500' className='m-slider'></input>
                 </div>
 
                 <div className='m-materials'>
-                    <label>Материал</label>
+                    <label>{ currentLanguage ? 'Material' : 'Материал'}</label>
                     <ul>
                         <MMenuLink path={`/items/${mDropdownCategory}/${subcategory || 'all'}`} key={ material }>все</MMenuLink>
                         {mDropdownCategory && Object.entries (materials[mDropdownCategory]).map (([material, label]: [string, string]) =>

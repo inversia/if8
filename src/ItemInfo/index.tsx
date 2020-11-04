@@ -5,6 +5,7 @@ import images from '~/images'
 import { useCartContext } from '~/Cart/Context'
 import Carousel from '~/Carousel'
 import PriceInRub from '~/PriceInRub'
+import { useAppContext } from '~/App/Context'
 
 export function ItemInfo ({ id }: FilterProps) {
 
@@ -13,6 +14,7 @@ export function ItemInfo ({ id }: FilterProps) {
 	const { cartItems, addToCart } = useCartContext ()
 	const count = cartItems[id] || 0
 	const notOnlyItem = chosenProduct.img.length > 1
+	const { currentLanguage } = useAppContext ()
 
 	return <div className='item-wrapper'>
 				<div className='item-container'>
@@ -22,34 +24,34 @@ export function ItemInfo ({ id }: FilterProps) {
 					<div className='item-info'>
 						<ul>
 							<li>
-								<label>Описание</label>
-								<span><strong>{ chosenProduct.title}</strong>{ chosenProduct.description && (', ' + chosenProduct.description) }</span>
+								<label>{ currentLanguage ? 'Description' : 'Описание' }</label>
+								<span><strong>{ chosenProduct.title[Number (currentLanguage)]}</strong>{ chosenProduct.description && (', ' + chosenProduct.description) }</span>
 							</li>
 							<li>
-								<label>Артикул</label>
+								<label>{ currentLanguage ? 'Product number' : 'Артикул' }</label>
 								<span>{ chosenProduct.partNumber }</span>
 							</li>
 							{ chosenProduct.probe && <li>
-								<label>Проба</label>
+								<label>{ currentLanguage ? 'Probe' : 'Проба' }</label>
 								<span>{ chosenProduct.probe }</span>
 							</li>}
 							<li>
-								<label>Наличие</label>
+								<label>{ currentLanguage ? 'Availability' : 'Наличие' }</label>
 								<span>{ chosenProduct.availability }</span>
 							</li>
 							<li>
-								<label>Цена</label>
+								<label>{ currentLanguage ? 'Price' : 'Цена' }</label>
 								<span><PriceInRub price={ chosenProduct.price }/></span>
 							</li>
 							<li>
-								<label>Цвета</label>
+								<label>{ currentLanguage ? 'Colors' : 'Цвета' }</label>
 								<div className='products-colors'>
 									{ chosenProduct.colors.map ((x, i) => <div key={i}
 																   style={{ backgroundColor:`#${x[1]}` }}/>) }
 								</div>
 							</li>
 						</ul>
-						<button onClick={() => addToCart (id)}>КУПИТЬ{ count ? ` (${ count })` : '' }</button>
+						<button onClick={() => addToCart (id)}>{ currentLanguage ? 'BUY' : 'КУПИТЬ'}{ count ? ` (${ count })` : '' }</button>
 					</div>
 				</div>
 	</div>

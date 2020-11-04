@@ -81,45 +81,46 @@ export function Menu ({ category, subcategory, material }: FilterProps) {
     }, [category])
 
     const { priceValue, setPriceValue } = useAppContext ()
+    const { currentLanguage } = useAppContext ()
 
     return <MenuContext.Provider value={{ hideDropdown }}>
         <div ref={menuContainerRef} className='menu-container'>
             <div className='menu'>
                 <ul>
-                    <MenuLink path='/about'>о компании</MenuLink>
-                    <MenuLink component='a' path={`/items/jewellery/${subcategory}`} onClick={ toggleDropdown ('jewellery')}>ювелирные украшения</MenuLink>
+                    <MenuLink path='/about'>{ currentLanguage ? 'about' : 'о компании'}</MenuLink>
+                    <MenuLink component='a' path={`/items/jewellery/${subcategory}`} onClick={ toggleDropdown ('jewellery')}>{ currentLanguage ? 'jewellery' : 'ювелирные украшения' }</MenuLink>
                     {/* <MenuLink component='a' path={`/items/interior/${subcategory}`}  onClick={ toggleDropdown ('interior')} >интерьер</MenuLink> */}
-                    <MenuLink path='/#events'                      onClick={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>события</MenuLink>
-                    <MenuLink path='/contacts'>контакты</MenuLink>
-                    <MenuLink path='/cart'>сделать заказ</MenuLink><CartCounter/>
+                    <MenuLink path='/#events'                      onClick={() => { setTimeout (() => smoothScrollTo ('events'), 100) }}>{ currentLanguage ? 'events' : 'события'}</MenuLink>
+                    <MenuLink path='/contacts'>{ currentLanguage ? 'contacts' : 'контакты'}</MenuLink>
+                    <MenuLink path='/cart'>{ currentLanguage ? 'order' : 'сделать заказ'}</MenuLink><CartCounter/>
                 </ul>
                 {/* <div className='language-change'></div> */}
             </div>
-        <div className={ cls ('dropdown-menu-container', { visible: !!dropdownCategory })} onClick={hideIfClickedAtBottom}>
+        <div className={ cls ('dropdown-menu-container', { visible: !!dropdownCategory })} onClick={ hideIfClickedAtBottom }>
             <div className='dropdown-menu'>
                 <div className='categories'>
-                    <label>Категории</label>
+                    <label>{ currentLanguage ? 'Categories' : 'Категории'}</label>
                     <ul>
-                        <MenuLink path={`/items/${dropdownCategory}/all`}>все</MenuLink>
+                        <MenuLink path={`/items/${dropdownCategory}/all`}>{ currentLanguage ? 'all': 'все' }</MenuLink>
                         <div className='subcategories'>{
-                            dropdownCategory && Object.entries (subcategories[dropdownCategory]).map (([subcategory, label]: [string, string]) =>
-                                <MenuLink path={`/items/${dropdownCategory}/${subcategory}`} key={ subcategory }>{ label }</MenuLink>
+                            dropdownCategory && Object.entries (subcategories[dropdownCategory]).map (([subcategory, label]: [string, string[]]) =>
+                                <MenuLink path={`/items/${dropdownCategory}/${subcategory}`} key={ subcategory }>{ label[+currentLanguage] }</MenuLink>
                             )
                         }</div>
                     </ul>
                 </div>
                 <div className='materials'>
-                    <label>Материал</label>
+                    <label>{ currentLanguage ? 'Material' : 'Материал'}</label>
                     <ul>
-                        <MenuLink path={`/items/${dropdownCategory}/${subcategory || 'all'}`} key={ material }>все</MenuLink>
-                        {dropdownCategory && Object.entries (materials[dropdownCategory]).map (([material, label]: [string, string]) =>
-                            <MenuLink path={`/items/${dropdownCategory}/${subcategory || 'all'}/${material}`} key={ material }>{ label }</MenuLink>)}
+                        <MenuLink path={`/items/${ dropdownCategory }/${ subcategory || 'all' }`} key={ material }>{ currentLanguage ? 'all': 'все'}</MenuLink>
+                        { dropdownCategory && Object.entries (materials[dropdownCategory]).map (([material, label]: [string, string []]) =>
+                        <MenuLink path={`/items/${dropdownCategory}/${ subcategory || 'all' }/${ material }`} key={ material }>{ label[+currentLanguage] }</MenuLink>)}
                     </ul>
                 </div>
                 <div className='price'>
-                    <label>Цена</label>
+                    <label>{ currentLanguage ? 'Price' : 'Цена'}</label>
                     <input onChange={(e) => setPriceValue (Number (e.target.value))} type='range' min='16800' max='427020' defaultValue='210500' className='slider'></input>
-                    <p className='rating-value'> { priceValue ? `до ${ priceValue } рублей` : 'в рублях'}</p>
+                    <p className='rating-value'> { priceValue ? ( currentLanguage ? `up to ${priceValue} rubles` : `до ${ priceValue } рублей`) : (currentLanguage ? 'in rubles' : 'в рублях')}</p>
                 </div>
             </div>
         </div>
