@@ -81,7 +81,7 @@ export function Menu ({ category, subcategory, material }: FilterProps) {
     }, [category])
 
     const { priceValue, setPriceValue } = useAppContext ()
-    const { currentLanguage } = useAppContext ()
+    const { currentLanguage, isMobile } = useAppContext ()
 
     return <MenuContext.Provider value={{ hideDropdown }}>
         <div ref={menuContainerRef} className='menu-container'>

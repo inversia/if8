@@ -17,7 +17,7 @@ export function Footer () {
 					<div className='self-delivery'>{ currentLanguage ? 'Self-delivery from IlgizF Gallery at the address:' : 'Самовывоз из галереи IlgizF по адресу:' }</div>
 					<div className='address'>
 						<a href='https://yandex.ru/maps/213/moscow/house/leningradskiy_prospekt_10/Z04YcwBpQEYEQFtvfXt2eHtjYw==/?ll=37.579986%2C55.779717&z=19.6'>
-						{ currentLanguage ? 'Leningradsky Ave, 10' : 'Ленинградский проспект 10-12' }
+						{ currentLanguage ? 'Leningradsky Avenue, 10' : 'Ленинградский проспект 10-12' }
 						</a>
 					</div>
 					<span className='company-info'>{ currentLanguage? 'ITN' : 'ИНН'} 164800399262</span>

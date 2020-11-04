@@ -17,7 +17,7 @@ export default function Search ({
 
     const [ input, setInput ] = useState<string> (value)
     const [ hideSearchItems, setHidesearchItems ] = useState<boolean|undefined> ()
-    const { currentLanguage, setCurrentLanguage } = useAppContext ()
+    const { currentLanguage } = useAppContext ()
 
     if (!buttonText) {
         onChange = debounce (onChange, 1000)
@@ -69,7 +69,7 @@ export default function Search ({
                                                     </Link>
                     )}
                 </ul>}
-            <div className='language-change' onClick={ () => setCurrentLanguage (!currentLanguage)}></div><span>{ currentLanguage ? 'en' : 'ru' }</span>
+            {/* <div className='language-change' onClick={ () => setCurrentLanguage (!currentLanguage)}></div><span>{ currentLanguage ? 'en' : 'ru' }</span> */}
             { error && input === value && <span className='search-error'>{ error }</span> }
         </div>
     )

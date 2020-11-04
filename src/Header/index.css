@@ -29,6 +29,39 @@
     background-position: right;
 }
 
+.language-change-wrapper {
+    position: absolute;
+    bottom: 0vw;
+    /* border:1px solid rgb(125, 250, 114); */
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    /* width:8vh; */
+    /* height: 2vw; */
+    /* left:8.8vw; */
+}
+
+    .language-change {
+        background-image: url(~/icons/language.svg);
+        background-size: 99% 99%;
+        background-repeat: no-repeat;
+        height: 1.1vw;
+        width: 1.1vw;
+        bottom:-0.34vw;
+        position: relative;
+        padding-left: 1.3vw;
+    }
+
+    .language-change-wrapper span {
+        opacity: 0.4;
+        font-size: 1.7vw;
+        display: flex;
+        flex:1;
+        text-align: center;
+        top:0%;
+        /* padding-right: 0.1em; */
+    }
+
 /* @media all and (max-width: 865px) {
 
     .tagline {
