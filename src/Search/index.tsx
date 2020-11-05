@@ -55,7 +55,7 @@ export default function Search ({
                     {filteredProducts.map (prdct => <Link   className='filtered-item'
                                                             key={ prdct.id } to={`/item/${ prdct.id  }`}
                                                             onClick={() => { setHidesearchItems (false); setInput ('')}}>
-                                                        <div style={{ backgroundImage: `url(${ images[prdct.img] })`}}
+                                                        <div style={{ backgroundImage: `url(${ images[prdct.img[0]] })`}}
                                                              className='filtered-item-background'/>
                                                         <div className='filtered-item-info-wrapper'>
                                                             <div className='filtered-item-description'>
