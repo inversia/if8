@@ -71,6 +71,22 @@ export const products: Product[] = [
 
     {
         category: 'jewellery',
+        subcategory: 'rings',
+        material: 'gold',
+        title: ['Кольцо «Чекано»', 'Ring "Checkano"'],
+        description: 'Белые сапфиры, горячая ювелирная эмаль',
+        probe: [750],
+        partNumber: '954',
+        weight: 9.42,
+        price: 185230,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', '6B8D89'], ['url(~/images/red.jpg)', '4AD6DF']],
+        img: ['ring-checkano-gold-green'],
+        id:'ring12'
+    },
+
+    {
+        category: 'jewellery',
         subcategory: 'earrings',
         material: 'gold',
         title: ['Пусеты из коллекции «IF8» бирюза', 'Pusetes from the "IF8" collection, turquoise'],
@@ -81,7 +97,7 @@ export const products: Product[] = [
         price: 80900,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', '3FDCD3'], ['url(~/images/red.jpg)', '000000']],
-        img: ['pusetas-pillow-if8-gold', 'pusetas-pillow-if8-gold2'],
+        img: ['pusetas-pillow-if8-gold', 'pusetas-pillow-if8-gold2', 'pusetas-pillow-if8-gold3'],
         id:'pusetas1'
     },
 
@@ -113,7 +129,7 @@ export const products: Product[] = [
         price: 36400,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', 'BDD7FF'], ['url(~/images/red.jpg)', 'EAC5E6'], ['url(~/images/red.jpg)', 'CAE3E2']],
-        img: ['earrings-peru-gold-moon', 'earrings-peru-gold-moon2'],
+        img: ['earrings-peru-gold-moon', 'earrings-peru-gold-moon2', 'earrings-nanosital'],
         id:'earrings1'
     },
 
@@ -169,7 +185,7 @@ export const products: Product[] = [
         category: 'jewellery',
         subcategory: 'earrings',
         material: 'gold',
-        title: ['Серьги «Кипу» бирюза', 'Earrings "Kipu", turquoise'],
+        title: ['Серьги «Кипу» бирюза', 'Earrings "Kipu" turquoise'],
         description: 'жемчуг',
         probe: [750],
         partNumber: '964',
@@ -177,25 +193,25 @@ export const products: Product[] = [
         price: 193970,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', '34E4E4'], ['url(~/images/red.jpg)', '00854D'], ['url(~/images/red.jpg)', '8F0808'], ['url(~/images/red.jpg)', '000000']],
-        img: ['earrings-kipu-turquoise-gold', 'earrings-kipu-turquoise-gold2'],
+        img: ['earrings-kipu-turquoise-gold', 'earrings-kipu-turquoise-gold3', 'earrings-kipu-turquoise-gold2'],
         id:'earrings5'
     },
 
-    // {
-    //     category: 'jewellery',
-    //     subcategory: 'earrings',
-    //     material: 'gold',
-    //     title: 'Серьги «Кипу» чёрные',
-    //     description: 'муассониты 0,6 ct',
-    //     probe: [750],
-    //     partNumber: '5275(961)',
-    //     weight: 9.35,
-    //     price: 140,
-    //     availability: 1,
-    //     colors: [['url(~/images/yellow.jpg)', '34E4E4'], ['url(~/images/red.jpg)', '00854D'], ['url(~/images/red.jpg)', '8F0808'], ['url(~/images/red.jpg)', '000000']],
-    //     img: 'earrings-kipu-black-gold',
-    //     id:'earrings6'
-    // },
+    {
+        category: 'jewellery',
+        subcategory: 'earrings',
+        material: 'gold',
+        title: ['Серьги «Кипу» чёрные', 'Earrings "Kipu" black'],
+        description: 'муассониты 0,6 ct',
+        probe: [750],
+        partNumber: '5275(961)',
+        weight: 9.35,
+        price: 172890,
+        availability: 1,
+        colors: [['url(~/images/yellow.jpg)', '34E4E4'], ['url(~/images/red.jpg)', '00854D'], ['url(~/images/red.jpg)', '8F0808'], ['url(~/images/red.jpg)', '000000']],
+        img: ['earrings-kipu-black-gold', 'earrings-kipu-black-gold2', 'earrings-kipu-black-gold3'],
+        id:'earrings6'
+    },
 
     {
         category: 'jewellery',
@@ -238,7 +254,7 @@ export const products: Product[] = [
         price: 91860,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', '00F0FF']],
-        img: ['bracelet-gold-skyblue'],
+        img: ['bracelet-gold-skyblue','bracelet-gold-skyblue2'],
         id:'bracelets1'
     },
 
@@ -254,7 +270,7 @@ export const products: Product[] = [
         price: 244060,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', '7D73F3'], ['url(~/images/yellow.jpg)', 'BBBBBB'], ['url(~/images/yellow.jpg)', '197850'], ['url(~/images/yellow.jpg)', '886945']],
-        img: ['bracelet-sphere-gold-blue', 'bracelet-sphere-gold-blue2'],
+        img: ['bracelet-sphere-gold-blue', 'bracelet-sphere-gold-blue2', 'bracelet-sphere-gold-blue3'],
         id:'bracelets2'
     },
 
@@ -283,7 +299,7 @@ export const products: Product[] = [
         price: 36400,
         availability: 1,
         colors: [['url(~/images/yellow.jpg)', 'E182EA'], ['url(~/images/yellow.jpg)', 'D0D4FD'], ['url(~/images/yellow.jpg)', '7B9BD8'], ['url(~/images/yellow.jpg)', '42BDF1']],
-        img: ['earrings-if8-silver-rose','earrings-if8-silver-rose2'],
+        img: ['earrings-if8-silver-rose','earrings-if8-silver-rose2', 'earrings-nanosital2'],
         id:'earrings7'
     },
 
