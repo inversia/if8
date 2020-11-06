@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-"use strict";
-
 const px = process.argv[2]
 const wd = process.argv[3] || 1280
 
