@@ -49,6 +49,11 @@
         border: 1px salmon solid;
     } */
 
+    .dropdown-menu-container:not(visible) {
+        transition: all 0.5s ease-in-out;
+        opacity: 0.4;
+    }
+
     .dropdown-menu-container {
         width: 100%;
         height: 29.2vw;
@@ -60,12 +65,15 @@
         padding: 2vw 23vw;
         display: none;
         top:-0.05vw;
+        transition: all 0.5s ease-in-out;
     } 
 
     .dropdown-menu-container.visible {
         opacity: 1;
         display: flex;
         z-index: 20;
+        transition: all 0.5s ease-in-out;
+        height: 29.2vw;
     }
 
         .dropdown-menu {

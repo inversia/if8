@@ -81,7 +81,7 @@ export function Menu ({ category, subcategory, material }: FilterProps) {
     }, [category])
 
     const { priceValue, setPriceValue } = useAppContext ()
-    const { currentLanguage, isMobile } = useAppContext ()
+    const { currentLanguage } = useAppContext ()
 
     return <MenuContext.Provider value={{ hideDropdown }}>
         <div ref={menuContainerRef} className='menu-container'>
@@ -96,7 +96,7 @@ export function Menu ({ category, subcategory, material }: FilterProps) {
                 </ul>
                 {/* <div className='language-change'></div> */}
             </div>
-        <div className={ cls ('dropdown-menu-container', { visible: !!dropdownCategory })} onClick={ hideIfClickedAtBottom }>
+        <div className={ cls ('dropdown-menu-container', { 'visible': !!dropdownCategory })} onClick={ hideIfClickedAtBottom }>
             <div className='dropdown-menu'>
                 <div className='categories'>
                     <label>{ currentLanguage ? 'Categories' : 'Категории'}</label>
