@@ -26,7 +26,8 @@ export default function Search ({
     function itemFilter (item: Product) {
         
         const string = input.toLowerCase ()
-        return item.title[Number (currentLanguage)].toLowerCase ().includes (string) || (item.description && item.description.toLowerCase ().includes (string))
+        // return item.title[Number (currentLanguage)].toLowerCase ().includes (string) || (item.description && item.description.toLowerCase ().includes (string))
+        return (item.title[0].toLowerCase () && item.title[1].toLowerCase ()).includes (string) || (item.description && item.description.toLowerCase ().includes (string))
     }
 
     const filteredProducts = products.filter (x => itemFilter (x))
