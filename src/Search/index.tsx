@@ -59,7 +59,7 @@ export default function Search ({
                                                              className='filtered-item-background'/>
                                                         <div className='filtered-item-info-wrapper'>
                                                             <div className='filtered-item-description'>
-                                                                <p className='filtered-item-title'><strong>{ prdct.title }</strong></p>
+                                                                <p className='filtered-item-title'><strong>{ prdct.title[Number (currentLanguage)] }</strong></p>
                                                                 <p>{ prdct.description && prdct.description }</p>
                                                             </div>
                                                             <div className='filtered-item-price'>{ prdct.price }</div>
