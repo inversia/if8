@@ -24,7 +24,7 @@ export function AppContextProvider ({ children = null as React.ReactChild }) {
     
     const windowSize = useWindowSize ()
     const isMobile   = windowSize.width < 665
-    const [ priceValue, setPriceValue ] = useState ()
+    const [ priceValue, setPriceValue ] = useState<number|undefined> ()
     const CIS        = navigator.language.split ('-')[0].includes ('ru' && 'be' && 'uk' && 'hy' && 'ky' && 'uz' && 'tg' && 'kk' && 'ab' && 'az' && 'ba')
     const language   = CIS ? false : true
     const [ currentLanguage, setCurrentLanguage ] = useState<boolean> (language)
