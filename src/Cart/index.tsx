@@ -134,7 +134,10 @@ type OrderData = FormInputs & {
 async function sendOrder (data: OrderData) {
     console.log ('OrderData:', data)
 
-    const response = await fetch ('https://vdror2s40j.execute-api.eu-central-1.amazonaws.com/default/acceptZILOrder', {
+    
+
+    // const response = await fetch ('https://vdror2s40j.execute-api.eu-central-1.amazonaws.com/default/acceptZILOrder', {
+    const response = await fetch ('https://t8v82xm73h.execute-api.eu-central-1.amazonaws.com/default/accept', {
         method: 'POST',
         body: JSON.stringify (data)
     })

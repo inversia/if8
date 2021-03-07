@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import { useWindowSize } from 'use-hooks'
 
 type AppContext = {
@@ -19,6 +19,9 @@ export const useAppContext = () => useContext (appContext)
 export function numberWithSpaces (x:number) {
     return x.toString ().replace (/\B(?=(\d{3})+(?!\d))/g, ' ') + ' P'
 }
+
+// useEffect () c fetch запросом данных о продуктах
+
 
 export function AppContextProvider ({ children = null as React.ReactChild }) {
     
