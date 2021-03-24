@@ -1,26 +1,25 @@
 .header-wrapper {
     display: flex;
+    margin-bottom: 2vw;
     /* border: 1px solid salmon; */
     justify-content: space-between;
-    padding: 4vw var(--mega-padding) 0vw var(--mega-padding);
+    align-items: flex-end;
+    padding: 2vw var(--mega-padding) 0;
     position: relative;
     /* z-index: 0; */
 }
 
 .tagline {
-    height: 5vw;
-    width: 23.750vw;
-    background-image: url(~/icons/tagline.svg);
-    background-repeat: no-repeat;
+    height: 4vw;
+    background: url(~/icons/tagline.svg) no-repeat;
     background-size: contain;
     outline: none;
     display: flex;
     flex:0.85;
-    align-self: center;
 }
 
 .logo {
-    height: 13vw;
+    height: 6vw;
     background-image: url(~/icons/logo.svg);
     background-repeat: no-repeat;
     background-size: contain;

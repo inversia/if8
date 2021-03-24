@@ -12,9 +12,9 @@ export function Header () {
         <Link className='tagline' to='/' />
         <Search />
         <Link className='logo' to='/' />
-        <div className='language-change-wrapper' onClick={ () => setCurrentLanguage (!currentLanguage)}>
+        {/*<div className='language-change-wrapper' onClick={ () => setCurrentLanguage (!currentLanguage)}>
             <span>{ currentLanguage ? 'en' : 'ru' }</span>
             <div className='language-change'/>
-        </div>
+        </div>*/}
     </div>
 }

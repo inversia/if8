@@ -38,24 +38,24 @@
 
     // first argument: 0 - silent, 1 - warning, 2 - error
     "rules": {
-        
+
         "react/prop-types":   0, // no requiring of prop types
         "react/display-name": 0, // allow anonymous components
 
         "strict":            [2, "safe"],
         "no-debugger":        2,
-        "brace-style":       [2, "1tbs", { "allowSingleLine": true }],        
+        "brace-style":       [2, "1tbs", { "allowSingleLine": true }],
         "no-trailing-spaces": [2, { "skipBlankLines": true }],
         "keyword-spacing":    2,
         "space-before-function-paren": [2, "always"],
         "func-call-spacing":  [2, "always"],
         "spaced-comment":     [2, "always"],
-        "vars-on-top":        0, // Disable: all 'var' declarations must be at the top of the function scope 
+        "vars-on-top":        0, // Disable: all 'var' declarations must be at the top of the function scope
         "no-undef":           0,
         "no-undefined":       0,
         "comma-dangle":       [ 0, "never" ],
         "quotes":             [ 2, "single" ],
-        "semi":               [ 1, "never" ],        
+        "semi":               [ 1, "never" ],
         "guard-for-in":       0, // allow iterating with for..in without checking for Object.hasOwnProperty
         "no-eval":            2,
         "no-with":            2,

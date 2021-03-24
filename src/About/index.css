@@ -1,17 +1,13 @@
 .about-container {
     width: 100%;
-    background-image: url(~/icons/cartbg2.png);
+    background: url(~/icons/cartbg2.png) no-repeat center center;
     background-size: 100% 95%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    top:1%;
-    opacity: 0.75;
-    color:black;
+
 }
 
-.about {
+.about-container .about {
     width: 78%;
-    margin: auto auto;
+    margin: auto;
     padding-bottom: 5vw;
     display: flex;
     flex-direction: column;
@@ -20,13 +16,18 @@
     text-align: center;
 }
 
-    .about-container p {
-        padding: 3.5vh;
-        font-size: 2.5vh;
-        white-space: pre-line;
-    }
+.about-container .about p {
+    padding: 3.5vh;
+    font-size: 3.5vh;
+    font-weight: 800;
+    line-height: 170%;
+    white-space: pre-line;
+    color: #000000;
+}
 
-    .about-container span {
-        font-size: 4.5vh;
-        font-family: 'Forward';
-    }
+.about-container .about p span {
+    font-family: Forward-extra;
+    font-size: 170%;
+    font-weight: normal;
+    opacity: 0.5;
+}
