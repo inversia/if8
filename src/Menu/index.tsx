@@ -43,7 +43,7 @@ function MenuLink ({
 export function Menu ({ category, subcategory, material }: FilterProps) {
 
     const [dropdownCategory, setDropdownCategory] = useState<Category|null> ()
-    
+
     const hideDropdown = () => setDropdownCategory (null)
 
     const toggleDropdown = (newCategory: Category|null) => {
@@ -60,33 +60,39 @@ export function Menu ({ category, subcategory, material }: FilterProps) {
     }
 
     const menuContainerRef = useRef<HTMLDivElement> ()
-    
+
     useOnClickOutside (menuContainerRef, () => {
         hideDropdown ()
     })
 
     const hideIfClickedAtBottom = useCallback ((e: React.MouseEvent) => {
-        
+
         const distanceFromBottom = e.currentTarget.getBoundingClientRect ().bottom - e.clientY
         const distanceFromBottomRel = distanceFromBottom / e.currentTarget.clientHeight // relative to height (0...1)
-        
+
         if (distanceFromBottomRel < 0.24) {
             hideDropdown ()
         }
     }, [])
 
     useLayoutEffect (() => {
-        
+
         if (!category) hideDropdown ()
     }, [category])
 
     const { priceValue, setPriceValue } = useAppContext ()
-    const { currentLanguage } = useAppContext ()
+    // const { currentLanguage } = useAppContext ()
+    const { currentLanguage, setCurrentLanguage } = useAppContext ()
 
     return <MenuContext.Provider value={{ hideDropdown }}>
         <div ref={menuContainerRef} className='menu-container'>
             <div className='menu'>
+
                 <ul>
+                    <div className='language-change-wrapper' onClick={ () => setCurrentLanguage (!currentLanguage)}>
+                        <span>{ currentLanguage ? 'en' : 'ru' }</span>
+                        <div className='language-change'/>
+                    </div>
                     <MenuLink path='/about'>{ currentLanguage ? 'about' : 'о компании'}</MenuLink>
                     <MenuLink component='a' path={`/items/jewellery/${subcategory}`} onClick={ toggleDropdown ('jewellery')}>{ currentLanguage ? 'jewellery' : 'ювелирные украшения' }</MenuLink>
                     {/* <MenuLink component='a' path={`/items/interior/${subcategory}`}  onClick={ toggleDropdown ('interior')} >интерьер</MenuLink> */}
@@ -94,7 +100,6 @@ export function Menu ({ category, subcategory, material }: FilterProps) {
                     <MenuLink path='/contacts'>{ currentLanguage ? 'contacts' : 'контакты'}</MenuLink>
                     <MenuLink path='/cart'>{ currentLanguage ? 'order' : 'сделать заказ'}</MenuLink><CartCounter/>
                 </ul>
-                {/* <div className='language-change'></div> */}
             </div>
         <div className={ cls ('dropdown-menu-container', { 'visible': !!dropdownCategory })} onClick={ hideIfClickedAtBottom }>
             <div className='dropdown-menu'>

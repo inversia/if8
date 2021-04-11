@@ -7,7 +7,7 @@ export function HeaderMobile () {
     return <div className='mobile-header-wrapper'>
         <div className='tagline-and-search'>
             <Search />
-            <Link className='mobile-tagline' to='/'/>
+            {/*<Link className='mobile-tagline' to='/'/>*/}
         </div>
         <Link className='mobile-logo' to='/'/>
     </div>

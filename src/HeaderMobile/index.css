@@ -4,7 +4,7 @@
     margin-top: 3vh!important;
     margin-bottom: 5vh;
     width:90vw;
-    height: var(--mobile-header-height);
+    height: auto;
     /* border:1px solid salmon; */
     margin:0 auto;
     --mobile-header-height:22vw;
@@ -80,7 +80,7 @@
                 border-radius: 1.7vw;
                 box-shadow: 0vw 0.1vw 0.5vw 0.5vw rgba(128, 128, 128, 0.11); */
             }
-            
+
                 .mobile-header-wrapper .search-list .filtered-item {
                     /* background-color: rgb(255, 255, 255); */
                     padding: 2vw 2vw;
@@ -92,19 +92,19 @@
                     transition: all 0.25s ease-in-out;
                     transform: scale(1); */
                 }
-            
+
                 /* .mobile-header-wrapper .search-list .filtered-item:not(:last-child) {
                     border-bottom: 1px solid rgba(128, 128, 128, 0.233);
                 } */
-            
+
                 /* .mobile-header-wrapper .search-list .filtered-item:last-child {
                     border-radius: 0vw 0vw 1.7vw 1.7vw;
                 } */
-            
+
                 /* .mobile-header-wrapper .search-list .filtered-item:first-child {
                     border-radius: 1.7vw 1.7vw 0vw 0vw;
                 } */
-            
+
                 .mobile-header-wrapper .search-list .filtered-item:hover {
                     transform: scale(1.07);
                     /* transition: all 0.25s ease-in-out;
@@ -113,7 +113,7 @@
                     z-index: 41!important;
                     border-bottom: 1px solid rgba(255, 255, 255, 0); */
                 }
-            
+
                     .mobile-header-wrapper .filtered-item .filtered-item-background {
                         height: 9vh;
                         /* flex:0.8;
@@ -127,26 +127,25 @@
                         margin-right: 1vw;
                         box-shadow: 0vw 0vw 0.7vw 0.1vw rgba(0, 0, 0, 0.116); */
                     }
-            
+
                     /* .mobile-header-wrapper .filtered-item-info-wrapper {
                         word-wrap: break-word;
                         overflow-wrap: break-word;
                         flex:3;
                     }
-            
+
                         .mobile-header-wrapper .filtered-item-description {
                             overflow-wrap: break-word;
                             word-wrap: break-word;
                         }
-            
+
                             .mobile-header-wrapper .filtered-item-title {
                                 word-wrap: break-word;
                                 overflow-wrap: break-word;
                                 padding-bottom: 0.5em;
                             }
-            
+
                         .mobile-header-wrapper .filtered-item-price {
                             font-family: 'Forward';
                             padding-top: 0.5em;
                         } */
-    

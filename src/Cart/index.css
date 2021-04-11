@@ -48,7 +48,7 @@ body .cart-content {
         width:80%;
         margin: 0 auto;
     }
-    
+
     .chosen-products > * {
         position: relative;
         z-index: 3;
@@ -88,7 +88,7 @@ body .cart-content {
                     align-items: center;
                     font-size: 1.5vw;
                     line-height: 1.3em;
-                    text-shadow: 0vw 0vw 0.8vw rgb(255, 255, 255); 
+                    text-shadow: 0vw 0vw 0.8vw rgb(255, 255, 255);
                     position: relative;
                     /* border:solid 1px salmon; */
                 }
@@ -215,13 +215,13 @@ body .cart-content {
         }
 
     .form-wrapper .submit {
-        width: 80%;
+        width: 50%;
         margin: 0 auto;
         margin-top: 5vw;
         padding:1.2vw;
         text-align: center;
         font-family: 'Fractal';
-        font-size: 3.4vw;
+        font-size: 2.5vw;
         border:solid 1px rgb(0, 0, 0);
         border-radius: 1vw;
         background-color: white;
@@ -288,12 +288,12 @@ body .cart-content {
 
 
 
-@media all and (max-width: 665px) { 
-    
+@media all and (max-width: 665px) {
+
     .chosen-products {
         width:90%;
     }
-    
+
     .chosen-products > * {
     }
 
@@ -317,7 +317,7 @@ body .cart-content {
                 }
 
                     .item-info-wrapper .description p {
-                        
+
                     }
 
                 .item-info-wrapper .price {
@@ -357,7 +357,7 @@ body .cart-content {
         font-size: 5vw;
         padding-top: 6.5vw;
         width:90%;
-        
+
     }
 
         .total-price .in-total {
@@ -369,14 +369,14 @@ body .cart-content {
     .form-wrapper {
         width: 98.2%;
     }
-    
+
         .form-wrapper .fields {
             /* display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center; */
         }
-    
+
             .form-wrapper .fields > * {
                 border:0.1vw solid rgba(255, 255, 255, 0);
                 padding: 2.4vw 0vw;
@@ -385,7 +385,7 @@ body .cart-content {
                 margin-bottom:2vw;
                 width: 90%;
                 /* outline: none;
-                background-color: rgba(255, 99, 71, 0); */        
+                background-color: rgba(255, 99, 71, 0); */
             }
 
         .form-wrapper .submit {
@@ -408,8 +408,8 @@ body .cart-content {
 }
 
 
-/* @media all and (max-width: 455px) { 
-    
+/* @media all and (max-width: 455px) {
+
     .chosen-products {
         width:90%;
     }
@@ -469,7 +469,7 @@ body .cart-content {
 
 } */
 
-@media all and (max-width: 455px) { 
+@media all and (max-width: 455px) {
     .chosen-products {
         width:90%;
     }
