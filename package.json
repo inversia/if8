@@ -50,7 +50,7 @@
     "build": "rimraf dist .cache && parcel build src/index.html",
     "start-published": "npm run build && cd dist && python -m SimpleHTTPServer",
     "publish": "npm run build && ./publish.sh",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
