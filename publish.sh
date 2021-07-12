@@ -8,5 +8,5 @@ echo Publishing to GitHub Pages \
 && cp -rf dist/* . \
 && git add --ignore-errors -A \
 && git commit -am "new build" \
-&& git push \
+&& git push -u\
 && git checkout master
